@@ -1,0 +1,13 @@
+{
+  "modifier_id": "chromatic_construct:antigravity",
+  "text": [
+    {
+      "text": "What comes up must come down, yet my feet don't touch the ground."
+    }
+  ],
+  "effects": [
+    "Tool defies gravity when dropped",
+    "Single use",
+    "Slotless"
+  ]
+}

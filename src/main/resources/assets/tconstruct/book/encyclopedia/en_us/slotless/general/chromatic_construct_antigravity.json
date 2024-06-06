@@ -1,0 +1,13 @@
+{
+  "modifier_id": "chromatic_construct:antigravity",
+  "text": [
+    {
+      "text": "Causes the tool to defy gravity when dropped, preventing it from falling."
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "Single use",
+    "Slotless"
+  ]
+}
