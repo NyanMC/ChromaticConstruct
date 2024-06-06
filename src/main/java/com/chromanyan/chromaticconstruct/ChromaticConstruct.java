@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticconstruct;
 
+import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierRecipeProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifiers;
 import com.chromanyan.chromaticconstruct.datagen.CCRecipeProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.material.*;
@@ -60,6 +61,7 @@ public class ChromaticConstruct {
         gen.addProvider(event.includeServer(), new CCMaterialStatsDataProvider(gen, materials));
         gen.addProvider(event.includeServer(), new CCMaterialRecipeProvider(gen));
         gen.addProvider(event.includeServer(), new CCModifiers(gen));
+        gen.addProvider(event.includeClient(), new CCModifierRecipeProvider(gen));
 
         gen.addProvider(event.includeServer(), new CCRecipeProvider(gen));
 
