@@ -17,7 +17,9 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
     @Override
     protected void buildCraftingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         addModifierRecipes(consumer);
+    }
 
+    private void addModifierRecipes(Consumer<FinishedRecipe> consumer) {
         String upgradeFolder = "tools/modifiers/upgrade/";
         String abilityFolder = "tools/modifiers/ability/";
         String slotlessFolder = "tools/modifiers/slotless/";
@@ -33,10 +35,6 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .addInput(MMTags.Items.GEMS_COSMITE)
                 .setMaxLevel(1)
                 .save(withCondition(consumer, modLoaded("meaningfulmaterials")), prefix(CCModifierIds.antigravity, slotlessFolder));
-    }
-
-    private void addModifierRecipes(Consumer<FinishedRecipe> consumer) {
-
     }
 
     @Override
