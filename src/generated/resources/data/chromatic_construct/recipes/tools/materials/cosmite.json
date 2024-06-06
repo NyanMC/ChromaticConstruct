@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:gems/cosmite"
+  },
+  "material": "chromatic_construct:cosmite",
+  "needed": 1,
+  "value": 1
+}

@@ -1,0 +1,84 @@
+package com.chromanyan.chromaticconstruct.init;
+
+import com.chromanyan.chromaticconstruct.ChromaticConstruct;
+import com.chromanyan.chromaticconstruct.datagen.CCFluidTagProvider;
+import com.chromanyan.chromaticconstruct.datagen.CCFluidTextureProvider;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.BlockSource;
+import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
+import net.minecraft.core.dispenser.DispenseItemBehavior;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.item.DispensibleContainerItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraftforge.common.SoundActions;
+import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fluids.FluidType;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import org.jetbrains.annotations.NotNull;
+import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
+import slimeknights.mantle.registration.object.FlowingFluidObject;
+import slimeknights.tconstruct.fluids.data.FluidBlockstateModelProvider;
+import slimeknights.tconstruct.fluids.data.FluidBucketModelProvider;
+
+import static slimeknights.tconstruct.fluids.block.BurningLiquidBlock.createBurning;
+
+public class CCFluids {
+
+    public static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(ChromaticConstruct.MODID);
+
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenCosmite = FLUIDS.register("molten_cosmite").type(hot("molten_cosmite").temperature(800).lightLevel(8)).block(createBurning(8, 10, 5f)).bucket().flowing();
+
+    private static FluidType.Properties hot(String name) {
+        return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000)
+                .descriptionId(ChromaticConstruct.makeDescriptionId("fluid", name))
+                .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA)
+                .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA)
+                // from forge lava type
+                .motionScale(0.0023333333333333335D)
+                .canSwim(false).canDrown(false)
+                .pathType(BlockPathTypes.LAVA).adjacentPathType(null);
+    }
+
+    @SubscribeEvent
+    void gatherData(final GatherDataEvent event) {
+        DataGenerator datagenerator = event.getGenerator();
+        boolean client = event.includeClient();
+
+        datagenerator.addProvider(event.includeServer(), new CCFluidTagProvider(datagenerator, event.getExistingFileHelper()));
+
+        datagenerator.addProvider(client, new CCFluidTextureProvider(datagenerator));
+        datagenerator.addProvider(client, new FluidBucketModelProvider(datagenerator, ChromaticConstruct.MODID));
+        datagenerator.addProvider(client, new FluidBlockstateModelProvider(datagenerator, ChromaticConstruct.MODID));
+    }
+
+    @SubscribeEvent
+    void commonSetup(final FMLCommonSetupEvent event) {
+        DispenseItemBehavior dispenseBucket = new DefaultDispenseItemBehavior() {
+            private final DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior();
+
+            @Override
+            public @NotNull ItemStack execute(BlockSource source, ItemStack stack) {
+                DispensibleContainerItem container = (DispensibleContainerItem)stack.getItem();
+                BlockPos blockpos = source.getPos().relative(source.getBlockState().getValue(DispenserBlock.FACING));
+                Level level = source.getLevel();
+                if (container.emptyContents(null, level, blockpos, null)) {
+                    container.checkExtraContent(null, level, stack, blockpos);
+                    return new ItemStack(Items.BUCKET);
+                } else {
+                    return this.defaultDispenseItemBehavior.dispense(source, stack);
+                }
+            }
+        };
+
+        event.enqueueWork(() -> {
+            DispenserBlock.registerBehavior(moltenCosmite, dispenseBucket);
+        });
+    }
+}

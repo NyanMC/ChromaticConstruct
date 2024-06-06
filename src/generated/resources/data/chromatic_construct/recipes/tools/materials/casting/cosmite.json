@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 100,
+    "tag": "chromatic_construct:molten_cosmite"
+  },
+  "output": "chromatic_construct:cosmite",
+  "temperature": 500
+}

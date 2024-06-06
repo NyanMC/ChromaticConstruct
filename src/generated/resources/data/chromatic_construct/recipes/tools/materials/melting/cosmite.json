@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "chromatic_construct:cosmite",
+  "result": {
+    "amount": 100,
+    "fluid": "chromatic_construct:molten_cosmite"
+  },
+  "temperature": 500
+}

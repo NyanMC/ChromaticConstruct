@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:geore_clusters/cosmite"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meaningfulmaterials"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_clusters/cosmite"
+  },
+  "result": {
+    "amount": 400,
+    "fluid": "chromatic_construct:molten_cosmite"
+  },
+  "temperature": 500,
+  "time": 125
+}

@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:composable",
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "each_level": 1.5,
+      "percent": false,
+      "target": {
+        "type": "mantle:inverted",
+        "inverted_type": "mantle:on_ground"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

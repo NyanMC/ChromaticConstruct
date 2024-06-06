@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/gem"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meaningfulmaterials"
+    }
+  ],
+  "cooling_time": 53,
+  "fluid": {
+    "amount": 100,
+    "tag": "chromatic_construct:molten_cosmite"
+  },
+  "result": "meaningfulmaterials:cosmite"
+}

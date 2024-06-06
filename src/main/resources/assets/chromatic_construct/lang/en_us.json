@@ -1,0 +1,15 @@
+{
+  "modifier.chromatic_construct.anti_air": "Anti-Air",
+  "modifier.chromatic_construct.anti_air.flavor": "Death to Phantoms!",
+  "modifier.chromatic_construct.anti_air.description": "Tool does bonus damage to airborne targets!",
+  "modifier.chromatic_construct.anti_air.attack_damage": "Anti-Air Damage",
+
+  "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
+  "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
+  "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",
+  "item.chromatic_construct.molten_cosmite_bucket": "Molten Cosmite Bucket",
+
+  "material.chromatic_construct.cosmite": "Cosmite",
+  "material.chromatic_construct.cosmite.flavor": "What comes up must come down, except for this apparently",
+  "material.chromatic_construct.cosmite.encyclopedia": "Grants +1.5 damage per level against targets that are not touching the ground"
+}
