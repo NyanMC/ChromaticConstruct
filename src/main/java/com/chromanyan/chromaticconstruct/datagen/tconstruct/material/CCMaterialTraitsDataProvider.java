@@ -13,7 +13,7 @@ public class CCMaterialTraitsDataProvider extends AbstractMaterialTraitDataProvi
 
     @Override
     protected void addMaterialTraits() {
-        addDefaultTraits(CCMaterialIds.cosmite, CCModifierIds.antiair);
+        addDefaultTraits(CCMaterialIds.cosmite, CCModifierIds.antiair, CCModifierIds.antigravity);
     }
 
     @Override

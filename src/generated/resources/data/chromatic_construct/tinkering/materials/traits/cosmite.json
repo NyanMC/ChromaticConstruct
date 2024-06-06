@@ -3,6 +3,10 @@
     {
       "level": 1,
       "name": "chromatic_construct:anti_air"
+    },
+    {
+      "level": 1,
+      "name": "chromatic_construct:antigravity"
     }
   ]
 }

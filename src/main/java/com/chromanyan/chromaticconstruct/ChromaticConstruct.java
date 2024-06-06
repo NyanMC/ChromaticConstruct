@@ -3,6 +3,7 @@ package com.chromanyan.chromaticconstruct;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifiers;
 import com.chromanyan.chromaticconstruct.datagen.CCRecipeProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.material.*;
+import com.chromanyan.chromaticconstruct.event.CCEvents;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
 import com.mojang.logging.LogUtils;
 import net.minecraft.data.DataGenerator;
@@ -13,6 +14,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import slimeknights.tconstruct.library.client.data.material.GeneratorPartTextureJsonGenerator;
@@ -32,6 +34,8 @@ public class ChromaticConstruct {
     public ChromaticConstruct() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+
+        modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::gatherData);
         modEventBus.register(new CCFluids());
 
@@ -39,6 +43,10 @@ public class ChromaticConstruct {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        MinecraftForge.EVENT_BUS.register(new CCEvents());
     }
 
     @SubscribeEvent

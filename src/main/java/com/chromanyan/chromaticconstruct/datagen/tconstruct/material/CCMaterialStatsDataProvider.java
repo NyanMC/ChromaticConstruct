@@ -24,7 +24,7 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
     private void addMeleeHarvest() {
         addMaterialStats(CCMaterialIds.cosmite,
                 new HeadMaterialStats(200, 5f, IRON, 2.25f),
-                HandleMaterialStats.multipliers().durability(0.85f).attackSpeed(1.05f).attackDamage(1.05f).build(),
+                HandleMaterialStats.multipliers().durability(0.9f).attackSpeed(1.05f).attackDamage(1.05f).build(),
                 StatlessMaterialStats.BINDING);
     }
 

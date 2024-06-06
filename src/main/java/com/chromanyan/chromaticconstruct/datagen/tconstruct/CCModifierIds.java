@@ -5,6 +5,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierId;
 
 public class CCModifierIds {
     public static final ModifierId antiair = id("anti_air");
+    public static final ModifierId antigravity = id("antigravity");
 
     private static ModifierId id(String name) {
         return new ModifierId(ChromaticConstruct.MODID, name);

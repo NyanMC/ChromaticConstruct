@@ -1,6 +1,7 @@
 {
   "modifier.chromatic_construct": {
-    "anti_air": "#513593"
+    "anti_air": "#513593",
+    "antigravity": "#513593"
   },
 
   "material.chromatic_construct": {
