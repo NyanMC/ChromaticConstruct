@@ -8,5 +8,17 @@
       "level": 1,
       "name": "chromatic_construct:antigravity"
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "chromatic_construct:moonbound"
+      },
+      {
+        "level": 1,
+        "name": "chromatic_construct:antigravity"
+      }
+    ]
+  }
 }

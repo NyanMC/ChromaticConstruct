@@ -15,6 +15,7 @@ public class CCMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
     protected void addAllMaterials() {
         buildMaterial(CCMaterialIds.cosmite)
                 .meleeHarvest()
+                .maille()
                 .fallbacks("crystal", "metal")
                 .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF050811).addARGB(102, 0xFF1D1C35).addARGB(140, 0xFF29234D).addARGB(178, 0xFF362A63).addARGB(216, 0xFF603BAE).addARGB(255, 0xFF7C4EC4).build());
     }

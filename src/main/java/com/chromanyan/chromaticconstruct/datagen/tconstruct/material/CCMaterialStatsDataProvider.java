@@ -19,6 +19,7 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
     @Override
     protected void addMaterialStats() {
         addMeleeHarvest();
+        addArmor();
     }
 
     private void addMeleeHarvest() {
@@ -26,6 +27,10 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
                 new HeadMaterialStats(200, 5f, IRON, 2.25f),
                 HandleMaterialStats.multipliers().durability(0.9f).attackSpeed(1.05f).attackDamage(1.05f).build(),
                 StatlessMaterialStats.BINDING);
+    }
+
+    private void addArmor() {
+        addMaterialStats(CCMaterialIds.cosmite, StatlessMaterialStats.MAILLE);
     }
 
     @Override
