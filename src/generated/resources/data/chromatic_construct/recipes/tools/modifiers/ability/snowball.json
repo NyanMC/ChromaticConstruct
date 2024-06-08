@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:snow_block"
+    },
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:snowball"
+    }
+  ],
+  "level": 1,
+  "result": "chromatic_construct:snowball",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/staffs"
+  }
+}

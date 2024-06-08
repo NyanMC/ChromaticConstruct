@@ -1,0 +1,14 @@
+{
+  "modifier_id": "chromatic_construct:snowball",
+  "text": [
+    {
+      "text": "Annoy your friends! Bully Blazes! What isn't there to love about this?"
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "Fires snowballs on right click at the cost of durability",
+    "Single level",
+    "Requires 1 ability slot"
+  ]
+}

@@ -12,6 +12,10 @@
   "modifier.chromatic_construct.antigravity.flavor": "It's impossible to put down!",
   "modifier.chromatic_construct.antigravity.description": "Tool defies gravity when dropped",
 
+  "modifier.chromatic_construct.snowball": "Snowball",
+  "modifier.chromatic_construct.snowball.flavor": "Start a snowball fight!",
+  "modifier.chromatic_construct.snowball.description": "Tool can conjure snowballs at the cost of durability",
+
   "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
   "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
   "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",

@@ -13,9 +13,9 @@ import slimeknights.tconstruct.library.modifiers.modules.build.VolatileFlagModul
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 
-public class CCModifiers extends AbstractModifierProvider implements IConditionBuilder {
+public class CCModifierProvider extends AbstractModifierProvider implements IConditionBuilder {
 
-    public CCModifiers(DataGenerator generator) {
+    public CCModifierProvider(DataGenerator generator) {
         super(generator);
     }
 

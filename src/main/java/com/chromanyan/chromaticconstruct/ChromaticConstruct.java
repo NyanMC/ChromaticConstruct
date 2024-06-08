@@ -2,11 +2,12 @@ package com.chromanyan.chromaticconstruct;
 
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierRecipeProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierTagProvider;
-import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifiers;
+import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierProvider;
 import com.chromanyan.chromaticconstruct.datagen.CCRecipeProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.material.*;
 import com.chromanyan.chromaticconstruct.event.CCEvents;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
+import com.chromanyan.chromaticconstruct.init.CCModifiers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -36,12 +37,12 @@ public class ChromaticConstruct {
     public ChromaticConstruct() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        CCFluids.FLUIDS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::gatherData);
         modEventBus.register(new CCFluids());
-
-        CCFluids.FLUIDS.register(modEventBus);
+        modEventBus.register(new CCModifiers());
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -61,9 +62,6 @@ public class ChromaticConstruct {
         gen.addProvider(event.includeServer(), new CCMaterialTraitsDataProvider(gen, materials));
         gen.addProvider(event.includeServer(), new CCMaterialStatsDataProvider(gen, materials));
         gen.addProvider(event.includeServer(), new CCMaterialRecipeProvider(gen));
-        gen.addProvider(event.includeServer(), new CCModifiers(gen));
-        gen.addProvider(event.includeServer(), new CCModifierRecipeProvider(gen));
-        gen.addProvider(event.includeServer(), new CCModifierTagProvider(gen, efh));
 
         gen.addProvider(event.includeServer(), new CCRecipeProvider(gen));
 

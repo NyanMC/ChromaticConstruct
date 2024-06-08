@@ -1,11 +1,15 @@
 package com.chromanyan.chromaticconstruct.datagen.tconstruct;
 
 import com.chromanyan.chromaticconstruct.datagen.CCBaseRecipeProvider;
+import com.chromanyan.chromaticconstruct.init.CCModifiers;
 import com.chromanyan.meaningfulmaterials.init.MMTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
+import slimeknights.tconstruct.library.tools.SlotType;
 
 import java.util.function.Consumer;
 
@@ -35,6 +39,18 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .addInput(MMTags.Items.GEMS_COSMITE)
                 .setMaxLevel(1)
                 .save(withCondition(consumer, modLoaded("meaningfulmaterials")), prefix(CCModifierIds.antigravity, slotlessFolder));
+
+        ModifierRecipeBuilder.modifier(CCModifiers.snowball)
+                .setTools(TinkerTags.Items.STAFFS)
+                .addInput(Items.SNOWBALL)
+                .addInput(Items.SNOW_BLOCK)
+                .addInput(Items.SNOWBALL)
+                .addInput(Items.SNOWBALL)
+                .addInput(Items.SNOWBALL)
+                .setSlots(SlotType.ABILITY, 1)
+                .setMaxLevel(1)
+                .saveSalvage(consumer, prefix(CCModifiers.snowball, abilitySalvage))
+                .save(consumer, prefix(CCModifiers.snowball, abilityFolder));
     }
 
     @Override

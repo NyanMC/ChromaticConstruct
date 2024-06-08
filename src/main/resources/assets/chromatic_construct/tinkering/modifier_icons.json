@@ -1,3 +1,4 @@
 {
-  "chromatic_construct:antigravity": "chromatic_construct:gui/modifiers/antigravity"
+  "chromatic_construct:antigravity": "chromatic_construct:gui/modifiers/antigravity",
+  "chromatic_construct:snowball": ["minecraft:item/snowball", "tconstruct:gui/modifiers/book"]
 }

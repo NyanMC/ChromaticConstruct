@@ -1,0 +1,13 @@
+{
+  "modifier_id": "chromatic_construct:snowball",
+  "text": [
+    {
+      "text": "Allows the tool to fire a snowball on right click, consuming 5 durability. The snowball is affected by velocity, but not by projectile power."
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "Single level",
+    "Requires 1 ability slot"
+  ]
+}
