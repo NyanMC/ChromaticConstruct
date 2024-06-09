@@ -1,0 +1,13 @@
+{
+  "modifier_id": "chromatic_construct:riding",
+  "text": [
+    {
+      "text": "Causes the shooter to ride the fired arrow when it is fired from the ground. Deals self-damage based on the arrow's initial speed. Additional arrows (e.g. Multishot) are ignored."
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "Single level",
+    "Requires 1 ability slot"
+  ]
+}

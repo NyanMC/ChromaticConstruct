@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "tag": "forge:leather"
+    },
+    {
+      "item": "minecraft:saddle"
+    },
+    {
+      "tag": "forge:leather"
+    },
+    {
+      "tag": "forge:ingots/hepatizon"
+    },
+    {
+      "tag": "forge:ingots/hepatizon"
+    }
+  ],
+  "level": 1,
+  "result": "chromatic_construct:riding",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/ranged/bows"
+  }
+}

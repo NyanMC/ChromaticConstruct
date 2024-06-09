@@ -16,6 +16,10 @@
   "modifier.chromatic_construct.snowball.flavor": "Start a snowball fight!",
   "modifier.chromatic_construct.snowball.description": "Tool can conjure snowballs at the cost of durability",
 
+  "modifier.chromatic_construct.riding": "Riding",
+  "modifier.chromatic_construct.riding.flavor": "Yeehaw!",
+  "modifier.chromatic_construct.riding.description": "Causes the shooter to ride the fired arrow when fired from the ground. Might hurt!",
+
   "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
   "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
   "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",

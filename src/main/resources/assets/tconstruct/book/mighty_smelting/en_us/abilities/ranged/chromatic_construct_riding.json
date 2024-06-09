@@ -1,0 +1,15 @@
+{
+  "modifier_id": "chromatic_construct:riding",
+  "text": [
+    {
+      "text": "Talk about low-budget flights!"
+    }
+  ],
+  "effects": [
+    "Rides the fired arrow",
+    "Only works from the ground",
+    "Might hurt",
+    "Single level",
+    "Requires 1 ability slot"
+  ]
+}

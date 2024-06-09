@@ -6,10 +6,12 @@ import com.chromanyan.meaningfulmaterials.init.MMTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
 import slimeknights.tconstruct.library.tools.SlotType;
+import slimeknights.tconstruct.shared.TinkerMaterials;
 
 import java.util.function.Consumer;
 
@@ -51,6 +53,18 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .setMaxLevel(1)
                 .saveSalvage(consumer, prefix(CCModifiers.snowball, abilitySalvage))
                 .save(consumer, prefix(CCModifiers.snowball, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(CCModifiers.riding)
+                .setTools(TinkerTags.Items.BOWS)
+                .addInput(Tags.Items.LEATHER)
+                .addInput(Items.SADDLE)
+                .addInput(Tags.Items.LEATHER)
+                .addInput(TinkerMaterials.hepatizon.getIngotTag())
+                .addInput(TinkerMaterials.hepatizon.getIngotTag())
+                .setSlots(SlotType.ABILITY, 1)
+                .setMaxLevel(1)
+                .saveSalvage(consumer, prefix(CCModifiers.riding, abilitySalvage))
+                .save(consumer, prefix(CCModifiers.riding, abilityFolder));
     }
 
     @Override

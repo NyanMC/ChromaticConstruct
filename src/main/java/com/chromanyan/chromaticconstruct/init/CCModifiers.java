@@ -5,6 +5,7 @@ import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierRecipeProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierTagProvider;
 import com.chromanyan.chromaticconstruct.tools.modifiers.ability.interaction.SnowballModifier;
+import com.chromanyan.chromaticconstruct.tools.modifiers.ability.ranged.RidingModifier;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,6 +21,7 @@ public class CCModifiers {
     }
 
     public static final StaticModifier<SnowballModifier> snowball = MODIFIERS.register("snowball", SnowballModifier::new);
+    public static final StaticModifier<RidingModifier> riding = MODIFIERS.register("riding", RidingModifier::new);
 
     @SubscribeEvent
     void gatherData(final GatherDataEvent event) {
