@@ -17,8 +17,10 @@ import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInterac
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.tools.capability.PersistentDataCapability;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 public class SnowballModifier extends NoLevelsModifier implements GeneralInteractionModifierHook {
@@ -41,7 +43,14 @@ public class SnowballModifier extends NoLevelsModifier implements GeneralInterac
 
             Snowball snowball = new Snowball(level, player);
             snowball.setItem(new ItemStack(Items.SNOWBALL));
+
             snowball.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F * ConditionalStatModifierHook.getModifiedStat(tool, player, ToolStats.VELOCITY), 1.0F);
+
+            NamespacedNBT arrowData = PersistentDataCapability.getOrWarn(snowball);
+            for (ModifierEntry entry : tool.getModifierList()) {
+                entry.getHook(ModifierHooks.PROJECTILE_LAUNCH).onProjectileLaunch(tool, modifierEntry, player, snowball, null, arrowData, true);
+            }
+
             level.addFreshEntity(snowball);
 
             ToolDamageUtil.damageAnimated(tool, 5, player, interactionSource.getSlot(interactionHand));
