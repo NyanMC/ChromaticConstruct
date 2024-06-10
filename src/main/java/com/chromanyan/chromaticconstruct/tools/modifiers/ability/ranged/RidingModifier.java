@@ -35,6 +35,7 @@ public class RidingModifier extends NoLevelsModifier implements ProjectileLaunch
         if (arrow == null || !primary) return;
         if (shooter.isShiftKeyDown() || !shooter.isOnGround()) return;
         shooter.startRiding(arrow);
+        arrow.setNoGravity(false); // prevent cheese using arrows that defy gravity
         shooter.hurt(DamageSource.arrow(arrow, shooter), (float) (arrow.getBaseDamage() * arrow.getDeltaMovement().length()));
     }
 }
