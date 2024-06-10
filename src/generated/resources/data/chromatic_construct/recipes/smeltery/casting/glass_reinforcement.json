@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "tconstruct:pattern"
+  },
+  "cast_consumed": true,
+  "cooling_time": 195,
+  "fluid": {
+    "amount": 1000,
+    "tag": "tconstruct:molten_glass"
+  },
+  "result": "chromatic_construct:glass_reinforcement"
+}

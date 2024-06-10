@@ -5,6 +5,8 @@ import com.chromanyan.chromaticconstruct.datagen.CCRecipeProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.material.*;
 import com.chromanyan.chromaticconstruct.event.CCEvents;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
+import com.chromanyan.chromaticconstruct.init.CCItems;
+import com.chromanyan.chromaticconstruct.init.CCMobEffects;
 import com.chromanyan.chromaticconstruct.init.CCModifiers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.data.DataGenerator;
@@ -21,7 +23,10 @@ import org.slf4j.Logger;
 import slimeknights.tconstruct.library.client.data.material.GeneratorPartTextureJsonGenerator;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
+import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
+
+import java.util.function.Supplier;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ChromaticConstruct.MODID)
@@ -35,10 +40,13 @@ public class ChromaticConstruct {
     public ChromaticConstruct() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        CCItems.ITEMS.register(modEventBus);
+        CCMobEffects.MOB_EFFECTS.register(modEventBus);
         CCFluids.FLUIDS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::gatherData);
+
         modEventBus.register(new CCFluids());
         modEventBus.register(new CCModifiers());
 
@@ -77,5 +85,13 @@ public class ChromaticConstruct {
 
     public static ResourceLocation getResource(String name) {
         return new ResourceLocation(MODID, name);
+    }
+
+    public static <T> TinkerDataCapability.TinkerDataKey<T> createKey(String name) {
+        return TinkerDataCapability.TinkerDataKey.of(getResource(name));
+    }
+
+    public static <T> TinkerDataCapability.ComputableDataKey<T> createKey(String name, Supplier<T> constructor) {
+        return TinkerDataCapability.ComputableDataKey.of(getResource(name), constructor);
     }
 }

@@ -1,14 +1,20 @@
 package com.chromanyan.chromaticconstruct.datagen.tconstruct;
 
 import com.chromanyan.chromaticconstruct.datagen.CCBaseRecipeProvider;
+import com.chromanyan.chromaticconstruct.init.CCItems;
 import com.chromanyan.chromaticconstruct.init.CCModifiers;
 import com.chromanyan.meaningfulmaterials.init.MMTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.crafting.CompoundIngredient;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.common.TinkerTags;
+import slimeknights.tconstruct.library.recipe.modifiers.adding.IncrementalModifierRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.shared.TinkerMaterials;
@@ -33,9 +39,8 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
         String abilitySalvage = "tools/modifiers/salvage/ability/";
         String defenseFolder = "tools/modifiers/defense/";
         String defenseSalvage = "tools/modifiers/salvage/defense/";
-        String compatFolder = "tools/modifiers/compat/";
-        String compatSalvage = "tools/modifiers/salvage/compat/";
-        String worktableFolder = "tools/modifiers/worktable/";
+
+        Ingredient protectableTools = ingredientFromTags(TinkerTags.Items.ARMOR, TinkerTags.Items.HELD);
 
         ModifierRecipeBuilder.modifier(CCModifierIds.antigravity)
                 .addInput(MMTags.Items.GEMS_COSMITE)
@@ -65,10 +70,26 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .setMaxLevel(1)
                 .saveSalvage(consumer, prefix(CCModifiers.riding, abilitySalvage))
                 .save(consumer, prefix(CCModifiers.riding, abilityFolder));
+
+        IncrementalModifierRecipeBuilder.modifier(CCModifiers.fragileProtection)
+                .setInput(CCItems.glassReinforcement, 1, 5)
+                .setSlots(SlotType.DEFENSE, 1)
+                .setTools(protectableTools)
+                .saveSalvage(consumer, prefix(CCModifiers.fragileProtection, defenseSalvage))
+                .save(consumer, prefix(CCModifiers.fragileProtection, defenseFolder));
     }
 
     @Override
     public @NotNull String getName() {
         return "Chromatic Construct Modifier Recipes";
+    }
+
+    @SafeVarargs
+    private static Ingredient ingredientFromTags(TagKey<Item>... tags) {
+        Ingredient[] tagIngredients = new Ingredient[tags.length];
+        for (int i = 0; i < tags.length; i++) {
+            tagIngredients[i] = Ingredient.of(tags[i]);
+        }
+        return CompoundIngredient.of(tagIngredients);
     }
 }

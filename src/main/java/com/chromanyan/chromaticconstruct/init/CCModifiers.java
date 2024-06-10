@@ -6,6 +6,7 @@ import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierRecipeProv
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierTagProvider;
 import com.chromanyan.chromaticconstruct.tools.modifiers.ability.interaction.SnowballModifier;
 import com.chromanyan.chromaticconstruct.tools.modifiers.ability.ranged.RidingModifier;
+import com.chromanyan.chromaticconstruct.tools.modifiers.defense.FragileProtectionModifier;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,6 +23,7 @@ public class CCModifiers {
 
     public static final StaticModifier<SnowballModifier> snowball = MODIFIERS.register("snowball", SnowballModifier::new);
     public static final StaticModifier<RidingModifier> riding = MODIFIERS.register("riding", RidingModifier::new);
+    public static final StaticModifier<FragileProtectionModifier> fragileProtection = MODIFIERS.register("fragile_protection", FragileProtectionModifier::new);
 
     @SubscribeEvent
     void gatherData(final GatherDataEvent event) {

@@ -18,6 +18,7 @@ public class CCModifierTagProvider extends AbstractModifierTagProvider {
         this.tag(TinkerTags.Modifiers.GENERAL_SLOTLESS).add(CCModifierIds.antigravity);
         this.tag(TinkerTags.Modifiers.INTERACTION_ABILITIES).add(CCModifiers.snowball.getId());
         this.tag(TinkerTags.Modifiers.RANGED_ABILITIES).add(CCModifiers.riding.getId());
+        this.tag(TinkerTags.Modifiers.PROTECTION_DEFENSE).add(CCModifiers.fragileProtection.getId());
     }
 
     @Override

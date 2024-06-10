@@ -1,0 +1,14 @@
+{
+  "modifier_id": "chromatic_construct:fragile_protection",
+  "text": [
+    {
+      "text": "Sound the alarm, shatter me like glass"
+    }
+  ],
+  "effects": [
+    "Increases protection",
+    "Briefly stops working after sustaining a hit",
+    "Multiple levels, each level further increases protection",
+    "Requires 1 defense slot per level"
+  ]
+}

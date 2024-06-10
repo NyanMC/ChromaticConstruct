@@ -20,10 +20,19 @@
   "modifier.chromatic_construct.riding.flavor": "Yeehaw!",
   "modifier.chromatic_construct.riding.description": "Causes the shooter to ride the fired arrow when fired from the ground. Might hurt!",
 
+  "modifier.chromatic_construct.fragile_protection": "Fragile Protection",
+  "modifier.chromatic_construct.fragile_protection.flavor": "Be careful with this!",
+  "modifier.chromatic_construct.fragile_protection.description": "Protects against all damage, but briefly stops protecting after sustaining damage",
+  "modifier.chromatic_construct.fragile_protection.resistance": "Fragile Resistance",
+
   "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
   "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
   "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",
   "item.chromatic_construct.molten_cosmite_bucket": "Molten Cosmite Bucket",
+
+  "item.chromatic_construct.glass_reinforcement": "Glass Reinforcement",
+
+  "effect.chromatic_construct.fragile_cooldown": "Fragile Cooldown",
 
   "material.chromatic_construct.cosmite": "Cosmite",
   "material.chromatic_construct.cosmite.flavor": "What goes up must come down, except for this apparently",

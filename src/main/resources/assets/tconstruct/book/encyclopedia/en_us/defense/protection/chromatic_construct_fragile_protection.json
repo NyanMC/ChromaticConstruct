@@ -1,0 +1,13 @@
+{
+  "modifier_id": "chromatic_construct:fragile_protection",
+  "text": [
+    {
+      "text": "Grants +10% resistance, but stops working for 5 seconds after taking damage. Caps at 80% across the whole set, or 8 levels."
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "Can apply levels incrementally",
+    "Requires 1 defense slot"
+  ]
+}
