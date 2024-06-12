@@ -83,12 +83,10 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .addInput(Tags.Items.STORAGE_BLOCKS_IRON)
                 .addInput(Items.ANVIL)
                 .addInput(Tags.Items.STORAGE_BLOCKS_IRON)
-                .addInput(Tags.Items.STORAGE_BLOCKS_IRON)
-                .addInput(Tags.Items.STORAGE_BLOCKS_IRON)
-                .setSlots(SlotType.ABILITY, 1)
+                .setSlots(SlotType.UPGRADE, 1)
                 .setMaxLevel(1)
-                .saveSalvage(consumer, prefix(CCModifierIds.encumberment, abilitySalvage))
-                .save(consumer, prefix(CCModifierIds.encumberment, abilityFolder));
+                .saveSalvage(consumer, prefix(CCModifierIds.encumberment, upgradeSalvage))
+                .save(consumer, prefix(CCModifierIds.encumberment, upgradeFolder));
     }
 
     @Override

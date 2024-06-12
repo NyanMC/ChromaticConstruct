@@ -10,18 +10,12 @@
     },
     {
       "tag": "forge:storage_blocks/iron"
-    },
-    {
-      "tag": "forge:storage_blocks/iron"
-    },
-    {
-      "tag": "forge:storage_blocks/iron"
     }
   ],
   "level": 1,
   "result": "chromatic_construct:encumberment",
   "slots": {
-    "abilities": 1
+    "upgrades": 1
   },
   "tools": {
     "tag": "tconstruct:modifiable/armor/leggings"

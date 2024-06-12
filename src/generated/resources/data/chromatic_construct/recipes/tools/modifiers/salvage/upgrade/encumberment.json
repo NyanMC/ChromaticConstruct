@@ -2,7 +2,7 @@
   "type": "tconstruct:modifier_salvage",
   "modifier": "chromatic_construct:encumberment",
   "slots": {
-    "abilities": 1
+    "upgrades": 1
   },
   "tools": {
     "tag": "tconstruct:modifiable/armor/leggings"
