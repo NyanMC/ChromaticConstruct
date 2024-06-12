@@ -1,0 +1,13 @@
+{
+  "modifier_id": "chromatic_construct:encumberment",
+  "text": [
+    {
+      "text": "Prevents picking up dropped items while equipped. This does not apply to experience."
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "Maximum of 1 level",
+    "Requires 1 ability slot"
+  ]
+}

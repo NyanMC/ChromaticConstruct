@@ -8,6 +8,8 @@ public class CCModifierIds {
     public static final ModifierId antigravity = id("antigravity");
     public static final ModifierId moonbound = id("moonbound");
 
+    public static final ModifierId encumberment = id("encumberment");
+
     private static ModifierId id(String name) {
         return new ModifierId(ChromaticConstruct.MODID, name);
     }

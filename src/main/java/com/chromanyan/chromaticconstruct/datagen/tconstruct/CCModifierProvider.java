@@ -32,6 +32,9 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
                 AttributeModule.builder(ForgeMod.ENTITY_GRAVITY.get(), AttributeModifier.Operation.MULTIPLY_TOTAL)
                         .uniqueFrom(CCModifierIds.moonbound)
                         .eachLevel(-0.25f));
+        buildModifier(CCModifierIds.encumberment)
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
+                .addModule(new VolatileFlagModule(CCVolatileFlags.PREVENT_PICKUPS));
     }
 
     @Override

@@ -1,0 +1,13 @@
+{
+  "modifier_id": "chromatic_construct:encumberment",
+  "text": [
+    {
+      "text": "With this, you won't have to worry about picking up garbage you don't want when exploring! You also won't pick up valuable stuff, but you can cross that bridge when you get there."
+    }
+  ],
+  "effects": [
+    "Prevents picking up items",
+    "Single level",
+    "Requires 1 ability slot"
+  ]
+}

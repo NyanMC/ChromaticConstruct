@@ -25,6 +25,10 @@
   "modifier.chromatic_construct.fragile_protection.description": "Protects against all damage, but briefly stops protecting after sustaining damage",
   "modifier.chromatic_construct.fragile_protection.resistance": "Fragile Resistance",
 
+  "modifier.chromatic_construct.encumberment": "Encumberment",
+  "modifier.chromatic_construct.encumberment.flavor": "You're carrying too much!",
+  "modifier.chromatic_construct.encumberment.description": "Prevents picking up items when worn",
+
   "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
   "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
   "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",

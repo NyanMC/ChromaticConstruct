@@ -4,7 +4,8 @@
     "antigravity": "#513593",
     "moonbound": "#513593",
     "riding": "#7F4A00",
-    "fragile_protection": "#CCCCFF"
+    "fragile_protection": "#CCCCFF",
+    "encumberment": "#AAAAAA"
   },
 
   "material.chromatic_construct": {

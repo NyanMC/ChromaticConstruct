@@ -77,6 +77,18 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .setTools(protectableTools)
                 .saveSalvage(consumer, prefix(CCModifiers.fragileProtection, defenseSalvage))
                 .save(consumer, prefix(CCModifiers.fragileProtection, defenseFolder));
+
+        ModifierRecipeBuilder.modifier(CCModifierIds.encumberment)
+                .setTools(TinkerTags.Items.LEGGINGS)
+                .addInput(Tags.Items.STORAGE_BLOCKS_IRON)
+                .addInput(Items.ANVIL)
+                .addInput(Tags.Items.STORAGE_BLOCKS_IRON)
+                .addInput(Tags.Items.STORAGE_BLOCKS_IRON)
+                .addInput(Tags.Items.STORAGE_BLOCKS_IRON)
+                .setSlots(SlotType.ABILITY, 1)
+                .setMaxLevel(1)
+                .saveSalvage(consumer, prefix(CCModifierIds.encumberment, abilitySalvage))
+                .save(consumer, prefix(CCModifierIds.encumberment, abilityFolder));
     }
 
     @Override
