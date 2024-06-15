@@ -163,6 +163,11 @@ dependencies {
 
     implementation fg.deobf("curse.maven:meaningful-materials-997680:5309122")
 
+    implementation fg.deobf("curse.maven:caelus-308989:3929284")
+    implementation fg.deobf("curse.maven:curios-309927:5302436")
+    implementation fg.deobf("curse.maven:patchouli-306770:4031402")
+    implementation fg.deobf("curse.maven:enigmatic-legacy-336184:4392950")
+
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"

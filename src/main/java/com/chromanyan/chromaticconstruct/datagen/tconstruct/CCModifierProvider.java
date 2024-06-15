@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticconstruct.datagen.tconstruct;
 
+import com.chromanyan.chromaticconstruct.tools.CCPredicate;
 import com.chromanyan.chromaticconstruct.tools.CCVolatileFlags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -21,6 +22,11 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
 
     @Override
     protected void addModifiers() {
+        buildModifier(CCModifierIds.encumberment)
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
+                .addModule(new VolatileFlagModule(CCVolatileFlags.PREVENT_PICKUPS));
+
+        // compat: meaningful materials
         buildModifier(CCModifierIds.antiair).addModule(
                 ConditionalMeleeDamageModule.builder()
                         .target(LivingEntityPredicate.ON_GROUND.inverted())
@@ -32,9 +38,12 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
                 AttributeModule.builder(ForgeMod.ENTITY_GRAVITY.get(), AttributeModifier.Operation.MULTIPLY_TOTAL)
                         .uniqueFrom(CCModifierIds.moonbound)
                         .eachLevel(-0.25f));
-        buildModifier(CCModifierIds.encumberment)
-                .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
-                .addModule(new VolatileFlagModule(CCVolatileFlags.PREVENT_PICKUPS));
+
+        // compat: enigmatic legacy
+        buildModifier(CCModifierIds.slayer).addModule(
+                ConditionalMeleeDamageModule.builder()
+                        .target(CCPredicate.MONSTER)
+                        .eachLevel(1.5f));
     }
 
     @Override

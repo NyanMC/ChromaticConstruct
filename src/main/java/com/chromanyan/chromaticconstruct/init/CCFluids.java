@@ -29,6 +29,7 @@ import slimeknights.tconstruct.fluids.data.FluidBucketModelProvider;
 
 import static slimeknights.tconstruct.fluids.block.BurningLiquidBlock.createBurning;
 
+@SuppressWarnings("deprecation")
 public class CCFluids {
 
     public static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(ChromaticConstruct.MODID);

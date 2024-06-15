@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "com.chromanyan.chromaticconstruct.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "chromaticconstruct.refmap.json",
+  "refmap": "chromatic_construct.refmap.json",
   "mixins": [
   ],
   "client": [

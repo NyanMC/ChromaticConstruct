@@ -8,7 +8,9 @@ import com.chromanyan.chromaticconstruct.init.CCFluids;
 import com.chromanyan.chromaticconstruct.init.CCItems;
 import com.chromanyan.chromaticconstruct.init.CCMobEffects;
 import com.chromanyan.chromaticconstruct.init.CCModifiers;
+import com.chromanyan.chromaticconstruct.tools.CCPredicate;
 import com.mojang.logging.LogUtils;
+import net.minecraft.core.Registry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,7 +21,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.RegisterEvent;
 import org.slf4j.Logger;
+import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.client.data.material.GeneratorPartTextureJsonGenerator;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
@@ -46,6 +50,7 @@ public class ChromaticConstruct {
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::gatherData);
+        modEventBus.addListener(this::registerEvent);
 
         modEventBus.register(new CCFluids());
         modEventBus.register(new CCModifiers());
@@ -77,6 +82,13 @@ public class ChromaticConstruct {
         gen.addProvider(event.includeClient(), new CCMaterialRenderInfoProvider(gen, materialSprites, efh));
         gen.addProvider(event.includeClient(), new GeneratorPartTextureJsonGenerator(gen, ChromaticConstruct.MODID, partSprites));
         gen.addProvider(event.includeClient(), new MaterialPartTextureGenerator(gen, efh, partSprites, materialSprites));
+    }
+
+    @SubscribeEvent
+    public void registerEvent(RegisterEvent event) {
+        if (event.getRegistryKey() == Registry.RECIPE_SERIALIZER_REGISTRY) {
+            LivingEntityPredicate.LOADER.register(getResource("monster"), CCPredicate.MONSTER.getLoader());
+        }
     }
 
     public static String makeDescriptionId(String type, String name) {

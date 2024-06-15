@@ -29,6 +29,11 @@
   "modifier.chromatic_construct.encumberment.flavor": "You're carrying too much!",
   "modifier.chromatic_construct.encumberment.description": "Prevents picking up items when worn",
 
+  "modifier.chromatic_construct.slayer": "Slayer",
+  "modifier.chromatic_construct.slayer.flavor": "Defeat the evil!",
+  "modifier.chromatic_construct.slayer.description": "Tool does bonus damage to monsters!",
+  "modifier.chromatic_construct.slayer.attack_damage": "Monster Damage",
+
   "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
   "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
   "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",
