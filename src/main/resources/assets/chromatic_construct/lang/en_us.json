@@ -43,6 +43,11 @@
   "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",
   "item.chromatic_construct.molten_cosmite_bucket": "Molten Cosmite Bucket",
 
+  "block.chromatic_construct.molten_etherium_fluid": "Molten Etherium",
+  "fluid.chromatic_construct.molten_etherium": "Molten Etherium",
+  "fluid.chromatic_construct.flowing_molten_etherium": "Flowing Molten Etherium",
+  "item.chromatic_construct.molten_etherium_bucket": "Molten Etherium Bucket",
+
   "item.chromatic_construct.glass_reinforcement": "Glass Reinforcement",
 
   "effect.chromatic_construct.fragile_cooldown": "Fragile Cooldown",

@@ -21,6 +21,7 @@ public class CCFluidEffectProvider extends AbstractFluidEffectProvider {
     @Override
     protected void addFluids() {
         metalborn(CCFluids.moltenCosmite.getForgeTag(), 2f).addEffect(TimeAction.SET, FluidMobEffect.builder().effect(MobEffects.LEVITATION, 20*3));
+        metalborn(CCFluids.moltenEtherium.getForgeTag(), 4f).addEffect(TimeAction.SET, FluidMobEffect.builder().effect(MobEffects.DAMAGE_RESISTANCE, 20*3));
     }
 
     /** Builder for an effect based metal */

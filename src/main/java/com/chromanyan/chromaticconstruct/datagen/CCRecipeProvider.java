@@ -1,5 +1,7 @@
 package com.chromanyan.chromaticconstruct.datagen;
 
+import com.aizistral.enigmaticlegacy.registries.EnigmaticBlocks;
+import com.aizistral.enigmaticlegacy.registries.EnigmaticItems;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
 import com.chromanyan.chromaticconstruct.init.CCItems;
 import com.chromanyan.meaningfulmaterials.init.MMItems;
@@ -39,6 +41,18 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
 
         MeltingRecipeBuilder.melting(Ingredient.of(CCItems.glassReinforcement), TinkerFluids.moltenGlass.get(), FluidValues.GLASS_BLOCK)
                 .save(consumer, location(folder + "glass_reinforcement"));
+
+        Consumer<FinishedRecipe> elConsumer = withCondition(consumer, new ModLoadedCondition("enigmaticlegacy"));
+
+        // Because SOMEONE doesn't properly tag their items, I have to do this the long way.
+        MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.ETHERIUM_INGOT), CCFluids.moltenEtherium.get(), FluidValues.INGOT)
+                .save(elConsumer, location(folder + "etherium_ingot"));
+        MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.ETHERIUM_NUGGET), CCFluids.moltenEtherium.get(), FluidValues.NUGGET)
+                .save(elConsumer, location(folder + "etherium_nugget"));
+        MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.ETHERIUM_ORE), CCFluids.moltenEtherium.get(), FluidValues.INGOT * 2)
+                .save(elConsumer, location(folder + "etherium_ore"));
+        MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticBlocks.ETHERIUM_BLOCK), CCFluids.moltenEtherium.get(), FluidValues.METAL_BLOCK)
+                .save(elConsumer, location(folder + "etherium_block"));
     }
 
     private void addCastingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
@@ -61,6 +75,15 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
                 .setFluidAndTime(TinkerFluids.moltenGlass, false, FluidValues.GLASS_BLOCK)
                 .setCast(TinkerTables.pattern, true)
                 .save(consumer, prefix(CCItems.glassReinforcement, folder));
+
+        Consumer<FinishedRecipe> elConsumer = withCondition(consumer, new ModLoadedCondition("enigmaticlegacy"));
+
+        this.ingotCasting(elConsumer, CCFluids.moltenEtherium, EnigmaticItems.ETHERIUM_INGOT, folder + "etherium/ingot");
+        this.nuggetCasting(elConsumer, CCFluids.moltenEtherium, false, EnigmaticItems.ETHERIUM_NUGGET, folder + "etherium/nugget");
+
+        ItemCastingRecipeBuilder.basinRecipe(EnigmaticBlocks.ETHERIUM_BLOCK)
+                .setFluidAndTime(CCFluids.moltenEtherium, false, FluidValues.METAL_BLOCK)
+                .save(elConsumer, location(folder + "etherium/block"));
     }
 
     @Override

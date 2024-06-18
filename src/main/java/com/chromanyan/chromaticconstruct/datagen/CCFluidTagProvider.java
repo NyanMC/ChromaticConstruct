@@ -19,8 +19,10 @@ public class CCFluidTagProvider extends FluidTagsProvider {
     @Override
     protected void addTags() {
         tagAll(CCFluids.moltenCosmite);
+        tagAll(CCFluids.moltenEtherium);
 
         this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(CCFluids.moltenCosmite.getLocalTag());
+        this.tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(CCFluids.moltenEtherium.getLocalTag());
     }
 
     /** Tags this fluid using local tags */
