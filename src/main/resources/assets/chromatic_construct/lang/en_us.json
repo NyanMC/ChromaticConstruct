@@ -34,6 +34,10 @@
   "modifier.chromatic_construct.slayer.description": "Tool does bonus damage to monsters!",
   "modifier.chromatic_construct.slayer.attack_damage": "Monster Damage",
 
+  "modifier.chromatic_construct.backstep": "Backstep",
+  "modifier.chromatic_construct.backstep.flavor": "Missed me!",
+  "modifier.chromatic_construct.backstep.description": "Melee attacks cause the attacker to leap backward",
+
   "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
   "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
   "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",

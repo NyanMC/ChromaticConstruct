@@ -6,7 +6,8 @@
     "riding": "#7F4A00",
     "fragile_protection": "#CCCCFF",
     "encumberment": "#AAAAAA",
-    "slayer": "#96FFFF"
+    "slayer": "#96FFFF",
+    "backstep": "#96FFFF"
   },
 
   "material.chromatic_construct": {
