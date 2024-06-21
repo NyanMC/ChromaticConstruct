@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "chromatic_construct:etherium",
+  "result": {
+    "amount": 90,
+    "fluid": "chromatic_construct:molten_etherium"
+  },
+  "temperature": 1500
+}

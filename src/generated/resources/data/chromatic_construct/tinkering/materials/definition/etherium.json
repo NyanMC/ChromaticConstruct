@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "enigmaticlegacy"
+  },
+  "craftable": false,
+  "hidden": false,
+  "sortOrder": 7,
+  "tier": 4
+}

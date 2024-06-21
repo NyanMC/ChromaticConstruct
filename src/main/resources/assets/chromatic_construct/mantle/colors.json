@@ -11,6 +11,7 @@
   },
 
   "material.chromatic_construct": {
-    "cosmite": "#513593"
+    "cosmite": "#513593",
+    "etherium": "#96FFFF"
   }
 }

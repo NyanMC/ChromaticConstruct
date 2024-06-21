@@ -9,6 +9,7 @@ import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 import static net.minecraft.world.item.Tiers.IRON;
+import static net.minecraft.world.item.Tiers.NETHERITE;
 
 public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvider {
 
@@ -26,6 +27,10 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
         addMaterialStats(CCMaterialIds.cosmite,
                 new HeadMaterialStats(200, 5f, IRON, 2.25f),
                 HandleMaterialStats.multipliers().durability(0.9f).attackSpeed(1.05f).attackDamage(1.05f).build(),
+                StatlessMaterialStats.BINDING);
+        addMaterialStats(CCMaterialIds.etherium,
+                new HeadMaterialStats(1500, 6f, NETHERITE, 3f),
+                HandleMaterialStats.multipliers().durability(1.25f).attackSpeed(0.85f).attackDamage(1.15f).miningSpeed(0.95f).build(),
                 StatlessMaterialStats.BINDING);
     }
 

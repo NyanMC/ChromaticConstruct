@@ -15,6 +15,7 @@ public class CCMaterialRenderInfoProvider extends AbstractMaterialRenderInfoProv
     @Override
     protected void addMaterialRenderInfo() {
         buildRenderInfo(CCMaterialIds.cosmite).color(0x513593).fallbacks("crystal", "metal");
+        buildRenderInfo(CCMaterialIds.etherium).color(0x96FFFF).fallbacks("metal");
     }
 
     @Override

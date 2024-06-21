@@ -1,6 +1,7 @@
 package com.chromanyan.chromaticconstruct.datagen.tconstruct.material;
 
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierIds;
+import com.chromanyan.chromaticconstruct.init.CCModifiers;
 import net.minecraft.data.DataGenerator;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
@@ -16,6 +17,8 @@ public class CCMaterialTraitsDataProvider extends AbstractMaterialTraitDataProvi
     protected void addMaterialTraits() {
         addDefaultTraits(CCMaterialIds.cosmite, CCModifierIds.antiair, CCModifierIds.antigravity);
         addTraits(CCMaterialIds.cosmite, MaterialRegistry.ARMOR, CCModifierIds.moonbound, CCModifierIds.antigravity);
+
+        addDefaultTraits(CCMaterialIds.etherium, CCModifiers.backstep);
     }
 
     @Override

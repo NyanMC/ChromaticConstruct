@@ -55,5 +55,9 @@
   "material.chromatic_construct.cosmite": "Cosmite",
   "material.chromatic_construct.cosmite.flavor": "What goes up must come down, except for this apparently",
   "material.chromatic_construct.cosmite.encyclopedia": "Grants +1.5 damage per level against targets that are not touching the ground. Tool defies gravity when dropped",
-  "material.chromatic_construct.cosmite.armor": "Reduces the wearer's gravity by 25%, multiplicatively with other pieces. Armor defies gravity when dropped"
+  "material.chromatic_construct.cosmite.armor": "Reduces the wearer's gravity by 25%, multiplicatively with other pieces. Armor defies gravity when dropped",
+
+  "material.chromatic_construct.etherium": "Etherium",
+  "material.chromatic_construct.etherium.flavor": "It appears melting this metal diluted its power. Fortunately, it's still usable.",
+  "material.chromatic_construct.etherium.encyclopedia": "Attacking entities knocks the attacker backwards. Distance scales based on trait level"
 }

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "enigmaticlegacy:etherium_nugget"
+  },
+  "material": "chromatic_construct:etherium",
+  "needed": 9,
+  "value": 1
+}
