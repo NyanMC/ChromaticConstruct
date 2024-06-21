@@ -12,6 +12,31 @@
       "melee_attack": 3.0,
       "mining_speed": 6.0,
       "mining_tier": "minecraft:netherite"
+    },
+    "tconstruct:maille": {},
+    "tconstruct:plating_boots": {
+      "armor": 2.0,
+      "durability": 520,
+      "toughness": 2.0
+    },
+    "tconstruct:plating_chestplate": {
+      "armor": 7.0,
+      "durability": 640,
+      "toughness": 2.0
+    },
+    "tconstruct:plating_helmet": {
+      "armor": 2.0,
+      "durability": 440,
+      "toughness": 2.0
+    },
+    "tconstruct:plating_leggings": {
+      "armor": 5.0,
+      "durability": 600,
+      "toughness": 2.0
+    },
+    "tconstruct:plating_shield": {
+      "durability": 720,
+      "toughness": 2.0
     }
   }
 }

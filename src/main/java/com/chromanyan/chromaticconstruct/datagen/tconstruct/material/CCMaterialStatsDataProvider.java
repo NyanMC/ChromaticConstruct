@@ -6,6 +6,7 @@ import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvide
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
+import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 import static net.minecraft.world.item.Tiers.IRON;
@@ -36,6 +37,7 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
 
     private void addArmor() {
         addMaterialStats(CCMaterialIds.cosmite, StatlessMaterialStats.MAILLE);
+        addArmorShieldStats(CCMaterialIds.etherium, PlatingMaterialStats.builder().durabilityFactor(40).armor(2, 5, 7, 2).toughness(2), StatlessMaterialStats.MAILLE);
     }
 
     @Override

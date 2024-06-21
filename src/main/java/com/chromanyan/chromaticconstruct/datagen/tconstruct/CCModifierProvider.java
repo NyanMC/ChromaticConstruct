@@ -7,8 +7,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
+import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
+import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.VolatileFlagModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
@@ -44,6 +46,11 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
                 ConditionalMeleeDamageModule.builder()
                         .target(CCPredicate.MONSTER)
                         .eachLevel(1.5f));
+        buildModifier(CCModifierIds.emergencyProtection).addModule(
+                ProtectionModule.builder()
+                        .source(DamageSourcePredicate.CAN_PROTECT)
+                        .entity(CCPredicate.BELOW_40)
+                        .eachLevel(1.25f));
     }
 
     @Override

@@ -88,6 +88,7 @@ public class ChromaticConstruct {
     public void registerEvent(RegisterEvent event) {
         if (event.getRegistryKey() == Registry.RECIPE_SERIALIZER_REGISTRY) {
             LivingEntityPredicate.LOADER.register(getResource("monster"), CCPredicate.MONSTER.getLoader());
+            LivingEntityPredicate.LOADER.register(getResource("below_40"), CCPredicate.BELOW_40.getLoader());
         }
     }
 

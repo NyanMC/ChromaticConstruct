@@ -38,6 +38,11 @@
   "modifier.chromatic_construct.backstep.flavor": "Missed me!",
   "modifier.chromatic_construct.backstep.description": "Melee attacks cause the attacker to leap backward",
 
+  "modifier.chromatic_construct.emergency_protection": "Emergency Protection",
+  "modifier.chromatic_construct.emergency_protection.flavor": "Close call!",
+  "modifier.chromatic_construct.emergency_protection.description": "Increases protection at low health",
+  "modifier.chromatic_construct.emergency_protection.resistance": "Emergency Resistance",
+
   "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
   "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
   "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",
@@ -59,5 +64,6 @@
 
   "material.chromatic_construct.etherium": "Etherium",
   "material.chromatic_construct.etherium.flavor": "It appears melting this metal diluted its power. Fortunately, it's still usable.",
-  "material.chromatic_construct.etherium.encyclopedia": "Attacking entities knocks the attacker backwards. Distance scales based on trait level"
+  "material.chromatic_construct.etherium.encyclopedia": "Attacking entities knocks the attacker backwards. Distance scales based on trait level",
+  "material.chromatic_construct.etherium.armor": "Reduces damage taken by 5% per level while below 40% health"
 }

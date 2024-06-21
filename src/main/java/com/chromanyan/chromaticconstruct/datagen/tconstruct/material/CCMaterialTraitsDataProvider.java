@@ -19,6 +19,7 @@ public class CCMaterialTraitsDataProvider extends AbstractMaterialTraitDataProvi
         addTraits(CCMaterialIds.cosmite, MaterialRegistry.ARMOR, CCModifierIds.moonbound, CCModifierIds.antigravity);
 
         addDefaultTraits(CCMaterialIds.etherium, CCModifiers.backstep);
+        addTraits(CCMaterialIds.etherium, MaterialRegistry.ARMOR, CCModifierIds.emergencyProtection);
     }
 
     @Override

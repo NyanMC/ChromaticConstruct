@@ -7,7 +7,8 @@
     "fragile_protection": "#CCCCFF",
     "encumberment": "#AAAAAA",
     "slayer": "#96FFFF",
-    "backstep": "#96FFFF"
+    "backstep": "#96FFFF",
+    "emergency_protection": "#96FFFF"
   },
 
   "material.chromatic_construct": {
