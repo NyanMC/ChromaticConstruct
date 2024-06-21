@@ -1,0 +1,13 @@
+{
+  "modifier_id": "chromatic_construct:nemesis",
+  "text": [
+    {
+      "text": "Causes 25% of the damage dealt in an attack to also be applied to the attacker. Will never kill the attacker, instead leaving them at half a heart. Counts as a curse for the Scroll of a Thousand Curses."
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "Single use",
+    "Slotless"
+  ]
+}

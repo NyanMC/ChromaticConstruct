@@ -14,6 +14,7 @@ public class CCModifierIds {
     // compat: enigmatic legacy
     public static final ModifierId slayer = id("slayer");
     public static final ModifierId emergencyProtection = id("emergency_protection");
+    public static final ModifierId nemesis = id("nemesis");
 
     private static ModifierId id(String name) {
         return new ModifierId(ChromaticConstruct.MODID, name);

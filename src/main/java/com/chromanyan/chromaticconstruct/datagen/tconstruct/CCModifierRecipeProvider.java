@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticconstruct.datagen.tconstruct;
 
+import com.aizistral.enigmaticlegacy.registries.EnigmaticItems;
 import com.chromanyan.chromaticconstruct.datagen.CCBaseRecipeProvider;
 import com.chromanyan.chromaticconstruct.init.CCItems;
 import com.chromanyan.chromaticconstruct.init.CCModifiers;
@@ -46,6 +47,14 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .addInput(MMTags.Items.GEMS_COSMITE)
                 .setMaxLevel(1)
                 .save(withCondition(consumer, modLoaded("meaningfulmaterials")), prefix(CCModifierIds.antigravity, slotlessFolder));
+
+        ModifierRecipeBuilder.modifier(CCModifierIds.nemesis)
+                .setTools(TinkerTags.Items.MELEE_PRIMARY) // nemesis would be jank if you could put it on a bow
+                .addInput(Tags.Items.TOOLS_SWORDS)
+                .addInput(EnigmaticItems.EVIL_ESSENCE)
+                .addInput(Tags.Items.TOOLS_SWORDS)
+                .setMaxLevel(1)
+                .save(withCondition(consumer, modLoaded("enigmaticlegacy")), prefix(CCModifierIds.nemesis, slotlessFolder));
 
         ModifierRecipeBuilder.modifier(CCModifiers.snowball)
                 .setTools(TinkerTags.Items.STAFFS)

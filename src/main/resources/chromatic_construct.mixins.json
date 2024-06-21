@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "chromatic_construct.refmap.json",
   "mixins": [
+    "MixinSuperpositionHandler"
   ],
   "client": [
   ],

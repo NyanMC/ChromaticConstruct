@@ -8,7 +8,8 @@
     "encumberment": "#AAAAAA",
     "slayer": "#96FFFF",
     "backstep": "#96FFFF",
-    "emergency_protection": "#96FFFF"
+    "emergency_protection": "#96FFFF",
+    "nemesis": "#FF0000"
   },
 
   "material.chromatic_construct": {

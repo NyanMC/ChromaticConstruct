@@ -43,6 +43,10 @@
   "modifier.chromatic_construct.emergency_protection.description": "Increases protection at low health",
   "modifier.chromatic_construct.emergency_protection.resistance": "Emergency Resistance",
 
+  "modifier.chromatic_construct.nemesis": "Nemesis",
+  "modifier.chromatic_construct.nemesis.flavor": "Confronting myself",
+  "modifier.chromatic_construct.nemesis.description": "Melee attacks also cause the attacker to take damage",
+
   "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
   "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
   "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",

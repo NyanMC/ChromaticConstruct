@@ -1,17 +1,20 @@
 package com.chromanyan.chromaticconstruct.datagen.tconstruct;
 
+import com.aizistral.enigmaticlegacy.registries.EnigmaticEnchantments;
 import com.chromanyan.chromaticconstruct.tools.CCPredicate;
 import com.chromanyan.chromaticconstruct.tools.CCVolatileFlags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
+import slimeknights.tconstruct.library.modifiers.modules.build.EnchantmentModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.VolatileFlagModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
@@ -51,6 +54,10 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
                         .source(DamageSourcePredicate.CAN_PROTECT)
                         .entity(CCPredicate.BELOW_40)
                         .eachLevel(1.25f));
+        // this one needs to be conditional because this might otherwise print an error if EL isn't installed
+        buildModifier(CCModifierIds.nemesis, new ModLoadedCondition("enigmaticlegacy"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS).addModule(
+                EnchantmentModule.builder(EnigmaticEnchantments.NEMESIS).constant());
     }
 
     @Override

@@ -1,0 +1,15 @@
+{
+  "modifier_id": "chromatic_construct:nemesis",
+  "text": [
+    {
+      "text": "I am my own enemy!"
+    }
+  ],
+  "effects": [
+    "Attacking a mob causes the attacker to take damage as well",
+    "Will never kill",
+    "Counts as a curse for the Scroll of a Thousand Curses",
+    "Single use",
+    "Slotless"
+  ]
+}
