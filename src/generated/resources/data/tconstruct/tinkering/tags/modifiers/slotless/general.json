@@ -1,6 +1,9 @@
 {
   "values": [
     "chromatic_construct:antigravity",
-    "chromatic_construct:nemesis"
+    {
+      "id": "chromatic_construct:nemesis",
+      "required": false
+    }
   ]
 }
