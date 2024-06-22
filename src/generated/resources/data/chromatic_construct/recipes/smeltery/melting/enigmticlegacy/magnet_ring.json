@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 490,
+      "fluid": "tconstruct:molten_iron"
+    },
+    {
+      "amount": 90,
+      "fluid": "tconstruct:molten_gold"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enigmaticlegacy"
+    }
+  ],
+  "ingredient": {
+    "item": "enigmaticlegacy:magnet_ring"
+  },
+  "result": {
+    "amount": 100,
+    "fluid": "tconstruct:molten_diamond"
+  },
+  "temperature": 1450,
+  "time": 83
+}

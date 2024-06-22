@@ -4,12 +4,14 @@ import com.aizistral.enigmaticlegacy.registries.EnigmaticBlocks;
 import com.aizistral.enigmaticlegacy.registries.EnigmaticItems;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
 import com.chromanyan.chromaticconstruct.init.CCItems;
+import com.chromanyan.chromaticconstruct.tools.CCFluidValues;
 import com.chromanyan.meaningfulmaterials.init.MMItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import net.minecraftforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
 import slimeknights.tconstruct.fluids.TinkerFluids;
@@ -23,6 +25,7 @@ import slimeknights.tconstruct.tables.TinkerTables;
 import java.util.function.Consumer;
 
 public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryRecipeHelper, ICommonRecipeHelper {
+
     public CCRecipeProvider(DataGenerator generator) {
         super(generator);
     }
@@ -39,20 +42,45 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
 
         gemMelting(mmConsumer, CCFluids.moltenCosmite.get(), "cosmite", true, 9, folder, true, Byproduct.AMETHYST);
 
-        MeltingRecipeBuilder.melting(Ingredient.of(CCItems.glassReinforcement), TinkerFluids.moltenGlass.get(), FluidValues.GLASS_BLOCK)
-                .save(consumer, location(folder + "glass_reinforcement"));
+        MeltingRecipeBuilder.melting(Ingredient.of(MMItems.COSMITE_BOOTS.get()), CCFluids.moltenCosmite.get(), FluidValues.GEM * 4)
+                .setDamagable(FluidValues.GEM)
+                .save(mmConsumer, location(folder + "cosmite/boots"));
 
         Consumer<FinishedRecipe> elConsumer = withCondition(consumer, new ModLoadedCondition("enigmaticlegacy"));
 
         // Because SOMEONE doesn't properly tag their items, I have to do this the long way.
         MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.ETHERIUM_INGOT), CCFluids.moltenEtherium.get(), FluidValues.INGOT)
-                .save(elConsumer, location(folder + "etherium_ingot"));
+                .save(elConsumer, location(folder + "etherium/ingot"));
         MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.ETHERIUM_NUGGET), CCFluids.moltenEtherium.get(), FluidValues.NUGGET)
-                .save(elConsumer, location(folder + "etherium_nugget"));
+                .save(elConsumer, location(folder + "etherium/nugget"));
         MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.ETHERIUM_ORE), CCFluids.moltenEtherium.get(), FluidValues.INGOT * 2)
-                .save(elConsumer, location(folder + "etherium_ore"));
+                .save(elConsumer, location(folder + "etherium/ore"));
         MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticBlocks.ETHERIUM_BLOCK), CCFluids.moltenEtherium.get(), FluidValues.METAL_BLOCK)
-                .save(elConsumer, location(folder + "etherium_block"));
+                .save(elConsumer, location(folder + "etherium/block"));
+
+        MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.IRON_RING), TinkerFluids.moltenIron.get(), CCFluidValues.ENIGMATIC_RING)
+                .save(elConsumer, location(folder + "iron/ring_enigmaticlegacy"));
+        MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.GOLDEN_RING), TinkerFluids.moltenGold.get(), CCFluidValues.ENIGMATIC_RING)
+                .addByproduct(new FluidStack(TinkerFluids.moltenIron.get(), CCFluidValues.ENIGMATIC_RING))
+                .save(elConsumer, location(folder + "gold/ring_enigmaticlegacy"));
+        // the most valuable resource on the magnet ring is that diamond, so make that the primary fluid
+        MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.MAGNET_RING), TinkerFluids.moltenDiamond.get(), FluidValues.GEM)
+                .addByproduct(new FluidStack(TinkerFluids.moltenIron.get(), CCFluidValues.ENIGMATIC_RING + FluidValues.INGOT))
+                .addByproduct(new FluidStack(TinkerFluids.moltenGold.get(), FluidValues.INGOT))
+                .save(elConsumer, location(folder + "enigmticlegacy/magnet_ring"));
+        MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.SUPER_MAGNET_RING), TinkerFluids.moltenDiamond.get(), FluidValues.GEM)
+                .addByproduct(new FluidStack(TinkerFluids.moltenIron.get(), CCFluidValues.ENIGMATIC_RING + FluidValues.INGOT))
+                .addByproduct(new FluidStack(TinkerFluids.moltenGold.get(), FluidValues.INGOT * 4))
+                .addByproduct(new FluidStack(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL))
+                .save(elConsumer, location(folder + "enigmticlegacy/super_magnet_ring"));
+        MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.ENDER_RING), TinkerFluids.moltenGold.get(), (FluidValues.INGOT * 2) + (FluidValues.NUGGET * 2))
+                .addByproduct(new FluidStack(TinkerFluids.moltenIron.get(), CCFluidValues.ENIGMATIC_RING))
+                .addByproduct(new FluidStack(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL * 2))
+                .addByproduct(new FluidStack(TinkerFluids.moltenObsidian.get(), FluidValues.GLASS_BLOCK * 8))
+                .save(elConsumer, location(folder + "enigmticlegacy/ender_ring"));
+
+        MeltingRecipeBuilder.melting(Ingredient.of(CCItems.glassReinforcement), TinkerFluids.moltenGlass.get(), FluidValues.GLASS_BLOCK)
+                .save(consumer, location(folder + "glass/reinforcement"));
     }
 
     private void addCastingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
@@ -71,11 +99,6 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
                 .setFluidAndTime(CCFluids.moltenCosmite, false, 10)
                 .save(mmConsumer, location(folder + "cosmite/arrow"));
 
-        ItemCastingRecipeBuilder.tableRecipe(CCItems.glassReinforcement)
-                .setFluidAndTime(TinkerFluids.moltenGlass, false, FluidValues.GLASS_BLOCK)
-                .setCast(TinkerTables.pattern, true)
-                .save(consumer, prefix(CCItems.glassReinforcement, folder));
-
         Consumer<FinishedRecipe> elConsumer = withCondition(consumer, new ModLoadedCondition("enigmaticlegacy"));
 
         this.ingotCasting(elConsumer, CCFluids.moltenEtherium, EnigmaticItems.ETHERIUM_INGOT, folder + "etherium/ingot");
@@ -84,6 +107,16 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
         ItemCastingRecipeBuilder.basinRecipe(EnigmaticBlocks.ETHERIUM_BLOCK)
                 .setFluidAndTime(CCFluids.moltenEtherium, false, FluidValues.METAL_BLOCK)
                 .save(elConsumer, location(folder + "etherium/block"));
+
+        ItemCastingRecipeBuilder.tableRecipe(EnigmaticItems.GOLDEN_RING)
+                .setCast(EnigmaticItems.IRON_RING, true)
+                .setFluidAndTime(TinkerFluids.moltenGold, true, CCFluidValues.ENIGMATIC_RING)
+                .save(elConsumer, location(folder + "gold/ring_enigmaticlegacy"));
+
+        ItemCastingRecipeBuilder.tableRecipe(CCItems.glassReinforcement)
+                .setFluidAndTime(TinkerFluids.moltenGlass, false, FluidValues.GLASS_BLOCK)
+                .setCast(TinkerTables.pattern, true)
+                .save(consumer, prefix(CCItems.glassReinforcement, folder));
     }
 
     @Override
