@@ -36,7 +36,7 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
                 ConditionalMeleeDamageModule.builder()
                         .target(LivingEntityPredicate.ON_GROUND.inverted())
                         .eachLevel(1.5f));
-        buildModifier(CCModifierIds.antigravity)
+        buildModifier(CCModifierIds.antigravity, new ModLoadedCondition("meaningfulmaterials"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(new VolatileFlagModule(CCVolatileFlags.NOGRAVITY_ENTITY));
         buildModifier(CCModifierIds.moonbound).addModule(

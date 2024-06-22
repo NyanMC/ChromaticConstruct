@@ -15,7 +15,7 @@ public class CCModifierTagProvider extends AbstractModifierTagProvider {
 
     @Override
     protected void addTags() {
-        this.tag(TinkerTags.Modifiers.GENERAL_SLOTLESS).add(CCModifierIds.antigravity).addOptional(CCModifierIds.nemesis);
+        this.tag(TinkerTags.Modifiers.GENERAL_SLOTLESS).addOptional(CCModifierIds.nemesis, CCModifierIds.antigravity);
         this.tag(TinkerTags.Modifiers.INTERACTION_ABILITIES).add(CCModifiers.snowball.getId());
         this.tag(TinkerTags.Modifiers.RANGED_ABILITIES).add(CCModifiers.riding.getId());
         this.tag(TinkerTags.Modifiers.LEGGING_UPGRADES).add(CCModifierIds.encumberment);
