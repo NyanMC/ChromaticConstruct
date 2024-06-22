@@ -1,6 +1,7 @@
 package com.chromanyan.chromaticconstruct.init;
 
 import com.chromanyan.chromaticconstruct.ChromaticConstruct;
+import com.chromanyan.chromaticconstruct.datagen.CCEnchantmentToModifierProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierRecipeProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierTagProvider;
@@ -34,5 +35,6 @@ public class CCModifiers {
         gen.addProvider(event.includeServer(), new CCModifierProvider(gen));
         gen.addProvider(event.includeServer(), new CCModifierRecipeProvider(gen));
         gen.addProvider(event.includeServer(), new CCModifierTagProvider(gen, event.getExistingFileHelper()));
+        gen.addProvider(event.includeServer(), new CCEnchantmentToModifierProvider(gen));
     }
 }

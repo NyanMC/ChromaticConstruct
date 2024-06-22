@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticconstruct;
 
+import com.chromanyan.chromaticconstruct.datagen.CCEnchantmentTagProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCFluidEffectProvider;
 import com.chromanyan.chromaticconstruct.datagen.CCRecipeProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.material.*;
@@ -76,6 +77,7 @@ public class ChromaticConstruct {
 
         gen.addProvider(event.includeServer(), new CCRecipeProvider(gen));
         gen.addProvider(event.includeServer(), new CCFluidEffectProvider(gen));
+        gen.addProvider(event.includeServer(), new CCEnchantmentTagProvider(gen, efh));
 
         CCMaterialSpriteProvider materialSprites = new CCMaterialSpriteProvider();
         TinkerPartSpriteProvider partSprites = new TinkerPartSpriteProvider();
