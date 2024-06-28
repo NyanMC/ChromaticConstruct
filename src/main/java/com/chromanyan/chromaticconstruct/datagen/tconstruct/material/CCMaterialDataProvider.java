@@ -15,6 +15,8 @@ public class CCMaterialDataProvider extends AbstractMaterialDataProvider {
     protected void addMaterials() {
         addCompatMaterial(CCMaterialIds.cosmite, 2, ORDER_COMPAT + ORDER_WEAPON, "gems/cosmite", false);
         addMaterial(CCMaterialIds.etherium, 4, ORDER_COMPAT + ORDER_WEAPON, false, false, new ModLoadedCondition("enigmaticlegacy"));
+
+        addMaterial(CCMaterialIds.chroma, 2, ORDER_REPAIR, true);
     }
 
     @Override

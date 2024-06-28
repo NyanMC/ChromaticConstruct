@@ -20,6 +20,7 @@ public class CCFluidTextureProvider extends AbstractFluidTextureProvider {
     public void addTextures() {
         moltenFolder(CCFluids.moltenCosmite, "compat_ore");
         moltenFolder(CCFluids.moltenEtherium, "compat_ore");
+        moltenFolder(CCFluids.moltenChroma, "compat_ore");
     }
 
     private FluidTexture.Builder named(FluidObject<?> fluid, String name) {

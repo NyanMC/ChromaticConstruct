@@ -57,6 +57,11 @@
   "fluid.chromatic_construct.flowing_molten_etherium": "Flowing Molten Etherium",
   "item.chromatic_construct.molten_etherium_bucket": "Molten Etherium Bucket",
 
+  "block.chromatic_construct.molten_chroma_fluid": "Chromatic Essence",
+  "fluid.chromatic_construct.molten_chroma": "Chromatic Essence",
+  "fluid.chromatic_construct.flowing_chroma_etherium": "Flowing Chromatic Essence",
+  "item.chromatic_construct.molten_chroma_bucket": "Molten Chromatic Essence",
+
   "item.chromatic_construct.glass_reinforcement": "Glass Reinforcement",
 
   "effect.chromatic_construct.fragile_cooldown": "Fragile Cooldown",
@@ -69,5 +74,7 @@
   "material.chromatic_construct.etherium": "Etherium",
   "material.chromatic_construct.etherium.flavor": "It appears melting this metal diluted its power. Fortunately, it's still usable.",
   "material.chromatic_construct.etherium.encyclopedia": "Attacking entities knocks the attacker backwards. Distance scales based on trait level",
-  "material.chromatic_construct.etherium.armor": "Reduces damage taken by 5% per level while below 40% health"
+  "material.chromatic_construct.etherium.armor": "Reduces damage taken by 5% per level while below 40% health",
+
+  "material.chromatic_construct.chroma": "Chromatic"
 }

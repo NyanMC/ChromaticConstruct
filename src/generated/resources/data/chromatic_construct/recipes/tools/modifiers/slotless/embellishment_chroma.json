@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "chromaticarsenal"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "chromaticarsenal:chroma_shard"
+    },
+    {
+      "item": "chromaticarsenal:chroma_shard"
+    },
+    {
+      "item": "chromaticarsenal:chroma_shard"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "chromatic_construct:chroma"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/slime"
+  }
+}

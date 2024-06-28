@@ -33,6 +33,8 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
                 new HeadMaterialStats(1500, 6f, NETHERITE, 3f),
                 HandleMaterialStats.multipliers().durability(1.25f).attackSpeed(0.85f).attackDamage(1.15f).miningSpeed(0.95f).build(),
                 StatlessMaterialStats.BINDING);
+
+        addMaterialStats(CCMaterialIds.chroma);
     }
 
     private void addArmor() {

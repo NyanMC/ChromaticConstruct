@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "minecraft:bread"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "chromaticarsenal"
+    }
+  ],
+  "cooling_time": 33,
+  "fluid": {
+    "amount": 25,
+    "tag": "chromatic_construct:molten_chroma"
+  },
+  "result": "chromaticarsenal:magic_garlic_bread"
+}

@@ -1,5 +1,11 @@
 {
   "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meaningfulmaterials"
+    }
+  ],
   "ingredient": {
     "tag": "forge:storage_blocks/cosmite"
   },

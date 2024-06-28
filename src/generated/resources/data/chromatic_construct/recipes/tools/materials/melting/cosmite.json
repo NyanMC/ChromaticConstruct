@@ -1,5 +1,11 @@
 {
   "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meaningfulmaterials"
+    }
+  ],
   "input": "chromatic_construct:cosmite",
   "result": {
     "amount": 100,

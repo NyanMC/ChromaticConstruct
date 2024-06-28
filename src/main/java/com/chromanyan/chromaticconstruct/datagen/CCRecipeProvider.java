@@ -2,6 +2,7 @@ package com.chromanyan.chromaticconstruct.datagen;
 
 import com.aizistral.enigmaticlegacy.registries.EnigmaticBlocks;
 import com.aizistral.enigmaticlegacy.registries.EnigmaticItems;
+import com.chromanyan.chromaticarsenal.init.ModItems;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
 import com.chromanyan.chromaticconstruct.init.CCItems;
 import com.chromanyan.chromaticconstruct.tools.CCFluidValues;
@@ -79,6 +80,10 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
                 .addByproduct(new FluidStack(TinkerFluids.moltenObsidian.get(), FluidValues.GLASS_BLOCK * 8))
                 .save(elConsumer, location(folder + "enigmticlegacy/ender_ring"));
 
+        Consumer<FinishedRecipe> caConsumer = withCondition(consumer, new ModLoadedCondition("chromaticarsenal"));
+
+        gemMelting(caConsumer, CCFluids.moltenChroma.get(), "chroma", false, 9, folder, true);
+
         MeltingRecipeBuilder.melting(Ingredient.of(CCItems.glassReinforcement), TinkerFluids.moltenGlass.get(), FluidValues.GLASS_BLOCK)
                 .save(consumer, location(folder + "glass/reinforcement"));
     }
@@ -112,6 +117,19 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
                 .setCast(EnigmaticItems.IRON_RING, true)
                 .setFluidAndTime(TinkerFluids.moltenGold, true, CCFluidValues.ENIGMATIC_RING)
                 .save(elConsumer, location(folder + "gold/ring_enigmaticlegacy"));
+
+        Consumer<FinishedRecipe> caConsumer = withCondition(consumer, new ModLoadedCondition("chromaticarsenal"));
+
+        this.gemCasting(caConsumer, CCFluids.moltenChroma, ModItems.CHROMA_SHARD.get(), folder + "chroma/gem");
+
+        ItemCastingRecipeBuilder.basinRecipe(ModItems.CHROMA_BLOCK_ITEM.get())
+                .setFluidAndTime(CCFluids.moltenChroma, false, FluidValues.LARGE_GEM_BLOCK)
+                .save(caConsumer, location(folder + "chroma/block"));
+
+        ItemCastingRecipeBuilder.tableRecipe(ModItems.MAGIC_GARLIC_BREAD.get())
+                .setFluidAndTime(CCFluids.moltenChroma, false, FluidValues.GEM_SHARD)
+                .setCast(Items.BREAD, true)
+                .save(caConsumer, location(folder + "chroma/bread"));
 
         ItemCastingRecipeBuilder.tableRecipe(CCItems.glassReinforcement)
                 .setFluidAndTime(TinkerFluids.moltenGlass, false, FluidValues.GLASS_BLOCK)

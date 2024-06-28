@@ -1,7 +1,9 @@
 package com.chromanyan.chromaticconstruct.datagen.tconstruct;
 
 import com.aizistral.enigmaticlegacy.registries.EnigmaticItems;
+import com.chromanyan.chromaticarsenal.init.ModItems;
 import com.chromanyan.chromaticconstruct.datagen.CCBaseRecipeProvider;
+import com.chromanyan.chromaticconstruct.datagen.tconstruct.material.CCMaterialIds;
 import com.chromanyan.chromaticconstruct.init.CCItems;
 import com.chromanyan.chromaticconstruct.init.CCModifiers;
 import com.chromanyan.meaningfulmaterials.init.MMTags;
@@ -13,12 +15,15 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.CompoundIngredient;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.IncrementalModifierRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifierRecipeBuilder;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.shared.TinkerMaterials;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import java.util.function.Consumer;
 
@@ -96,6 +101,11 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .setMaxLevel(1)
                 .saveSalvage(consumer, prefix(CCModifierIds.encumberment, upgradeSalvage))
                 .save(consumer, prefix(CCModifierIds.encumberment, upgradeFolder));
+
+        SwappableModifierRecipeBuilder.modifier(TinkerModifiers.embellishment, CCMaterialIds.chroma.toString())
+                .setTools(TinkerTags.Items.EMBELLISHMENT_SLIME)
+                .addInput(ModItems.CHROMA_SHARD.get()).addInput(ModItems.CHROMA_SHARD.get()).addInput(ModItems.CHROMA_SHARD.get())
+                .save(withCondition(consumer, new ModLoadedCondition("chromaticarsenal")), wrap(TinkerModifiers.embellishment, slotlessFolder, "_chroma"));
     }
 
     @Override

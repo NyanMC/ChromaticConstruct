@@ -36,6 +36,7 @@ public class CCFluids {
 
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenCosmite = FLUIDS.register("molten_cosmite").type(hot("molten_cosmite").temperature(800).lightLevel(8)).block(createBurning(8, 10, 5f)).bucket().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenEtherium = FLUIDS.register("molten_etherium").type(hot("molten_etherium").temperature(1800).lightLevel(15)).block(createBurning(15, 15, 6f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenChroma = FLUIDS.register("molten_chroma").type(hot("molten_chroma").temperature(1150).lightLevel(15)).block(createBurning(15, 10, 2f)).bucket().flowing();
 
     private static FluidType.Properties hot(String name) {
         return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000)
@@ -82,6 +83,7 @@ public class CCFluids {
         event.enqueueWork(() -> {
             DispenserBlock.registerBehavior(moltenCosmite, dispenseBucket);
             DispenserBlock.registerBehavior(moltenEtherium, dispenseBucket);
+            DispenserBlock.registerBehavior(moltenChroma, dispenseBucket);
         });
     }
 }

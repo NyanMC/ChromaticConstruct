@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "chromatic_construct:fluid/molten/compat_ore/chroma/flowing",
+  "still": "chromatic_construct:fluid/molten/compat_ore/chroma/still"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "chromaticarsenal"
+    }
+  ],
+  "cooling_time": 195,
+  "fluid": {
+    "amount": 900,
+    "tag": "chromatic_construct:molten_chroma"
+  },
+  "result": "chromaticarsenal:chroma_block"
+}

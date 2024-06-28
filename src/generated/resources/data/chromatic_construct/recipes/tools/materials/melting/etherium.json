@@ -1,5 +1,11 @@
 {
   "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enigmaticlegacy"
+    }
+  ],
   "input": "chromatic_construct:etherium",
   "result": {
     "amount": 90,

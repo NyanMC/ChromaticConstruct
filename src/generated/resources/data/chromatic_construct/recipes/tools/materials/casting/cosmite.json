@@ -1,5 +1,11 @@
 {
   "type": "tconstruct:material_fluid",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meaningfulmaterials"
+    }
+  ],
   "fluid": {
     "amount": 100,
     "tag": "chromatic_construct:molten_cosmite"

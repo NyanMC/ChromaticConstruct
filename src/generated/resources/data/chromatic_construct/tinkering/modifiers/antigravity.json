@@ -1,5 +1,9 @@
 {
   "type": "tconstruct:composable",
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "meaningfulmaterials"
+  },
   "level_display": "tconstruct:no_levels",
   "modules": [
     {
