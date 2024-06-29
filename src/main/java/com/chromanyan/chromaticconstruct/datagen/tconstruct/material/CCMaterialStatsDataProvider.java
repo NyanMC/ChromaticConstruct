@@ -4,10 +4,7 @@ import net.minecraft.data.DataGenerator;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
-import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
-import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
-import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
-import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
+import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.IRON;
 import static net.minecraft.world.item.Tiers.NETHERITE;
@@ -21,6 +18,7 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
     @Override
     protected void addMaterialStats() {
         addMeleeHarvest();
+        addRanged();
         addArmor();
     }
 
@@ -38,6 +36,12 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
                 new HeadMaterialStats(150, 6.5f, IRON, 1.5f),
                 HandleMaterialStats.multipliers().durability(0.8f).miningSpeed(1.1f).attackDamage(0.95f).build(),
                 StatlessMaterialStats.BINDING);
+    }
+
+    private void addRanged() {
+        addMaterialStats(CCMaterialIds.chroma,
+                new LimbMaterialStats(150, 0.1f, 0f, -0.1f),
+                new GripMaterialStats(-0.2f, 0.05f, 1.25f));
     }
 
     private void addArmor() {

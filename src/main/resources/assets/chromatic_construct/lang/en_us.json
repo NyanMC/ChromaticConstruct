@@ -49,8 +49,9 @@
 
   "modifier.chromatic_construct.variety": "Variety",
   "modifier.chromatic_construct.variety.flavor": "The spice of life!",
-  "modifier.chromatic_construct.variety.description": "Increases mining speed based on the number of unique materials the tool has",
+  "modifier.chromatic_construct.variety.description": "Increases mining or draw speed based on the number of unique materials the tool has",
   "modifier.chromatic_construct.variety.mining_speed": "Variety Mining Speed",
+  "modifier.chromatic_construct.variety.draw_speed": "Variety Draw Speed",
 
   "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
   "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
@@ -83,5 +84,6 @@
 
   "material.chromatic_construct.chroma": "Chromatic",
   "material.chromatic_construct.chroma.flavor": "What a pretty material. Pretty WEAK! The trait's decent, though.",
-  "material.chromatic_construct.chroma.encyclopedia": "Increases mining speed by 5% per level, multiplied by the number of unique materials the tool has"
+  "material.chromatic_construct.chroma.encyclopedia": "Increases mining speed by 5% per level, multiplied by the number of unique materials the tool has",
+  "material.chromatic_construct.chroma.ranged": "Increases draw speed by 0.05 per level, multiplied by the number of unique materials the tool has"
 }

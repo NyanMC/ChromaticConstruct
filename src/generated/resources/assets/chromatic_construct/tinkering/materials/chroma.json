@@ -11,6 +11,8 @@
       "tconstruct:handle",
       "tconstruct:binding",
       "tconstruct:repair_kit",
+      "tconstruct:limb",
+      "tconstruct:grip",
       "tconstruct:slimesuit"
     ],
     "transformer": {
