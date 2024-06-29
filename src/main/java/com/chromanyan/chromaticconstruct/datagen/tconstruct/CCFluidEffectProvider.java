@@ -22,11 +22,17 @@ public class CCFluidEffectProvider extends AbstractFluidEffectProvider {
     protected void addFluids() {
         metalborn(CCFluids.moltenCosmite.getForgeTag(), 2f).addEffect(TimeAction.SET, FluidMobEffect.builder().effect(MobEffects.LEVITATION, 20*3));
         metalborn(CCFluids.moltenEtherium.getForgeTag(), 4f).addEffect(TimeAction.SET, FluidMobEffect.builder().effect(MobEffects.DAMAGE_RESISTANCE, 20*3));
+        burningFluidWithAmount(CCFluids.moltenChroma.getForgeTag(), FluidValues.GEM_SHARD, 2f).addEffect(TimeAction.SET, FluidMobEffect.builder().effect(MobEffects.LEVITATION, 20));
     }
 
     /** Builder for an effect based metal */
     private Builder metalborn(TagKey<Fluid> tag, float damage) {
         return burningFluid(tag.location().getPath(), tag, FluidValues.NUGGET, damage, 0);
+    }
+
+    @SuppressWarnings("SameParameterValue")
+    private Builder burningFluidWithAmount(TagKey<Fluid> tag, int amount, float damage) {
+        return burningFluid(tag.location().getPath(), tag, amount, damage, 0);
     }
 
     @Override
