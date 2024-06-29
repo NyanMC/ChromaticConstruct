@@ -33,6 +33,7 @@ public class CCMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
         ResourceLocation highlightTexture = getResource("item/materials/generator/chroma_highlight");
         ResourceLocation borderTexture = getResource("item/materials/generator/chroma_border");
         buildMaterial(CCMaterialIds.chroma)
+                .meleeHarvest()
                 .statType(SLIMESUIT)
                 .fallbacks("crystal", "metal")
                 .transformer(GreyToSpriteTransformer.builderFromBlack()

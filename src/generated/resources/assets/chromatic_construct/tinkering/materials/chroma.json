@@ -7,6 +7,10 @@
   "generator": {
     "ignoreMaterialStats": false,
     "supportedStats": [
+      "tconstruct:head",
+      "tconstruct:handle",
+      "tconstruct:binding",
+      "tconstruct:repair_kit",
       "tconstruct:slimesuit"
     ],
     "transformer": {

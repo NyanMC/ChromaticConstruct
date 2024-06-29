@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "chromaticarsenal"
+    }
+  ],
+  "input": "chromatic_construct:chroma",
+  "result": {
+    "amount": 100,
+    "fluid": "chromatic_construct:molten_chroma"
+  },
+  "temperature": 850
+}

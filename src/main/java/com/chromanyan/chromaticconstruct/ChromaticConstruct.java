@@ -13,6 +13,8 @@ import com.chromanyan.chromaticconstruct.tools.CCPredicate;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.Registry;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -29,6 +31,7 @@ import slimeknights.tconstruct.library.client.data.material.GeneratorPartTexture
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
+import slimeknights.tconstruct.library.utils.Util;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 import java.util.function.Supplier;
@@ -108,5 +111,12 @@ public class ChromaticConstruct {
 
     public static <T> TinkerDataCapability.ComputableDataKey<T> createKey(String name, Supplier<T> constructor) {
         return TinkerDataCapability.ComputableDataKey.of(getResource(name), constructor);
+    }
+
+    public static MutableComponent makeTranslation(String base, String name) {
+        return Component.translatable(makeTranslationKey(base, name));
+    }
+    public static String makeTranslationKey(String base, String name) {
+        return Util.makeTranslationKey(base, getResource(name));
     }
 }

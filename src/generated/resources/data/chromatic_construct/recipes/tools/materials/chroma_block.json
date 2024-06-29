@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "chromaticarsenal"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/chroma"
+  },
+  "material": "chromatic_construct:chroma",
+  "needed": 1,
+  "value": 9
+}

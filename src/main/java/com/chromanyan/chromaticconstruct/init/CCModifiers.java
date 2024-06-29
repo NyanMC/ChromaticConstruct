@@ -9,6 +9,7 @@ import com.chromanyan.chromaticconstruct.tools.modifiers.ability.interaction.Sno
 import com.chromanyan.chromaticconstruct.tools.modifiers.ability.ranged.RidingModifier;
 import com.chromanyan.chromaticconstruct.tools.modifiers.defense.FragileProtectionModifier;
 import com.chromanyan.chromaticconstruct.tools.modifiers.trait.BackstepModifier;
+import com.chromanyan.chromaticconstruct.tools.modifiers.trait.VarietyModifier;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,6 +28,7 @@ public class CCModifiers {
     public static final StaticModifier<RidingModifier> riding = MODIFIERS.register("riding", RidingModifier::new);
     public static final StaticModifier<FragileProtectionModifier> fragileProtection = MODIFIERS.register("fragile_protection", FragileProtectionModifier::new);
     public static final StaticModifier<BackstepModifier> backstep = MODIFIERS.register("backstep", BackstepModifier::new);
+    public static final StaticModifier<VarietyModifier> variety = MODIFIERS.register("variety", VarietyModifier::new);
 
     @SubscribeEvent
     void gatherData(final GatherDataEvent event) {

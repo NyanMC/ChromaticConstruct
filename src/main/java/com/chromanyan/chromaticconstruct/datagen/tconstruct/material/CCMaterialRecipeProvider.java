@@ -2,6 +2,7 @@ package com.chromanyan.chromaticconstruct.datagen.tconstruct.material;
 
 import com.aizistral.enigmaticlegacy.registries.EnigmaticBlocks;
 import com.aizistral.enigmaticlegacy.registries.EnigmaticItems;
+import com.chromanyan.chromaticarsenal.init.ModTags;
 import com.chromanyan.chromaticconstruct.datagen.CCBaseRecipeProvider;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
 import com.chromanyan.meaningfulmaterials.init.MMTags;
@@ -32,6 +33,7 @@ public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IM
 
         Consumer<FinishedRecipe> mmConsumer = withCondition(consumer, new ModLoadedCondition("meaningfulmaterials"));
         Consumer<FinishedRecipe> elConsumer = withCondition(consumer, new ModLoadedCondition("enigmaticlegacy"));
+        Consumer<FinishedRecipe> caConsumer = withCondition(consumer, new ModLoadedCondition("chromaticarsenal"));
 
         materialRecipe(mmConsumer, CCMaterialIds.cosmite, Ingredient.of(MMTags.Items.GEMS_COSMITE), 1, 1, folder + "cosmite");
         materialRecipe(mmConsumer, CCMaterialIds.cosmite, Ingredient.of(MMTags.Items.STORAGE_BLOCKS_COSMITE), 9, 1, folder + "cosmite_block");
@@ -39,6 +41,9 @@ public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IM
         materialRecipe(elConsumer, CCMaterialIds.etherium, Ingredient.of(EnigmaticItems.ETHERIUM_NUGGET), 1, 9, folder + "etherium_nugget");
         materialRecipe(elConsumer, CCMaterialIds.etherium, Ingredient.of(EnigmaticItems.ETHERIUM_INGOT), 1, 1, folder + "etherium_ingot");
         materialRecipe(elConsumer, CCMaterialIds.etherium, Ingredient.of(EnigmaticBlocks.ETHERIUM_BLOCK), 9, 1, folder + "etherium_block");
+
+        materialRecipe(caConsumer, CCMaterialIds.chroma, Ingredient.of(ModTags.Items.GEMS_CHROMA), 1, 1, folder + "chroma_shard");
+        materialRecipe(caConsumer, CCMaterialIds.chroma, Ingredient.of(ModTags.Items.STORAGE_BLOCKS_CHROMA), 9, 1, folder + "chroma_block");
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {
@@ -46,9 +51,11 @@ public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IM
 
         Consumer<FinishedRecipe> mmConsumer = withCondition(consumer, new ModLoadedCondition("meaningfulmaterials"));
         Consumer<FinishedRecipe> elConsumer = withCondition(consumer, new ModLoadedCondition("enigmaticlegacy"));
+        Consumer<FinishedRecipe> caConsumer = withCondition(consumer, new ModLoadedCondition("chromaticarsenal"));
 
         materialMeltingCasting(mmConsumer, CCMaterialIds.cosmite, CCFluids.moltenCosmite, false, FluidValues.GEM, folder);
         materialMeltingCasting(elConsumer, CCMaterialIds.etherium, CCFluids.moltenEtherium, false, FluidValues.INGOT, folder);
+        materialMeltingCasting(caConsumer, CCMaterialIds.chroma, CCFluids.moltenChroma, false, FluidValues.GEM, folder);
     }
 
     @Override

@@ -1,6 +1,22 @@
 {
-  "craftable": true,
+  "condition": {
+    "type": "forge:or",
+    "values": [
+      {
+        "type": "tconstruct:config",
+        "prop": "force_integration_materials"
+      },
+      {
+        "type": "forge:not",
+        "value": {
+          "type": "forge:tag_empty",
+          "tag": "forge:gems/chroma"
+        }
+      }
+    ]
+  },
+  "craftable": false,
   "hidden": false,
-  "sortOrder": 25,
+  "sortOrder": 6,
   "tier": 2
 }

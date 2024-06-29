@@ -9,7 +9,8 @@
     "slayer": "#96FFFF",
     "backstep": "#96FFFF",
     "emergency_protection": "#96FFFF",
-    "nemesis": "#FF0000"
+    "nemesis": "#FF0000",
+    "variety": "#FF00FF"
   },
 
   "material.chromatic_construct": {

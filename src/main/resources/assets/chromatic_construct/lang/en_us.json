@@ -47,6 +47,11 @@
   "modifier.chromatic_construct.nemesis.flavor": "Confronting myself",
   "modifier.chromatic_construct.nemesis.description": "Melee attacks also cause the attacker to take damage",
 
+  "modifier.chromatic_construct.variety": "Variety",
+  "modifier.chromatic_construct.variety.flavor": "The spice of life!",
+  "modifier.chromatic_construct.variety.description": "Increases mining speed based on the number of unique materials the tool has",
+  "modifier.chromatic_construct.variety.mining_speed": "Variety Mining Speed",
+
   "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
   "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
   "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",
@@ -76,5 +81,7 @@
   "material.chromatic_construct.etherium.encyclopedia": "Attacking entities knocks the attacker backwards. Distance scales based on trait level",
   "material.chromatic_construct.etherium.armor": "Reduces damage taken by 5% per level while below 40% health",
 
-  "material.chromatic_construct.chroma": "Chromatic"
+  "material.chromatic_construct.chroma": "Chromatic",
+  "material.chromatic_construct.chroma.flavor": "What a pretty material. Pretty WEAK! The trait's decent, though.",
+  "material.chromatic_construct.chroma.encyclopedia": "Increases mining speed by 5% per level, multiplied by the number of unique materials the tool has"
 }
