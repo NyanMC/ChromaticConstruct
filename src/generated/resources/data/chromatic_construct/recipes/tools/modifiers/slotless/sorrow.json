@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enigmaticlegacy"
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "forge:armors/chestplates"
+    },
+    {
+      "item": "enigmaticlegacy:evil_essence"
+    },
+    {
+      "tag": "forge:armors/chestplates"
+    }
+  ],
+  "level": 1,
+  "result": "chromatic_construct:sorrow",
+  "tools": {
+    "tag": "tconstruct:modifiable/armor/worn"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "modifier_id": "chromatic_construct:sorrow",
+  "text": [
+    {
+      "text": "Adds a chance to receive a negative potion effect after taking damage. Functions identically to the curse of the same name. Counts as a curse for the Scroll of a Thousand Curses."
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "Single use",
+    "Slotless"
+  ]
+}

@@ -47,6 +47,10 @@
   "modifier.chromatic_construct.nemesis.flavor": "Confronting myself",
   "modifier.chromatic_construct.nemesis.description": "Melee attacks also cause the attacker to take damage",
 
+  "modifier.chromatic_construct.sorrow": "Sorrow",
+  "modifier.chromatic_construct.sorrow.flavor": "Boohoo!",
+  "modifier.chromatic_construct.sorrow.description": "Taking damage occasionally inflicts negative effects",
+
   "modifier.chromatic_construct.variety": "Variety",
   "modifier.chromatic_construct.variety.flavor": "The spice of life!",
   "modifier.chromatic_construct.variety.description": "Increases mining or draw speed based on the number of unique materials the tool has",

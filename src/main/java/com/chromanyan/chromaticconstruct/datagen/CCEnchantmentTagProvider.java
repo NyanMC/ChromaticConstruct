@@ -25,6 +25,7 @@ public class CCEnchantmentTagProvider extends TagsProvider<Enchantment> {
     @Override
     protected void addTags() {
         modifierTag(CCModifierIds.nemesis, "enigmaticlegacy:nemesis");
+        modifierTag(CCModifierIds.sorrow, "enigmaticlegacy:sorrow");
         modifierTag(TinkerModifiers.crystalshot.getId(), "enigmaticlegacy:ceaseless");
         modifierTag(ModifierIds.power, "enigmaticlegacy:sharpshooter");
         modifierTag(ModifierIds.cooling, "enigmaticlegacy:torrent");

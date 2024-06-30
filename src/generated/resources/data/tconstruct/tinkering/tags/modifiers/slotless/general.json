@@ -5,6 +5,10 @@
       "required": false
     },
     {
+      "id": "chromatic_construct:sorrow",
+      "required": false
+    },
+    {
       "id": "chromatic_construct:antigravity",
       "required": false
     }

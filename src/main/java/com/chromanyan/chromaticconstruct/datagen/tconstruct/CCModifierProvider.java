@@ -54,10 +54,13 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
                         .source(DamageSourcePredicate.CAN_PROTECT)
                         .entity(CCPredicate.BELOW_40)
                         .eachLevel(1.25f));
-        // this one needs to be conditional because this might otherwise print an error if EL isn't installed
+        // these ones need to be conditional because they might otherwise print an error if EL isn't installed
         buildModifier(CCModifierIds.nemesis, new ModLoadedCondition("enigmaticlegacy"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS).addModule(
                 EnchantmentModule.builder(EnigmaticEnchantments.NEMESIS).constant());
+        buildModifier(CCModifierIds.sorrow, new ModLoadedCondition("enigmaticlegacy"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS).addModule(
+                        EnchantmentModule.builder(EnigmaticEnchantments.SORROW).constant());
     }
 
     @Override

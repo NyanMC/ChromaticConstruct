@@ -18,6 +18,7 @@ public class CCEnchantmentToModifierProvider extends AbstractEnchantmentToModifi
     @Override
     protected void addEnchantmentMappings() {
         addCompat(CCModifierIds.nemesis);
+        addCompat(CCModifierIds.sorrow);
         addCompat(TinkerModifiers.crystalshot.getId());
         addCompat(ModifierIds.power);
         addCompat(ModifierIds.cooling);

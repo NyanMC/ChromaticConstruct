@@ -2,5 +2,6 @@
   "#chromatic_construct:modifier_like/cooling": "tconstruct:cooling",
   "#chromatic_construct:modifier_like/crystalshot": "tconstruct:crystalshot",
   "#chromatic_construct:modifier_like/nemesis": "chromatic_construct:nemesis",
-  "#chromatic_construct:modifier_like/power": "tconstruct:power"
+  "#chromatic_construct:modifier_like/power": "tconstruct:power",
+  "#chromatic_construct:modifier_like/sorrow": "chromatic_construct:sorrow"
 }

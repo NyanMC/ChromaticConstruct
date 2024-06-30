@@ -1,0 +1,14 @@
+{
+  "modifier_id": "chromatic_construct:sorrow",
+  "text": [
+    {
+      "text": "Let me play a sad song for you on the world's smallest violin."
+    }
+  ],
+  "effects": [
+    "Taking damage sometimes inflicts harmful potion effects to yourself",
+    "Counts as a curse for the Scroll of a Thousand Curses",
+    "Single use",
+    "Slotless"
+  ]
+}

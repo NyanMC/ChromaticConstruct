@@ -20,6 +20,7 @@ public class MixinSuperpositionHandler {
         int bonusCurses = 0;
 
         bonusCurses += ModifierUtil.getModifierLevel(stack, CCModifierIds.nemesis);
+        bonusCurses += ModifierUtil.getModifierLevel(stack, CCModifierIds.sorrow);
 
         cir.setReturnValue(cir.getReturnValue() + bonusCurses);
     }

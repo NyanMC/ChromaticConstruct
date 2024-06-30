@@ -61,6 +61,14 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .setMaxLevel(1)
                 .save(withCondition(consumer, modLoaded("enigmaticlegacy")), prefix(CCModifierIds.nemesis, slotlessFolder));
 
+        ModifierRecipeBuilder.modifier(CCModifierIds.sorrow)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(Tags.Items.ARMORS_CHESTPLATES)
+                .addInput(EnigmaticItems.EVIL_ESSENCE)
+                .addInput(Tags.Items.ARMORS_CHESTPLATES)
+                .setMaxLevel(1)
+                .save(withCondition(consumer, modLoaded("enigmaticlegacy")), prefix(CCModifierIds.sorrow, slotlessFolder));
+
         ModifierRecipeBuilder.modifier(CCModifiers.snowball)
                 .setTools(TinkerTags.Items.STAFFS)
                 .addInput(Items.SNOWBALL)
