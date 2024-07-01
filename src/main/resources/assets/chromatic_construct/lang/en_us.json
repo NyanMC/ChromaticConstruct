@@ -13,7 +13,7 @@
   "modifier.chromatic_construct.antigravity.description": "Tool defies gravity when dropped",
 
   "modifier.chromatic_construct.infernal": "Infernal",
-  "modifier.chromatic_construct.infernal.flavor": "From the depths of the nether",
+  "modifier.chromatic_construct.infernal.flavor": "From the depths of the Nether",
   "modifier.chromatic_construct.infernal.description": "Tool has multiplied mining speed when you are on fire",
   "modifier.chromatic_construct.infernal.boost": "Infernal Boost Max",
 
@@ -101,6 +101,10 @@
   "material.chromatic_construct.cosmite.flavor": "What goes up must come down, except for this apparently",
   "material.chromatic_construct.cosmite.encyclopedia": "Grants +1.5 damage per level against targets that are not touching the ground. Tool defies gravity when dropped",
   "material.chromatic_construct.cosmite.armor": "Reduces the wearer's gravity by 25%, multiplicatively with other pieces. Armor defies gravity when dropped",
+
+  "material.chromatic_construct.infernium": "Infernium",
+  "material.chromatic_construct.infernium.flavor": "Do you like third-degree burns? No? Too bad!",
+  "material.chromatic_construct.infernium.encyclopedia": "Grants +1% mining speed per second of fire, up to +15% from lava's 15 seconds. Bonus reduced by fire resistance.",
 
   "material.chromatic_construct.etherium": "Etherium",
   "material.chromatic_construct.etherium.flavor": "It appears melting this metal diluted its power. Fortunately, it's still usable.",

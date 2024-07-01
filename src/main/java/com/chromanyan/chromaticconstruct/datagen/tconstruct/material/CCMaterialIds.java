@@ -7,6 +7,7 @@ public class CCMaterialIds {
     public static final MaterialId hamhide = id("hamhide");
 
     public static final MaterialId cosmite = id("cosmite");
+    public static final MaterialId infernium = id("infernium");
     public static final MaterialId etherium = id("etherium");
     public static final MaterialId chroma = id("chroma");
 

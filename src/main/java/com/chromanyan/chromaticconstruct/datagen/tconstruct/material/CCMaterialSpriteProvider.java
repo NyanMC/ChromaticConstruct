@@ -26,6 +26,10 @@ public class CCMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
                 .meleeHarvest().maille()
                 .fallbacks("crystal", "metal")
                 .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF050811).addARGB(102, 0xFF1D1C35).addARGB(140, 0xFF29234D).addARGB(178, 0xFF362A63).addARGB(216, 0xFF603BAE).addARGB(255, 0xFF7C4EC4).build());
+        buildMaterial(CCMaterialIds.infernium)
+                .meleeHarvest()
+                .fallbacks("metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFFE22F69).addARGB(102, 0xFFED6956).addARGB(140, 0xFFF17E63).addARGB(178, 0xFFF9AB80).addARGB(216, 0xFFFDD1AA).addARGB(255, 0xFFFFF0CC).build());
         buildMaterial(CCMaterialIds.etherium)
                 .meleeHarvest().armor()
                 .fallbacks("metal")

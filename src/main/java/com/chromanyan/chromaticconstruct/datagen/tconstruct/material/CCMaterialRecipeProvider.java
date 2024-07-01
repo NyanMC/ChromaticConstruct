@@ -43,6 +43,9 @@ public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IM
         materialRecipe(mmConsumer, CCMaterialIds.cosmite, Ingredient.of(MMTags.Items.GEMS_COSMITE), 1, 1, folder + "cosmite");
         materialRecipe(mmConsumer, CCMaterialIds.cosmite, Ingredient.of(MMTags.Items.STORAGE_BLOCKS_COSMITE), 9, 1, folder + "cosmite_block");
 
+        materialRecipe(mmConsumer, CCMaterialIds.infernium, Ingredient.of(MMTags.Items.INGOTS_INFERNIUM), 1, 1, folder + "infernium");
+        materialRecipe(mmConsumer, CCMaterialIds.infernium, Ingredient.of(MMTags.Items.STORAGE_BLOCKS_INFERNIUM), 9, 1, folder + "infernium_block");
+
         materialRecipe(elConsumer, CCMaterialIds.etherium, Ingredient.of(EnigmaticItems.ETHERIUM_NUGGET), 1, 9, folder + "etherium_nugget");
         materialRecipe(elConsumer, CCMaterialIds.etherium, Ingredient.of(EnigmaticItems.ETHERIUM_INGOT), 1, 1, folder + "etherium_ingot");
         materialRecipe(elConsumer, CCMaterialIds.etherium, Ingredient.of(EnigmaticBlocks.ETHERIUM_BLOCK), 9, 1, folder + "etherium_block");
@@ -61,6 +64,7 @@ public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IM
         materialComposite(consumer, MaterialIds.leather, CCMaterialIds.hamhide, TinkerFluids.meatSoup, false, FluidValues.BOWL, folder);
 
         materialMeltingCasting(mmConsumer, CCMaterialIds.cosmite, CCFluids.moltenCosmite, false, FluidValues.GEM, folder);
+        materialMeltingCasting(mmConsumer, CCMaterialIds.infernium, CCFluids.moltenInfernium, false, FluidValues.INGOT, folder);
         materialMeltingCasting(elConsumer, CCMaterialIds.etherium, CCFluids.moltenEtherium, false, FluidValues.INGOT, folder);
         materialMeltingCasting(caConsumer, CCMaterialIds.chroma, CCFluids.moltenChroma, false, FluidValues.GEM, folder);
     }

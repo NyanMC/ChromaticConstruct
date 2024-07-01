@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_fluid",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meaningfulmaterials"
+    }
+  ],
+  "fluid": {
+    "amount": 90,
+    "tag": "chromatic_construct:molten_infernium"
+  },
+  "output": "chromatic_construct:infernium",
+  "temperature": 1000
+}

@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meaningfulmaterials"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/infernium"
+  },
+  "material": "chromatic_construct:infernium",
+  "needed": 1,
+  "value": 1
+}

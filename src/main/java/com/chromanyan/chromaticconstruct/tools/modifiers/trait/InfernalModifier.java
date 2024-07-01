@@ -29,12 +29,13 @@ public class InfernalModifier extends Modifier implements BreakSpeedModifierHook
 
     @Override
     protected void registerHooks(ModuleHookMap.@NotNull Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
         hookBuilder.addHook(this, ModifierHooks.BREAK_SPEED, ModifierHooks.TOOLTIP);
     }
 
     @Override
     public void addTooltip(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, @Nullable Player player, @NotNull List<Component> tooltip, @NotNull TooltipKey tooltipKey, @NotNull TooltipFlag tooltipFlag) {
-        float bonus = (PERCENT_PER_LEVEL) * modifier.getLevel();
+        float bonus = (PERCENT_PER_LEVEL) * modifier.getEffectiveLevel();
         // client only knows if the player is on fire or not, not the amount of fire, so just show full if on fire
         if (player != null && tooltipKey == TooltipKey.SHIFT && player.getRemainingFireTicks() == 0) {
             bonus = 0;
@@ -44,8 +45,12 @@ public class InfernalModifier extends Modifier implements BreakSpeedModifierHook
 
     @Override
     public void onBreakSpeed(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, PlayerEvent.@NotNull BreakSpeed event, @NotNull Direction sideHit, boolean isEffective, float miningSpeedModifier) {
+        if (event.getEntity().getLevel().isClientSide()) return;
         if (isEffective) {
-            event.setNewSpeed(event.getNewSpeed() * ((ConductingModifier.bonusScale(event.getEntity()) * PERCENT_PER_LEVEL) + 1));
+            ChromaticConstruct.LOGGER.debug("Bonus scale: {}", ConductingModifier.bonusScale(event.getEntity()));
+            ChromaticConstruct.LOGGER.debug("New speed before infernal: {}", event.getNewSpeed());
+            ChromaticConstruct.LOGGER.debug("New speed after infernal: {}", event.getNewSpeed() * (ConductingModifier.bonusScale(event.getEntity()) * PERCENT_PER_LEVEL * modifier.getEffectiveLevel()) + 1);
+            event.setNewSpeed(event.getNewSpeed() * ((ConductingModifier.bonusScale(event.getEntity()) * PERCENT_PER_LEVEL * modifier.getEffectiveLevel()) + 1f));
         }
     }
 }
