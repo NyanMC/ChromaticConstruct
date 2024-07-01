@@ -12,6 +12,11 @@
   "modifier.chromatic_construct.antigravity.flavor": "It's impossible to put down!",
   "modifier.chromatic_construct.antigravity.description": "Tool defies gravity when dropped",
 
+  "modifier.chromatic_construct.infernal": "Infernal",
+  "modifier.chromatic_construct.infernal.flavor": "From the depths of the nether",
+  "modifier.chromatic_construct.infernal.description": "Tool has multiplied mining speed when you are on fire",
+  "modifier.chromatic_construct.infernal.boost": "Infernal Boost Max",
+
   "modifier.chromatic_construct.snowball": "Snowball",
   "modifier.chromatic_construct.snowball.flavor": "Start a snowball fight!",
   "modifier.chromatic_construct.snowball.description": "Tool can conjure snowballs at the cost of durability",
