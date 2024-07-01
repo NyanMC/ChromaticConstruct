@@ -3,6 +3,8 @@ package com.chromanyan.chromaticconstruct.tools.modifiers.trait;
 import com.chromanyan.chromaticconstruct.ChromaticConstruct;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -21,11 +23,34 @@ import slimeknights.tconstruct.tools.modifiers.traits.melee.ConductingModifier;
 
 import java.util.List;
 
-// this is basically just conducting for mining so a lot of this is taken from that class
 public class InfernalModifier extends Modifier implements BreakSpeedModifierHook, TooltipModifierHook {
+
+    private static int clientRemainingFireTicks = 0;
 
     private static final Component BOOST = ChromaticConstruct.makeTranslation("modifier", "infernal.boost");
     private static final float PERCENT_PER_LEVEL = 0.15f;
+    private static final int MAX_BONUS_TICKS = 15 * 20; // time from lava
+
+    public static void setClientRemainingFireTicks(int clientRemainingFireTicks) {
+        InfernalModifier.clientRemainingFireTicks = clientRemainingFireTicks;
+    }
+
+    private static float clientsideBonusScale(LivingEntity living) {
+        int fire = clientRemainingFireTicks;
+        if (fire > 0) {
+            float bonus = 1;
+            // if less than 15 seconds of fire, smaller boost
+            if (fire < MAX_BONUS_TICKS) {
+                bonus *= (float)(fire) / MAX_BONUS_TICKS;
+            }
+            // half boost if not on fire
+            if (living.hasEffect(MobEffects.FIRE_RESISTANCE)) {
+                bonus /= 2;
+            }
+            return bonus;
+        }
+        return 0;
+    }
 
     @Override
     protected void registerHooks(ModuleHookMap.@NotNull Builder hookBuilder) {
@@ -45,12 +70,14 @@ public class InfernalModifier extends Modifier implements BreakSpeedModifierHook
 
     @Override
     public void onBreakSpeed(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, PlayerEvent.@NotNull BreakSpeed event, @NotNull Direction sideHit, boolean isEffective, float miningSpeedModifier) {
-        if (event.getEntity().getLevel().isClientSide()) return;
         if (isEffective) {
-            ChromaticConstruct.LOGGER.debug("Bonus scale: {}", ConductingModifier.bonusScale(event.getEntity()));
-            ChromaticConstruct.LOGGER.debug("New speed before infernal: {}", event.getNewSpeed());
-            ChromaticConstruct.LOGGER.debug("New speed after infernal: {}", event.getNewSpeed() * (ConductingModifier.bonusScale(event.getEntity()) * PERCENT_PER_LEVEL * modifier.getEffectiveLevel()) + 1);
-            event.setNewSpeed(event.getNewSpeed() * ((ConductingModifier.bonusScale(event.getEntity()) * PERCENT_PER_LEVEL * modifier.getEffectiveLevel()) + 1f));
+            float bonusScale = 0;
+            if (event.getEntity().getLevel().isClientSide()) {
+                bonusScale = clientsideBonusScale(event.getEntity());
+            } else {
+                bonusScale = ConductingModifier.bonusScale(event.getEntity());
+            }
+            event.setNewSpeed(event.getNewSpeed() * ((bonusScale * PERCENT_PER_LEVEL * modifier.getEffectiveLevel()) + 1f));
         }
     }
 }

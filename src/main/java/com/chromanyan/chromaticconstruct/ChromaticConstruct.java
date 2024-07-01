@@ -9,6 +9,8 @@ import com.chromanyan.chromaticconstruct.init.CCFluids;
 import com.chromanyan.chromaticconstruct.init.CCItems;
 import com.chromanyan.chromaticconstruct.init.CCMobEffects;
 import com.chromanyan.chromaticconstruct.init.CCModifiers;
+import com.chromanyan.chromaticconstruct.network.CCPacketHandler;
+import com.chromanyan.chromaticconstruct.network.client.PacketRemainingFireTicks;
 import com.chromanyan.chromaticconstruct.tools.CCPredicate;
 import com.chromanyan.chromaticconstruct.tools.modules.armor.PanicModule;
 import com.mojang.logging.LogUtils;
@@ -67,6 +69,8 @@ public class ChromaticConstruct {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         MinecraftForge.EVENT_BUS.register(new CCEvents());
+
+        CCPacketHandler.INSTANCE.registerMessage(0, PacketRemainingFireTicks.class, PacketRemainingFireTicks::encode, PacketRemainingFireTicks::decode, PacketRemainingFireTicks::handle);
     }
 
     @SubscribeEvent
