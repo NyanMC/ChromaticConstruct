@@ -80,7 +80,7 @@ public class VarietyModifier extends Modifier implements ConditionalStatModifier
     @Override
     public float modifyStat(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, @NotNull LivingEntity living, @NotNull FloatToolStat stat, float baseValue, float multiplier) {
         if (stat == ToolStats.DRAW_SPEED) {
-            return baseValue * getBonus(tool, modifier) * multiplier;
+            return baseValue + (getBonus(tool, modifier) * multiplier);
         }
 
         return baseValue;
