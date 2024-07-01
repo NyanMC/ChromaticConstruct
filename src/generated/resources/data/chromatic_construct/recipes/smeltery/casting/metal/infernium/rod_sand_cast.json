@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/rod"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:rods/infernium"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meaningfulmaterials"
+    }
+  ],
+  "cooling_time": 49,
+  "fluid": {
+    "amount": 45,
+    "tag": "chromatic_construct:molten_infernium"
+  },
+  "result": {
+    "tag": "forge:rods/infernium"
+  }
+}

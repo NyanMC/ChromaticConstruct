@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/infernium"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meaningfulmaterials"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/infernium"
+  },
+  "result": {
+    "amount": 360,
+    "fluid": "chromatic_construct:molten_infernium"
+  },
+  "temperature": 1125,
+  "time": 140
+}

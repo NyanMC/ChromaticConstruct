@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/infernium"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meaningfulmaterials"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:wires/infernium"
+  },
+  "result": {
+    "amount": 45,
+    "fluid": "chromatic_construct:molten_infernium"
+  },
+  "temperature": 1125,
+  "time": 14
+}

@@ -42,6 +42,7 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
         Consumer<FinishedRecipe> mmConsumer = withCondition(consumer, new ModLoadedCondition("meaningfulmaterials"));
 
         gemMelting(mmConsumer, CCFluids.moltenCosmite.get(), "cosmite", true, 9, folder, true, Byproduct.AMETHYST);
+        metalMelting(mmConsumer, CCFluids.moltenInfernium.get(), "infernium", true, true, folder, true, Byproduct.IRON);
 
         MeltingRecipeBuilder.melting(Ingredient.of(MMItems.COSMITE_BOOTS.get()), CCFluids.moltenCosmite.get(), FluidValues.GEM * 4)
                 .setDamagable(FluidValues.GEM)
@@ -90,6 +91,7 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
 
     private void addCastingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         String folder = "smeltery/casting/";
+        String metalFolder = folder + "metal/";
 
         ItemCastingRecipeBuilder.tableRecipe(CCItems.glassReinforcement)
                 .setFluidAndTime(TinkerFluids.moltenGlass, false, FluidValues.GLASS_BLOCK)
@@ -104,6 +106,7 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
         Consumer<FinishedRecipe> mmConsumer = withCondition(consumer, new ModLoadedCondition("meaningfulmaterials"));
 
         this.gemCasting(mmConsumer, CCFluids.moltenCosmite, MMItems.COSMITE.get(), folder + "cosmite/gem");
+        this.metalCasting(mmConsumer, CCFluids.moltenInfernium, false, MMItems.INFERNIUM_BLOCK_ITEM.get(), MMItems.INFERNIUM_INGOT.get(), null, metalFolder, "infernium");
 
         ItemCastingRecipeBuilder.basinRecipe(MMItems.COSMITE_BLOCK_ITEM.get())
                 .setFluidAndTime(CCFluids.moltenCosmite, false, FluidValues.LARGE_GEM_BLOCK)

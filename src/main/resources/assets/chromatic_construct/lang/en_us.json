@@ -72,6 +72,11 @@
   "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",
   "item.chromatic_construct.molten_cosmite_bucket": "Molten Cosmite Bucket",
 
+  "block.chromatic_construct.molten_infernium_fluid": "Molten Infernium",
+  "fluid.chromatic_construct.molten_infernium": "Molten Infernium",
+  "fluid.chromatic_construct.flowing_molten_infernium": "Flowing Molten Infernium",
+  "item.chromatic_construct.molten_infernium_bucket": "Molten Infernium Bucket",
+
   "block.chromatic_construct.molten_etherium_fluid": "Molten Etherium",
   "fluid.chromatic_construct.molten_etherium": "Molten Etherium",
   "fluid.chromatic_construct.flowing_molten_etherium": "Flowing Molten Etherium",

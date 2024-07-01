@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:dusts/infernium"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meaningfulmaterials"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:dusts/infernium"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "chromatic_construct:molten_infernium"
+  },
+  "temperature": 1125,
+  "time": 52
+}
