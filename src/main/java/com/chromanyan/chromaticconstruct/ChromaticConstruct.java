@@ -10,6 +10,7 @@ import com.chromanyan.chromaticconstruct.init.CCItems;
 import com.chromanyan.chromaticconstruct.init.CCMobEffects;
 import com.chromanyan.chromaticconstruct.init.CCModifiers;
 import com.chromanyan.chromaticconstruct.tools.CCPredicate;
+import com.chromanyan.chromaticconstruct.tools.modules.armor.PanicModule;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.Registry;
 import net.minecraft.data.DataGenerator;
@@ -30,6 +31,7 @@ import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.client.data.material.GeneratorPartTextureJsonGenerator;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.library.utils.Util;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
@@ -94,6 +96,8 @@ public class ChromaticConstruct {
         if (event.getRegistryKey() == Registry.RECIPE_SERIALIZER_REGISTRY) {
             LivingEntityPredicate.LOADER.register(getResource("monster"), CCPredicate.MONSTER.getLoader());
             LivingEntityPredicate.LOADER.register(getResource("below_40"), CCPredicate.BELOW_40.getLoader());
+
+            ModifierModule.LOADER.register(getResource("panic"), PanicModule.LOADER);
         }
     }
 

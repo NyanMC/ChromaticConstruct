@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:composable",
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "chromatic_construct:panic"
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -29,6 +29,11 @@
   "modifier.chromatic_construct.encumberment.flavor": "You're carrying too much!",
   "modifier.chromatic_construct.encumberment.description": "Prevents picking up items when worn",
 
+  "modifier.chromatic_construct.panic": "Panic",
+  "modifier.chromatic_construct.panic.flavor": "Run away!",
+  "modifier.chromatic_construct.panic.description": "Increases movement speed after being attacked",
+  "modifier.chromatic_construct.panic.movement_speed": "Panic Movement Speed",
+
   "modifier.chromatic_construct.slayer": "Slayer",
   "modifier.chromatic_construct.slayer.flavor": "Defeat the evil!",
   "modifier.chromatic_construct.slayer.description": "Tool does bonus damage to monsters!",
@@ -75,6 +80,7 @@
   "item.chromatic_construct.glass_reinforcement": "Glass Reinforcement",
 
   "effect.chromatic_construct.fragile_cooldown": "Fragile Cooldown",
+  "effect.chromatic_construct.panic": "Panic!",
 
   "material.chromatic_construct.cosmite": "Cosmite",
   "material.chromatic_construct.cosmite.flavor": "What goes up must come down, except for this apparently",

@@ -5,6 +5,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierId;
 
 public class CCModifierIds {
     public static final ModifierId encumberment = id("encumberment");
+    public static final ModifierId panic = id("panic");
 
     // compat: meaningful materials
     public static final ModifierId antiair = id("anti_air");
