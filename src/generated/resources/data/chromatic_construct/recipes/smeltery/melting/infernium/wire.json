@@ -20,6 +20,6 @@
     "amount": 45,
     "fluid": "chromatic_construct:molten_infernium"
   },
-  "temperature": 1125,
-  "time": 14
+  "temperature": 1000,
+  "time": 13
 }

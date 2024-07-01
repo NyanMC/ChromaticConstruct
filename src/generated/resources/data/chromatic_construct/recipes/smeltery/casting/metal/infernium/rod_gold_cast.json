@@ -16,7 +16,7 @@
       "modid": "meaningfulmaterials"
     }
   ],
-  "cooling_time": 49,
+  "cooling_time": 47,
   "fluid": {
     "amount": 45,
     "tag": "chromatic_construct:molten_infernium"
