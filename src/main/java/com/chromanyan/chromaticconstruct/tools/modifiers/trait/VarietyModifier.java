@@ -39,7 +39,7 @@ public class VarietyModifier extends Modifier implements ConditionalStatModifier
     @Override
     protected void registerHooks(ModuleHookMap.@NotNull Builder hookBuilder) {
         super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.BREAK_SPEED, ModifierHooks.TOOLTIP);
+        hookBuilder.addHook(this, ModifierHooks.CONDITIONAL_STAT, ModifierHooks.BREAK_SPEED, ModifierHooks.TOOLTIP);
     }
 
     private static float getBonus(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier) {
