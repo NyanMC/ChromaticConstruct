@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "minecraft:leather"
+  },
+  "cast_consumed": true,
+  "cooling_time": 55,
+  "fluid": {
+    "amount": 250,
+    "tag": "tconstruct:meat_soup"
+  },
+  "result": "chromatic_construct:hamhide"
+}

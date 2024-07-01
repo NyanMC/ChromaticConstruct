@@ -45,6 +45,8 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
     }
 
     private void addArmor() {
+        addMaterialStats(CCMaterialIds.hamhide, StatlessMaterialStats.MAILLE, StatlessMaterialStats.REPAIR_KIT);
+
         addMaterialStats(CCMaterialIds.cosmite, StatlessMaterialStats.MAILLE);
         addArmorShieldStats(CCMaterialIds.etherium, PlatingMaterialStats.builder().durabilityFactor(40).armor(2, 5, 7, 2).toughness(2), StatlessMaterialStats.MAILLE);
     }

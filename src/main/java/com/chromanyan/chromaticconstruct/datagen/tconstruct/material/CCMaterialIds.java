@@ -4,6 +4,8 @@ import com.chromanyan.chromaticconstruct.ChromaticConstruct;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 
 public class CCMaterialIds {
+    public static final MaterialId hamhide = id("hamhide");
+
     public static final MaterialId cosmite = id("cosmite");
     public static final MaterialId etherium = id("etherium");
     public static final MaterialId chroma = id("chroma");

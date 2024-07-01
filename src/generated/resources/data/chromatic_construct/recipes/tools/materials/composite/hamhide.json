@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 250,
+    "tag": "tconstruct:meat_soup"
+  },
+  "input": "tconstruct:leather",
+  "output": "chromatic_construct:hamhide",
+  "temperature": 100
+}

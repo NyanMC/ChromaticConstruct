@@ -15,5 +15,6 @@ public class CCItems {
     private static final Item.Properties GENERAL_PROPS = new Item.Properties().tab(TAB_GENERAL);
 
     public static final ItemObject<Item> glassReinforcement = ITEMS.register("glass_reinforcement", GENERAL_PROPS);
+    public static final ItemObject<Item> hamhide = ITEMS.register("hamhide", GENERAL_PROPS);
 
 }

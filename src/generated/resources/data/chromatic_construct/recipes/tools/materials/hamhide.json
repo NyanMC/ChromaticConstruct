@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "chromatic_construct:hamhide"
+  },
+  "material": "chromatic_construct:hamhide",
+  "needed": 1,
+  "value": 1
+}

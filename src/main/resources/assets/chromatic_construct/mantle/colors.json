@@ -16,6 +16,7 @@
   },
 
   "material.chromatic_construct": {
+    "hamhide": "#FF7272",
     "cosmite": "#513593",
     "etherium": "#96FFFF",
     "chroma": "#FF00FF"

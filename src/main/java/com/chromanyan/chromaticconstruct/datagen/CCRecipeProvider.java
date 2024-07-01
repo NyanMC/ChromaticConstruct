@@ -91,6 +91,16 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
     private void addCastingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         String folder = "smeltery/casting/";
 
+        ItemCastingRecipeBuilder.tableRecipe(CCItems.glassReinforcement)
+                .setFluidAndTime(TinkerFluids.moltenGlass, false, FluidValues.GLASS_BLOCK)
+                .setCast(TinkerTables.pattern, true)
+                .save(consumer, prefix(CCItems.glassReinforcement, folder));
+
+        ItemCastingRecipeBuilder.tableRecipe(CCItems.hamhide)
+                .setFluidAndTime(TinkerFluids.meatSoup, false, FluidValues.BOWL)
+                .setCast(Items.LEATHER, true)
+                .save(consumer, prefix(CCItems.hamhide, folder));
+
         Consumer<FinishedRecipe> mmConsumer = withCondition(consumer, new ModLoadedCondition("meaningfulmaterials"));
 
         this.gemCasting(mmConsumer, CCFluids.moltenCosmite, MMItems.COSMITE.get(), folder + "cosmite/gem");
@@ -130,11 +140,6 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
                 .setFluidAndTime(CCFluids.moltenChroma, false, FluidValues.GEM_SHARD)
                 .setCast(Items.BREAD, true)
                 .save(caConsumer, location(folder + "chroma/bread"));
-
-        ItemCastingRecipeBuilder.tableRecipe(CCItems.glassReinforcement)
-                .setFluidAndTime(TinkerFluids.moltenGlass, false, FluidValues.GLASS_BLOCK)
-                .setCast(TinkerTables.pattern, true)
-                .save(consumer, prefix(CCItems.glassReinforcement, folder));
     }
 
     @Override
