@@ -5,7 +5,6 @@ import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToSpriteTransformer;
-import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 import static com.chromanyan.chromaticconstruct.ChromaticConstruct.getResource;
 import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.SLIMESUIT;
