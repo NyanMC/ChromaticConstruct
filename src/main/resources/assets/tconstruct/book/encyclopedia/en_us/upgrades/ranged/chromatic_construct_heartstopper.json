@@ -1,0 +1,14 @@
+{
+  "modifier_id": "chromatic_construct:heartstopper",
+  "text": [
+    {
+      "text": "Prevents entities hit by the arrow from healing for 2 seconds (plus 2 seconds per level)."
+    }
+  ],
+  "more_text_space": true,
+  "tool_filter": "tconstruct:modifiable/ranged",
+  "effects": [
+    "Maximum of 3 levels",
+    "Requires 1 upgrade slot per level"
+  ]
+}

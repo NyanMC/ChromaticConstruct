@@ -1,0 +1,14 @@
+{
+  "modifier_id": "chromatic_construct:heartstopper",
+  "text": [
+    {
+      "text": "I guess not really a heartstopper, when you think about it. More of a heartpauser."
+    }
+  ],
+  "tool_filter": "tconstruct:modifiable/ranged",
+  "effects": [
+    "Fired projectiles stop enemies from healing",
+    "Multiple levels, each level increases the duration",
+  	"Requires 1 upgrade slot per level"
+  ]
+}

@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticconstruct.event;
 
+import com.chromanyan.chromaticconstruct.init.CCMobEffects;
 import com.chromanyan.chromaticconstruct.network.CCPacketHandler;
 import com.chromanyan.chromaticconstruct.network.client.PacketRemainingFireTicks;
 import com.chromanyan.chromaticconstruct.tools.CCVolatileFlags;
@@ -9,6 +10,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
@@ -58,6 +60,13 @@ public class CCEvents {
         } else if (remainingFireTicksMap.get(uuid) != playerRemainingFireTicks) {
             remainingFireTicksMap.replace(uuid, playerRemainingFireTicks);
             CCPacketHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> serverPlayer), new PacketRemainingFireTicks(playerRemainingFireTicks));
+        }
+    }
+
+    @SubscribeEvent
+    public void onLivingHeal(LivingHealEvent event) {
+        if (event.getEntity().hasEffect(CCMobEffects.heartstopperEffect.get())) {
+            event.setCanceled(true);
         }
     }
 }

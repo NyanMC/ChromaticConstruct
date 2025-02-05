@@ -34,6 +34,10 @@
   "modifier.chromatic_construct.encumberment.flavor": "You're carrying too much!",
   "modifier.chromatic_construct.encumberment.description": "Prevents picking up items when worn",
 
+  "modifier.chromatic_construct.heartstopper": "Heartstopper",
+  "modifier.chromatic_construct.heartstopper.flavor": "Witches hate it!",
+  "modifier.chromatic_construct.heartstopper.description": "Attacked mobs briefly lose the ability to heal",
+
   "modifier.chromatic_construct.panic": "Panic",
   "modifier.chromatic_construct.panic.flavor": "Run away!",
   "modifier.chromatic_construct.panic.description": "Increases movement speed after being attacked",
@@ -92,6 +96,7 @@
 
   "effect.chromatic_construct.fragile_cooldown": "Fragile Cooldown",
   "effect.chromatic_construct.panic": "Panic!",
+  "effect.chromatic_construct.heartstopper": "Heartstopper",
 
   "material.chromatic_construct.hamhide": "Hamhide",
   "material.chromatic_construct.hamhide.flavor": "This material empowers you with the same abilities of the animals you had to sacrifice to make it! Make it count.",

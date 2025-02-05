@@ -22,4 +22,6 @@ public class CCMobEffects {
             new NoMilkEffect(MobEffectCategory.BENEFICIAL, 0xFF7272, true)
                     .addAttributeModifier(Attributes.MOVEMENT_SPEED, "26541d75-f7e1-4147-bf44-9cf7db883b50", 0.15f, AttributeModifier.Operation.MULTIPLY_TOTAL));
 
+    public static final RegistryObject<TinkerEffect> heartstopperEffect = MOB_EFFECTS.register("heartstopper", () ->
+            new NoMilkEffect(MobEffectCategory.HARMFUL, 0xAA3333, true));
 }

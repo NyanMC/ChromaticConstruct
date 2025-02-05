@@ -116,6 +116,16 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .saveSalvage(consumer, prefix(CCModifierIds.encumberment, upgradeSalvage))
                 .save(consumer, prefix(CCModifierIds.encumberment, upgradeFolder));
 
+        ModifierRecipeBuilder.modifier(CCModifiers.heartstopper)
+                .setTools(ingredientFromTags(TinkerTags.Items.MELEE, TinkerTags.Items.BOWS))
+                .addInput(Items.FERMENTED_SPIDER_EYE)
+                .addInput(Items.GLISTERING_MELON_SLICE)
+                .addInput(TinkerMaterials.venombone)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(3)
+                .saveSalvage(consumer, prefix(CCModifiers.heartstopper, upgradeSalvage))
+                .save(consumer, prefix(CCModifiers.heartstopper, upgradeFolder));
+
         SwappableModifierRecipeBuilder.modifier(TinkerModifiers.embellishment, CCMaterialIds.chroma.toString())
                 .setTools(TinkerTags.Items.EMBELLISHMENT_SLIME)
                 .addInput(ModItems.CHROMA_SHARD.get()).addInput(ModItems.CHROMA_SHARD.get()).addInput(ModItems.CHROMA_SHARD.get())
