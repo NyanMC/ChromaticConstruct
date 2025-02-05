@@ -2,7 +2,7 @@ package com.chromanyan.chromaticconstruct.datagen;
 
 import com.chromanyan.chromaticconstruct.ChromaticConstruct;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierIds;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.data.tinkering.AbstractEnchantmentToModifierProvider;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
@@ -11,14 +11,14 @@ import slimeknights.tconstruct.tools.data.ModifierIds;
 
 public class CCEnchantmentToModifierProvider extends AbstractEnchantmentToModifierProvider {
 
-    public CCEnchantmentToModifierProvider(DataGenerator generator) {
-        super(generator);
+    public CCEnchantmentToModifierProvider(PackOutput out) {
+        super(out);
     }
 
     @Override
     protected void addEnchantmentMappings() {
-        addCompat(CCModifierIds.nemesis);
-        addCompat(CCModifierIds.sorrow);
+        addOptionalCompat(CCModifierIds.nemesis);
+        addOptionalCompat(CCModifierIds.sorrow);
         addCompat(TinkerModifiers.crystalshot.getId());
         addCompat(ModifierIds.power);
         addCompat(ModifierIds.cooling);
@@ -26,6 +26,10 @@ public class CCEnchantmentToModifierProvider extends AbstractEnchantmentToModifi
 
     private void addCompat(ModifierId modifier) {
         add(ChromaticConstruct.getResource("modifier_like/" + modifier.getPath()), modifier);
+    }
+
+    private void addOptionalCompat(ModifierId modifier) { // thanks knightminer
+        add(ChromaticConstruct.getResource("modifier_like/" + modifier.getPath()), modifier, true);
     }
 
     @Override

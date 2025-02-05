@@ -7,7 +7,7 @@ import com.chromanyan.chromaticconstruct.init.CCFluids;
 import com.chromanyan.chromaticconstruct.init.CCItems;
 import com.chromanyan.chromaticconstruct.tools.CCFluidValues;
 import com.chromanyan.meaningfulmaterials.init.MMItems;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -27,14 +27,19 @@ import java.util.function.Consumer;
 
 public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryRecipeHelper, ICommonRecipeHelper {
 
-    public CCRecipeProvider(DataGenerator generator) {
-        super(generator);
+    public CCRecipeProvider(PackOutput output) {
+        super(output);
     }
 
     @Override
-    protected void buildCraftingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         this.addMeltingRecipes(consumer);
         this.addCastingRecipes(consumer);
+    }
+
+    @Override
+    public @NotNull String getName() {
+        return "Chromatic Construct Recipes";
     }
 
     private void addMeltingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
@@ -94,41 +99,41 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
         String metalFolder = folder + "metal/";
 
         ItemCastingRecipeBuilder.tableRecipe(CCItems.glassReinforcement)
-                .setFluidAndTime(TinkerFluids.moltenGlass, false, FluidValues.GLASS_BLOCK)
+                .setFluidAndTime(TinkerFluids.moltenGlass, FluidValues.GLASS_BLOCK)
                 .setCast(TinkerTables.pattern, true)
                 .save(consumer, prefix(CCItems.glassReinforcement, folder));
 
         ItemCastingRecipeBuilder.tableRecipe(CCItems.hamhide)
-                .setFluidAndTime(TinkerFluids.meatSoup, false, FluidValues.BOWL)
+                .setFluidAndTime(TinkerFluids.meatSoup, FluidValues.BOWL)
                 .setCast(Items.LEATHER, true)
                 .save(consumer, prefix(CCItems.hamhide, folder));
 
         Consumer<FinishedRecipe> mmConsumer = withCondition(consumer, new ModLoadedCondition("meaningfulmaterials"));
 
         this.gemCasting(mmConsumer, CCFluids.moltenCosmite, MMItems.COSMITE.get(), folder + "cosmite/gem");
-        this.metalCasting(mmConsumer, CCFluids.moltenInfernium, false, MMItems.INFERNIUM_BLOCK_ITEM.get(), MMItems.INFERNIUM_INGOT.get(), null, metalFolder, "infernium");
+        this.metalCasting(mmConsumer, CCFluids.moltenInfernium, MMItems.INFERNIUM_BLOCK_ITEM.get(), MMItems.INFERNIUM_INGOT.get(), null, metalFolder, "infernium");
 
         ItemCastingRecipeBuilder.basinRecipe(MMItems.COSMITE_BLOCK_ITEM.get())
-                .setFluidAndTime(CCFluids.moltenCosmite, false, FluidValues.LARGE_GEM_BLOCK)
+                .setFluidAndTime(CCFluids.moltenCosmite, FluidValues.LARGE_GEM_BLOCK)
                 .save(mmConsumer, location(folder + "cosmite/block"));
 
         ItemCastingRecipeBuilder.tableRecipe(MMItems.COSMIC_ARROW.get())
                 .setCast(Items.ARROW, true)
-                .setFluidAndTime(CCFluids.moltenCosmite, false, 10)
+                .setFluidAndTime(CCFluids.moltenCosmite, 10)
                 .save(mmConsumer, location(folder + "cosmite/arrow"));
 
         Consumer<FinishedRecipe> elConsumer = withCondition(consumer, new ModLoadedCondition("enigmaticlegacy"));
 
         this.ingotCasting(elConsumer, CCFluids.moltenEtherium, EnigmaticItems.ETHERIUM_INGOT, folder + "etherium/ingot");
-        this.nuggetCasting(elConsumer, CCFluids.moltenEtherium, false, EnigmaticItems.ETHERIUM_NUGGET, folder + "etherium/nugget");
+        this.nuggetCasting(elConsumer, CCFluids.moltenEtherium, EnigmaticItems.ETHERIUM_NUGGET, folder + "etherium/nugget");
 
         ItemCastingRecipeBuilder.basinRecipe(EnigmaticBlocks.ETHERIUM_BLOCK)
-                .setFluidAndTime(CCFluids.moltenEtherium, false, FluidValues.METAL_BLOCK)
+                .setFluidAndTime(CCFluids.moltenEtherium, FluidValues.METAL_BLOCK)
                 .save(elConsumer, location(folder + "etherium/block"));
 
         ItemCastingRecipeBuilder.tableRecipe(EnigmaticItems.GOLDEN_RING)
                 .setCast(EnigmaticItems.IRON_RING, true)
-                .setFluidAndTime(TinkerFluids.moltenGold, true, CCFluidValues.ENIGMATIC_RING)
+                .setFluidAndTime(TinkerFluids.moltenGold, CCFluidValues.ENIGMATIC_RING)
                 .save(elConsumer, location(folder + "gold/ring_enigmaticlegacy"));
 
         Consumer<FinishedRecipe> caConsumer = withCondition(consumer, new ModLoadedCondition("chromaticarsenal"));
@@ -136,17 +141,12 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
         this.gemCasting(caConsumer, CCFluids.moltenChroma, ModItems.CHROMA_SHARD.get(), folder + "chroma/gem");
 
         ItemCastingRecipeBuilder.basinRecipe(ModItems.CHROMA_BLOCK_ITEM.get())
-                .setFluidAndTime(CCFluids.moltenChroma, false, FluidValues.LARGE_GEM_BLOCK)
+                .setFluidAndTime(CCFluids.moltenChroma, FluidValues.LARGE_GEM_BLOCK)
                 .save(caConsumer, location(folder + "chroma/block"));
 
         ItemCastingRecipeBuilder.tableRecipe(ModItems.MAGIC_GARLIC_BREAD.get())
-                .setFluidAndTime(CCFluids.moltenChroma, false, FluidValues.GEM_SHARD)
+                .setFluidAndTime(CCFluids.moltenChroma, FluidValues.GEM_SHARD)
                 .setCast(Items.BREAD, true)
                 .save(caConsumer, location(folder + "chroma/bread"));
-    }
-
-    @Override
-    public @NotNull String getName() {
-        return "Chromatic Construct Recipes";
     }
 }

@@ -7,7 +7,7 @@ import com.chromanyan.chromaticconstruct.datagen.CCBaseRecipeProvider;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
 import com.chromanyan.chromaticconstruct.init.CCItems;
 import com.chromanyan.meaningfulmaterials.init.MMTags;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
@@ -21,14 +21,19 @@ import java.util.function.Consumer;
 
 public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IMaterialRecipeHelper {
 
-    public CCMaterialRecipeProvider(DataGenerator p_125973_) {
-        super(p_125973_);
+    public CCMaterialRecipeProvider(PackOutput out) {
+        super(out);
     }
 
     @Override
-    protected void buildCraftingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         addMaterialItems(consumer);
         addMaterialSmeltery(consumer);
+    }
+
+    @Override
+    public @NotNull String getName() {
+        return "Chromatic Construct Material Recipes";
     }
 
     private void addMaterialItems(Consumer<FinishedRecipe> consumer) {
@@ -61,16 +66,11 @@ public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IM
         Consumer<FinishedRecipe> elConsumer = withCondition(consumer, new ModLoadedCondition("enigmaticlegacy"));
         Consumer<FinishedRecipe> caConsumer = withCondition(consumer, new ModLoadedCondition("chromaticarsenal"));
 
-        materialComposite(consumer, MaterialIds.leather, CCMaterialIds.hamhide, TinkerFluids.meatSoup, false, FluidValues.BOWL, folder);
+        materialComposite(consumer, MaterialIds.leather, CCMaterialIds.hamhide, TinkerFluids.meatSoup, FluidValues.BOWL, folder);
 
-        materialMeltingCasting(mmConsumer, CCMaterialIds.cosmite, CCFluids.moltenCosmite, false, FluidValues.GEM, folder);
-        materialMeltingCasting(mmConsumer, CCMaterialIds.infernium, CCFluids.moltenInfernium, false, FluidValues.INGOT, folder);
-        materialMeltingCasting(elConsumer, CCMaterialIds.etherium, CCFluids.moltenEtherium, false, FluidValues.INGOT, folder);
-        materialMeltingCasting(caConsumer, CCMaterialIds.chroma, CCFluids.moltenChroma, false, FluidValues.GEM, folder);
-    }
-
-    @Override
-    public @NotNull String getName() {
-        return "Chromatic Construct Material Recipe";
+        materialMeltingCasting(mmConsumer, CCMaterialIds.cosmite, CCFluids.moltenCosmite, FluidValues.GEM, folder);
+        materialMeltingCasting(mmConsumer, CCMaterialIds.infernium, CCFluids.moltenInfernium, FluidValues.INGOT, folder);
+        materialMeltingCasting(elConsumer, CCMaterialIds.etherium, CCFluids.moltenEtherium, FluidValues.INGOT, folder);
+        materialMeltingCasting(caConsumer, CCMaterialIds.chroma, CCFluids.moltenChroma, FluidValues.GEM, folder);
     }
 }

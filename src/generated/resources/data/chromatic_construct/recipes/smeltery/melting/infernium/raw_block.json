@@ -3,7 +3,7 @@
   "byproducts": [
     {
       "amount": 810,
-      "fluid": "tconstruct:molten_iron"
+      "tag": "forge:molten_iron"
     }
   ],
   "conditions": [

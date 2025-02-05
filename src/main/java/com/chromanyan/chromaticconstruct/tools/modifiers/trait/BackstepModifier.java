@@ -37,7 +37,7 @@ public class BackstepModifier extends Modifier implements MeleeHitModifierHook {
 
             try {
                 EnigmaticItems.ETHERIUM_SWORD.getConfig().knockBack(attacker, modifier.getLevel() / 2F, lookAngle.x, lookAngle.z);
-                attacker.getLevel().playSound(null, attacker.blockPosition(), SoundEvents.SKELETON_SHOOT, SoundSource.PLAYERS, 1.0F, (float) (0.6F + (Math.random() * 0.1D)));
+                attacker.getCommandSenderWorld().playSound(null, attacker.blockPosition(), SoundEvents.SKELETON_SHOOT, SoundSource.PLAYERS, 1.0F, (float) (0.6F + (Math.random() * 0.1D)));
             } catch (Exception e) {
                 ChromaticConstruct.LOGGER.error("Couldn't perform Backstep modifier: ", e);
             }

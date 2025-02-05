@@ -1,7 +1,7 @@
 package com.chromanyan.chromaticconstruct.init;
 
 import com.chromanyan.chromaticconstruct.ChromaticConstruct;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -13,7 +13,7 @@ import slimeknights.tconstruct.tools.modifiers.effect.NoMilkEffect;
 
 public class CCMobEffects {
 
-    public static final EnumDeferredRegister<MobEffect> MOB_EFFECTS = new EnumDeferredRegister<>(Registry.MOB_EFFECT_REGISTRY, ChromaticConstruct.MODID);
+    public static final EnumDeferredRegister<MobEffect> MOB_EFFECTS = new EnumDeferredRegister<>(Registries.MOB_EFFECT, ChromaticConstruct.MODID);
 
     public static final RegistryObject<TinkerEffect> fragileCooldownEffect = MOB_EFFECTS.register("fragile_cooldown", () ->
             new NoMilkEffect(MobEffectCategory.HARMFUL, 0xCCCCFF, true));

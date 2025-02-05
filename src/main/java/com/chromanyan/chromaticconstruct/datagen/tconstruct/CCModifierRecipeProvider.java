@@ -7,8 +7,9 @@ import com.chromanyan.chromaticconstruct.datagen.tconstruct.material.CCMaterialI
 import com.chromanyan.chromaticconstruct.init.CCItems;
 import com.chromanyan.chromaticconstruct.init.CCModifiers;
 import com.chromanyan.meaningfulmaterials.init.MMTags;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -28,13 +29,18 @@ import slimeknights.tconstruct.tools.TinkerModifiers;
 import java.util.function.Consumer;
 
 public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
-    public CCModifierRecipeProvider(DataGenerator p_125973_) {
-        super(p_125973_);
+    public CCModifierRecipeProvider(PackOutput out) {
+        super(out);
     }
 
     @Override
-    protected void buildCraftingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         addModifierRecipes(consumer);
+    }
+
+    @Override
+    public @NotNull String getName() {
+        return "Chromatic Construct Modifier Recipes";
     }
 
     private void addModifierRecipes(Consumer<FinishedRecipe> consumer) {
@@ -55,9 +61,9 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
 
         ModifierRecipeBuilder.modifier(CCModifierIds.nemesis)
                 .setTools(TinkerTags.Items.MELEE_PRIMARY) // nemesis would be jank if you could put it on a bow
-                .addInput(Tags.Items.TOOLS_SWORDS)
+                .addInput(ItemTags.SWORDS)
                 .addInput(EnigmaticItems.EVIL_ESSENCE)
-                .addInput(Tags.Items.TOOLS_SWORDS)
+                .addInput(ItemTags.SWORDS)
                 .setMaxLevel(1)
                 .save(withCondition(consumer, modLoaded("enigmaticlegacy")), prefix(CCModifierIds.nemesis, slotlessFolder));
 
@@ -93,12 +99,12 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .saveSalvage(consumer, prefix(CCModifiers.riding, abilitySalvage))
                 .save(consumer, prefix(CCModifiers.riding, abilityFolder));
 
-        IncrementalModifierRecipeBuilder.modifier(CCModifiers.fragileProtection)
+        IncrementalModifierRecipeBuilder.modifier(CCModifierIds.fragileProtection)
                 .setInput(CCItems.glassReinforcement, 1, 5)
                 .setSlots(SlotType.DEFENSE, 1)
                 .setTools(protectableTools)
-                .saveSalvage(consumer, prefix(CCModifiers.fragileProtection, defenseSalvage))
-                .save(consumer, prefix(CCModifiers.fragileProtection, defenseFolder));
+                .saveSalvage(consumer, prefix(CCModifierIds.fragileProtection, defenseSalvage))
+                .save(consumer, prefix(CCModifierIds.fragileProtection, defenseFolder));
 
         ModifierRecipeBuilder.modifier(CCModifierIds.encumberment)
                 .setTools(TinkerTags.Items.LEGGINGS)
@@ -114,11 +120,6 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .setTools(TinkerTags.Items.EMBELLISHMENT_SLIME)
                 .addInput(ModItems.CHROMA_SHARD.get()).addInput(ModItems.CHROMA_SHARD.get()).addInput(ModItems.CHROMA_SHARD.get())
                 .save(withCondition(consumer, new ModLoadedCondition("chromaticarsenal")), wrap(TinkerModifiers.embellishment, slotlessFolder, "_chroma"));
-    }
-
-    @Override
-    public @NotNull String getName() {
-        return "Chromatic Construct Modifier Recipes";
     }
 
     @SafeVarargs

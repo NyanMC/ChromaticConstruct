@@ -2,7 +2,7 @@ package com.chromanyan.chromaticconstruct.datagen;
 
 import com.chromanyan.chromaticconstruct.ChromaticConstruct;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.mantle.fluid.texture.AbstractFluidTextureProvider;
@@ -12,8 +12,8 @@ import static com.chromanyan.chromaticconstruct.ChromaticConstruct.getResource;
 
 public class CCFluidTextureProvider extends AbstractFluidTextureProvider {
 
-    public CCFluidTextureProvider(DataGenerator generator) {
-        super(generator, ChromaticConstruct.MODID);
+    public CCFluidTextureProvider(PackOutput out) {
+        super(out, ChromaticConstruct.MODID);
     }
 
     @Override

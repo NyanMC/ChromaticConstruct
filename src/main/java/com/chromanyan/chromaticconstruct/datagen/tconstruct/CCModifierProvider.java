@@ -3,8 +3,9 @@ package com.chromanyan.chromaticconstruct.datagen.tconstruct;
 import com.aizistral.enigmaticlegacy.registries.EnigmaticEnchantments;
 import com.chromanyan.chromaticconstruct.tools.CCPredicate;
 import com.chromanyan.chromaticconstruct.tools.CCVolatileFlags;
+import com.chromanyan.chromaticconstruct.tools.modules.armor.FragileProtectionModule;
 import com.chromanyan.chromaticconstruct.tools.modules.armor.PanicModule;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -13,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
+import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.EnchantmentModule;
@@ -22,8 +24,8 @@ import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 
 public class CCModifierProvider extends AbstractModifierProvider implements IConditionBuilder {
 
-    public CCModifierProvider(DataGenerator generator) {
-        super(generator);
+    public CCModifierProvider(PackOutput output) {
+        super(output);
     }
 
     @Override
@@ -34,6 +36,8 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
         buildModifier(CCModifierIds.panic)
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(PanicModule.INSTANCE);
+        buildModifier(CCModifierIds.fragileProtection)
+                .addModule(new FragileProtectionModule(LevelingValue.eachLevel(2.5f)));
 
         // compat: meaningful materials
         buildModifier(CCModifierIds.antiair).addModule(

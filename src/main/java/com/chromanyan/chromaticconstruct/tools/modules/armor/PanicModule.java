@@ -10,6 +10,7 @@ import net.minecraft.world.item.TooltipFlag;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
+import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
@@ -24,7 +25,6 @@ import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.tools.modules.armor.KineticModule;
 
-import slimeknights.mantle.data.registry.GenericLoaderRegistry.SingletonLoader;
 
 import java.util.List;
 

@@ -2,7 +2,7 @@ package com.chromanyan.chromaticconstruct.datagen.tconstruct;
 
 import com.chromanyan.chromaticconstruct.ChromaticConstruct;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.material.Fluid;
@@ -14,15 +14,15 @@ import slimeknights.tconstruct.library.recipe.FluidValues;
 
 public class CCFluidEffectProvider extends AbstractFluidEffectProvider {
 
-    public CCFluidEffectProvider(DataGenerator generator) {
-        super(generator, ChromaticConstruct.MODID);
+    public CCFluidEffectProvider(PackOutput out) {
+        super(out, ChromaticConstruct.MODID);
     }
 
     @Override
     protected void addFluids() {
-        metalborn(CCFluids.moltenCosmite.getForgeTag(), 2f).addEffect(TimeAction.SET, FluidMobEffect.builder().effect(MobEffects.LEVITATION, 20*3));
-        metalborn(CCFluids.moltenEtherium.getForgeTag(), 4f).addEffect(TimeAction.SET, FluidMobEffect.builder().effect(MobEffects.DAMAGE_RESISTANCE, 20*3));
-        burningFluidWithAmount(CCFluids.moltenChroma.getForgeTag(), FluidValues.GEM_SHARD, 2f).addEffect(TimeAction.SET, FluidMobEffect.builder().effect(MobEffects.LEVITATION, 20));
+        metalborn(CCFluids.moltenCosmite.getTag(), 2f).addEffect(TimeAction.SET, FluidMobEffect.builder().effect(MobEffects.LEVITATION, 20*3));
+        metalborn(CCFluids.moltenEtherium.getTag(), 4f).addEffect(TimeAction.SET, FluidMobEffect.builder().effect(MobEffects.DAMAGE_RESISTANCE, 20*3));
+        burningFluidWithAmount(CCFluids.moltenChroma.getTag(), FluidValues.GEM_SHARD, 2f).addEffect(TimeAction.SET, FluidMobEffect.builder().effect(MobEffects.LEVITATION, 20));
     }
 
     /** Builder for an effect based metal */

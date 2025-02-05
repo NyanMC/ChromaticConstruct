@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "forge:tools/swords"
+      "tag": "minecraft:swords"
     },
     {
       "item": "enigmaticlegacy:evil_essence"
     },
     {
-      "tag": "forge:tools/swords"
+      "tag": "minecraft:swords"
     }
   ],
   "level": 1,

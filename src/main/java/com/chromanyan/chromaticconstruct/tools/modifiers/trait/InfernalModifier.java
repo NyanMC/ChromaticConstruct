@@ -71,8 +71,8 @@ public class InfernalModifier extends Modifier implements BreakSpeedModifierHook
     @Override
     public void onBreakSpeed(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, PlayerEvent.@NotNull BreakSpeed event, @NotNull Direction sideHit, boolean isEffective, float miningSpeedModifier) {
         if (isEffective) {
-            float bonusScale = 0;
-            if (event.getEntity().getLevel().isClientSide()) {
+            float bonusScale;
+            if (event.getEntity().getCommandSenderWorld().isClientSide()) {
                 bonusScale = clientsideBonusScale(event.getEntity());
             } else {
                 bonusScale = ConductingModifier.bonusScale(event.getEntity());

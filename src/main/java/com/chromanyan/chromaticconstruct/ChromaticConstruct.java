@@ -12,10 +12,12 @@ import com.chromanyan.chromaticconstruct.init.CCModifiers;
 import com.chromanyan.chromaticconstruct.network.CCPacketHandler;
 import com.chromanyan.chromaticconstruct.network.client.PacketRemainingFireTicks;
 import com.chromanyan.chromaticconstruct.tools.CCPredicate;
+import com.chromanyan.chromaticconstruct.tools.modules.armor.FragileProtectionModule;
 import com.chromanyan.chromaticconstruct.tools.modules.armor.PanicModule;
-import com.mojang.logging.LogUtils;
-import net.minecraft.core.Registry;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -28,7 +30,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegisterEvent;
-import org.slf4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.client.data.material.GeneratorPartTextureJsonGenerator;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
@@ -37,7 +39,9 @@ import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.library.utils.Util;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
+import org.apache.logging.log4j.Logger;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -47,8 +51,9 @@ public class ChromaticConstruct {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "chromatic_construct";
     // Directly reference a slf4j logger
-    public static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
 
+    @SuppressWarnings("removal") // if it doesn't concern tinkers it doesn't concern me
     public ChromaticConstruct() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -76,32 +81,35 @@ public class ChromaticConstruct {
     @SubscribeEvent
     public void gatherData(final GatherDataEvent event) {
         DataGenerator gen = event.getGenerator();
+        PackOutput out = gen.getPackOutput();
         ExistingFileHelper efh = event.getExistingFileHelper();
+        CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
 
-        AbstractMaterialDataProvider materials = new CCMaterialDataProvider(gen);
+        AbstractMaterialDataProvider materials = new CCMaterialDataProvider(out);
         gen.addProvider(event.includeServer(), materials);
-        gen.addProvider(event.includeServer(), new CCMaterialTraitsDataProvider(gen, materials));
-        gen.addProvider(event.includeServer(), new CCMaterialStatsDataProvider(gen, materials));
-        gen.addProvider(event.includeServer(), new CCMaterialRecipeProvider(gen));
+        gen.addProvider(event.includeServer(), new CCMaterialTraitsDataProvider(out, materials));
+        gen.addProvider(event.includeServer(), new CCMaterialStatsDataProvider(out, materials));
+        gen.addProvider(event.includeServer(), new CCMaterialRecipeProvider(out));
 
-        gen.addProvider(event.includeServer(), new CCRecipeProvider(gen));
-        gen.addProvider(event.includeServer(), new CCFluidEffectProvider(gen));
-        gen.addProvider(event.includeServer(), new CCEnchantmentTagProvider(gen, efh));
+        gen.addProvider(event.includeServer(), new CCRecipeProvider(out));
+        gen.addProvider(event.includeServer(), new CCFluidEffectProvider(out));
+        gen.addProvider(event.includeServer(), new CCEnchantmentTagProvider(out, provider, efh));
 
         CCMaterialSpriteProvider materialSprites = new CCMaterialSpriteProvider();
         TinkerPartSpriteProvider partSprites = new TinkerPartSpriteProvider();
-        gen.addProvider(event.includeClient(), new CCMaterialRenderInfoProvider(gen, materialSprites, efh));
-        gen.addProvider(event.includeClient(), new GeneratorPartTextureJsonGenerator(gen, ChromaticConstruct.MODID, partSprites));
-        gen.addProvider(event.includeClient(), new MaterialPartTextureGenerator(gen, efh, partSprites, materialSprites));
+        gen.addProvider(event.includeClient(), new CCMaterialRenderInfoProvider(out, materialSprites, efh));
+        gen.addProvider(event.includeClient(), new GeneratorPartTextureJsonGenerator(out, ChromaticConstruct.MODID, partSprites));
+        gen.addProvider(event.includeClient(), new MaterialPartTextureGenerator(out, efh, partSprites, materialSprites));
     }
 
     @SubscribeEvent
     public void registerEvent(RegisterEvent event) {
-        if (event.getRegistryKey() == Registry.RECIPE_SERIALIZER_REGISTRY) {
+        if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
             LivingEntityPredicate.LOADER.register(getResource("monster"), CCPredicate.MONSTER.getLoader());
             LivingEntityPredicate.LOADER.register(getResource("below_40"), CCPredicate.BELOW_40.getLoader());
 
             ModifierModule.LOADER.register(getResource("panic"), PanicModule.LOADER);
+            ModifierModule.LOADER.register(getResource("fragile_protection"), FragileProtectionModule.LOADER);
         }
     }
 
@@ -117,6 +125,7 @@ public class ChromaticConstruct {
         return TinkerDataCapability.TinkerDataKey.of(getResource(name));
     }
 
+    @SuppressWarnings("unused")
     public static <T> TinkerDataCapability.ComputableDataKey<T> createKey(String name, Supplier<T> constructor) {
         return TinkerDataCapability.ComputableDataKey.of(getResource(name), constructor);
     }

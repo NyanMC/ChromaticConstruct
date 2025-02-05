@@ -1,7 +1,7 @@
 {
   "chromatic_construct:antigravity": "chromatic_construct:gui/modifiers/antigravity",
   "chromatic_construct:nemesis": ["chromatic_construct:gui/modifiers/nemesis", "tconstruct:gui/modifiers/book"],
-  "chromatic_construct:sorrow": ["minecraft:mob_effect/unluck", "tconstruct:gui/modifiers/book"],
+  "chromatic_construct:sorrow": ["chromatic_construct:gui/modifiers/unluck", "tconstruct:gui/modifiers/book"],
   "chromatic_construct:snowball": ["minecraft:item/snowball", "tconstruct:gui/modifiers/book"],
   "chromatic_construct:riding": ["minecraft:item/saddle", "tconstruct:gui/modifiers/book"],
   "chromatic_construct:fragile_protection": ["chromatic_construct:item/glass_reinforcement", "tconstruct:gui/modifiers/book"],

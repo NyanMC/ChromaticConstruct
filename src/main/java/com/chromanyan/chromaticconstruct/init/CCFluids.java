@@ -5,15 +5,18 @@ import com.chromanyan.chromaticconstruct.datagen.CCFluidTagProvider;
 import com.chromanyan.chromaticconstruct.datagen.CCFluidTextureProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.core.dispenser.DispenseItemBehavior;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.DispensibleContainerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -27,6 +30,8 @@ import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.tconstruct.fluids.data.FluidBlockstateModelProvider;
 import slimeknights.tconstruct.fluids.data.FluidBucketModelProvider;
 
+import java.util.concurrent.CompletableFuture;
+
 import static slimeknights.tconstruct.fluids.block.BurningLiquidBlock.createBurning;
 
 @SuppressWarnings("deprecation")
@@ -34,10 +39,10 @@ public class CCFluids {
 
     public static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(ChromaticConstruct.MODID);
 
-    public static final FlowingFluidObject<ForgeFlowingFluid> moltenCosmite = FLUIDS.register("molten_cosmite").type(hot("molten_cosmite").temperature(800).lightLevel(8)).block(createBurning(8, 10, 5f)).bucket().flowing();
-    public static final FlowingFluidObject<ForgeFlowingFluid> moltenInfernium = FLUIDS.register("molten_infernium").type(hot("molten_infernium").temperature(1300).lightLevel(15)).block(createBurning(15, 15, 3f)).bucket().flowing();
-    public static final FlowingFluidObject<ForgeFlowingFluid> moltenEtherium = FLUIDS.register("molten_etherium").type(hot("molten_etherium").temperature(1800).lightLevel(15)).block(createBurning(15, 15, 6f)).bucket().flowing();
-    public static final FlowingFluidObject<ForgeFlowingFluid> moltenChroma = FLUIDS.register("molten_chroma").type(hot("molten_chroma").temperature(1150).lightLevel(15)).block(createBurning(15, 10, 2f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenCosmite = FLUIDS.register("molten_cosmite").type(hot("molten_cosmite").temperature(800).lightLevel(8)).block(createBurning(MapColor.COLOR_PURPLE, 8, 10, 5f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenInfernium = FLUIDS.register("molten_infernium").type(hot("molten_infernium").temperature(1300).lightLevel(15)).block(createBurning(MapColor.COLOR_ORANGE, 15, 15, 3f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenEtherium = FLUIDS.register("molten_etherium").type(hot("molten_etherium").temperature(1800).lightLevel(15)).block(createBurning(MapColor.COLOR_LIGHT_BLUE, 15, 15, 6f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenChroma = FLUIDS.register("molten_chroma").type(hot("molten_chroma").temperature(1150).lightLevel(15)).block(createBurning(MapColor.COLOR_MAGENTA, 15, 10, 2f)).bucket().flowing();
 
     private static FluidType.Properties hot(String name) {
         return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000)
@@ -53,13 +58,15 @@ public class CCFluids {
     @SubscribeEvent
     void gatherData(final GatherDataEvent event) {
         DataGenerator datagenerator = event.getGenerator();
+        PackOutput out = datagenerator.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         boolean client = event.includeClient();
 
-        datagenerator.addProvider(event.includeServer(), new CCFluidTagProvider(datagenerator, event.getExistingFileHelper()));
+        datagenerator.addProvider(event.includeServer(), new CCFluidTagProvider(out, lookupProvider, event.getExistingFileHelper()));
 
-        datagenerator.addProvider(client, new CCFluidTextureProvider(datagenerator));
-        datagenerator.addProvider(client, new FluidBucketModelProvider(datagenerator, ChromaticConstruct.MODID));
-        datagenerator.addProvider(client, new FluidBlockstateModelProvider(datagenerator, ChromaticConstruct.MODID));
+        datagenerator.addProvider(client, new CCFluidTextureProvider(out));
+        datagenerator.addProvider(client, new FluidBucketModelProvider(out, ChromaticConstruct.MODID));
+        datagenerator.addProvider(client, new FluidBlockstateModelProvider(out, ChromaticConstruct.MODID));
     }
 
     @SubscribeEvent

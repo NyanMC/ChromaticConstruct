@@ -2,8 +2,9 @@ package com.chromanyan.chromaticconstruct.datagen;
 
 import com.chromanyan.chromaticconstruct.ChromaticConstruct;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierIds;
-import net.minecraft.core.Registry;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -15,15 +16,16 @@ import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 
-@SuppressWarnings("deprecation")
+import java.util.concurrent.CompletableFuture;
+
 public class CCEnchantmentTagProvider extends TagsProvider<Enchantment> {
 
-    public CCEnchantmentTagProvider(DataGenerator p_126546_, @Nullable ExistingFileHelper existingFileHelper) {
-        super(p_126546_, Registry.ENCHANTMENT, ChromaticConstruct.MODID, existingFileHelper);
+    public CCEnchantmentTagProvider(PackOutput out, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(out, Registries.ENCHANTMENT, lookupProvider, ChromaticConstruct.MODID, existingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.@NotNull Provider provider) {
         modifierTag(CCModifierIds.nemesis, "enigmaticlegacy:nemesis");
         modifierTag(CCModifierIds.sorrow, "enigmaticlegacy:sorrow");
         modifierTag(TinkerModifiers.crystalshot.getId(), "enigmaticlegacy:ceaseless");
@@ -32,7 +34,7 @@ public class CCEnchantmentTagProvider extends TagsProvider<Enchantment> {
     }
 
     private void modifierTag(ModifierId modifier, String... ids) {
-        TagsProvider.TagAppender<Enchantment> appender = tag(TagKey.create(Registry.ENCHANTMENT_REGISTRY, ChromaticConstruct.getResource("modifier_like/" + modifier.getPath())));
+        TagsProvider.TagAppender<Enchantment> appender = tag(TagKey.create(Registries.ENCHANTMENT, ChromaticConstruct.getResource("modifier_like/" + modifier.getPath())));
         for (String id : ids) {
             appender.addOptional(new ResourceLocation(id));
         }

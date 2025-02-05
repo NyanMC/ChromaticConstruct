@@ -1,6 +1,6 @@
 package com.chromanyan.chromaticconstruct.datagen.tconstruct.material;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
@@ -10,8 +10,8 @@ import static net.minecraft.world.item.Tiers.*;
 
 public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvider {
 
-    public CCMaterialStatsDataProvider(DataGenerator gen, AbstractMaterialDataProvider materials) {
-        super(gen, materials);
+    public CCMaterialStatsDataProvider(PackOutput out, AbstractMaterialDataProvider materials) {
+        super(out, materials);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
     }
 
     private void addArmor() {
-        addMaterialStats(CCMaterialIds.hamhide, StatlessMaterialStats.MAILLE, StatlessMaterialStats.REPAIR_KIT);
+        addMaterialStats(CCMaterialIds.hamhide, StatlessMaterialStats.MAILLE);
 
         addMaterialStats(CCMaterialIds.cosmite, StatlessMaterialStats.MAILLE);
         addArmorShieldStats(CCMaterialIds.etherium, PlatingMaterialStats.builder().durabilityFactor(40).armor(2, 5, 7, 2).toughness(2), StatlessMaterialStats.MAILLE);

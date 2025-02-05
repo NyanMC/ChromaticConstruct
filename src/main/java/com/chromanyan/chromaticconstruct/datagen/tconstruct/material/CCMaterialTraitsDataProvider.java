@@ -2,15 +2,15 @@ package com.chromanyan.chromaticconstruct.datagen.tconstruct.material;
 
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierIds;
 import com.chromanyan.chromaticconstruct.init.CCModifiers;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 
 public class CCMaterialTraitsDataProvider extends AbstractMaterialTraitDataProvider {
-    public CCMaterialTraitsDataProvider(DataGenerator gen, AbstractMaterialDataProvider materials) {
-        super(gen, materials);
+    public CCMaterialTraitsDataProvider(PackOutput out, AbstractMaterialDataProvider materials) {
+        super(out, materials);
     }
 
     @Override
