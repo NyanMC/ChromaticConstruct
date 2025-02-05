@@ -114,5 +114,6 @@
   "material.chromatic_construct.chroma": "Chromatic",
   "material.chromatic_construct.chroma.flavor": "What a pretty material. Pretty WEAK! The trait's decent, though.",
   "material.chromatic_construct.chroma.encyclopedia": "Increases mining speed by 5% per level, multiplied by the number of unique materials the tool has",
-  "material.chromatic_construct.chroma.ranged": "Increases draw speed by 0.05 per level, multiplied by the number of unique materials the tool has"
+  "material.chromatic_construct.chroma.ranged": "Increases draw speed by 0.05 per level, multiplied by the number of unique materials the tool has",
+  "modifier.tconstruct.embellishment.chromatic_construct:chroma": "Chromatic"
 }
