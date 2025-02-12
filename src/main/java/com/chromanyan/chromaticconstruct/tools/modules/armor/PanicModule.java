@@ -65,6 +65,6 @@ public enum PanicModule implements ModifierModule, OnAttackedModifierHook, Toolt
 
     @Override
     public void addTooltip(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, @Nullable Player player, @NotNull List<Component> tooltip, @NotNull TooltipKey tooltipKey, @NotNull TooltipFlag tooltipFlag) {
-        TooltipModifierHook.addPercentBoost(modifier.getModifier(), MOVEMENT_SPEED, modifier.getLevel() * 0.15, tooltip);
+        TooltipModifierHook.addPercentBoost(modifier.getModifier(), MOVEMENT_SPEED, modifier.getLevel() * 0.10, tooltip);
     }
 }

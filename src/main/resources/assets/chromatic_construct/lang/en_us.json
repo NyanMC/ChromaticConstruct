@@ -100,7 +100,7 @@
 
   "material.chromatic_construct.hamhide": "Hamhide",
   "material.chromatic_construct.hamhide.flavor": "This material empowers you with the same abilities of the animals you had to sacrifice to make it! Make it count.",
-  "material.chromatic_construct.hamhide.armor": "Increases movement speed by 15% per level after being attacked",
+  "material.chromatic_construct.hamhide.armor": "Increases movement speed by 10% per level after being attacked",
 
   "material.chromatic_construct.cosmite": "Cosmite",
   "material.chromatic_construct.cosmite.flavor": "What goes up must come down, except for this apparently",
