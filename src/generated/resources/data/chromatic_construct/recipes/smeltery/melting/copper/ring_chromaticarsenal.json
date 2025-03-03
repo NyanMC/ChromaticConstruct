@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "chromaticarsenal"
+    }
+  ],
+  "ingredient": {
+    "item": "chromaticarsenal:copper_ring"
+  },
+  "result": {
+    "amount": 360,
+    "fluid": "tconstruct:molten_copper"
+  },
+  "temperature": 500,
+  "time": 100
+}

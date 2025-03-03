@@ -1,17 +1,20 @@
 {
-  "type": "tconstruct:casting_basin",
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
   "conditions": [
     {
       "type": "forge:mod_loaded",
       "modid": "meaningfulmaterials"
     }
   ],
-  "cooling_time": 199,
+  "cooling_time": 22,
   "fluid": {
-    "amount": 810,
+    "amount": 10,
     "tag": "chromatic_construct:molten_infernium"
   },
   "result": {
-    "tag": "forge:storage_blocks/infernium"
+    "tag": "forge:nuggets/infernium"
   }
 }

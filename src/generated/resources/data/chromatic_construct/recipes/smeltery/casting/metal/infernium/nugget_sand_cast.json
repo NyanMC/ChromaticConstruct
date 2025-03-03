@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:casting_table",
   "cast": {
-    "tag": "tconstruct:casts/single_use/ingot"
+    "tag": "tconstruct:casts/single_use/nugget"
   },
   "cast_consumed": true,
   "conditions": [
@@ -10,12 +10,12 @@
       "modid": "meaningfulmaterials"
     }
   ],
-  "cooling_time": 66,
+  "cooling_time": 22,
   "fluid": {
-    "amount": 90,
+    "amount": 10,
     "tag": "chromatic_construct:molten_infernium"
   },
   "result": {
-    "tag": "forge:ingots/infernium"
+    "tag": "forge:nuggets/infernium"
   }
 }

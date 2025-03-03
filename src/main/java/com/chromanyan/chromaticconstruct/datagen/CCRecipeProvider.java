@@ -3,24 +3,28 @@ package com.chromanyan.chromaticconstruct.datagen;
 import com.aizistral.enigmaticlegacy.registries.EnigmaticBlocks;
 import com.aizistral.enigmaticlegacy.registries.EnigmaticItems;
 import com.chromanyan.chromaticarsenal.init.ModItems;
+import com.chromanyan.chromaticconstruct.ChromaticConstruct;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
 import com.chromanyan.chromaticconstruct.init.CCItems;
 import com.chromanyan.chromaticconstruct.tools.CCFluidValues;
 import com.chromanyan.meaningfulmaterials.init.MMItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
+import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
+import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
-import slimeknights.tconstruct.smeltery.data.Byproduct;
 import slimeknights.tconstruct.tables.TinkerTables;
 
 import java.util.function.Consumer;
@@ -35,6 +39,7 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         this.addMeltingRecipes(consumer);
         this.addCastingRecipes(consumer);
+        this.addSmelteryRecipes(consumer);
     }
 
     @Override
@@ -42,12 +47,32 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
         return "Chromatic Construct Recipes";
     }
 
+    private void addSmelteryRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+        Consumer<FinishedRecipe> mmConsumer = withCondition(consumer, new ModLoadedCondition("meaningfulmaterials"));
+
+        // maybe consider giving some of these byproducts again? infernium could byproduct lava
+
+        molten(mmConsumer, CCFluids.moltenCosmite)
+                .ore()
+                .largeGem()
+                .optional();
+
+        metal(mmConsumer, CCFluids.moltenInfernium)
+                .ore()
+                .metal()
+                .dust()
+                .optional();
+
+        Consumer<FinishedRecipe> caConsumer = withCondition(consumer, new ModLoadedCondition("chromaticarsenal"));
+
+        SmelteryRecipeBuilder.fluid(caConsumer, ChromaticConstruct.getResource("chroma"), CCFluids.moltenChroma.get())
+                .largeGem()
+                .optional();
+    }
+
     private void addMeltingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         String folder = "smeltery/melting/";
         Consumer<FinishedRecipe> mmConsumer = withCondition(consumer, new ModLoadedCondition("meaningfulmaterials"));
-
-        gemMelting(mmConsumer, CCFluids.moltenCosmite.get(), "cosmite", true, 9, folder, true, Byproduct.AMETHYST);
-        metalMelting(mmConsumer, CCFluids.moltenInfernium.get(), "infernium", true, true, folder, true, Byproduct.IRON);
 
         MeltingRecipeBuilder.melting(Ingredient.of(MMItems.COSMITE_BOOTS.get()), CCFluids.moltenCosmite.get(), FluidValues.GEM * 4)
                 .setDamagable(FluidValues.GEM)
@@ -80,15 +105,25 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
                 .addByproduct(new FluidStack(TinkerFluids.moltenGold.get(), FluidValues.INGOT * 4))
                 .addByproduct(new FluidStack(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL))
                 .save(elConsumer, location(folder + "enigmticlegacy/super_magnet_ring"));
-        MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.ENDER_RING), TinkerFluids.moltenGold.get(), (FluidValues.INGOT * 2) + (FluidValues.NUGGET * 2))
+        MeltingRecipeBuilder.melting(Ingredient.of(EnigmaticItems.ENDER_RING), TinkerFluids.moltenObsidian.get(), FluidValues.GLASS_BLOCK * 8)
                 .addByproduct(new FluidStack(TinkerFluids.moltenIron.get(), CCFluidValues.ENIGMATIC_RING))
                 .addByproduct(new FluidStack(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL * 2))
-                .addByproduct(new FluidStack(TinkerFluids.moltenObsidian.get(), FluidValues.GLASS_BLOCK * 8))
+                .addByproduct(new FluidStack(TinkerFluids.moltenGold.get(), (FluidValues.INGOT * 2) + (FluidValues.NUGGET * 2)))
                 .save(elConsumer, location(folder + "enigmticlegacy/ender_ring"));
 
         Consumer<FinishedRecipe> caConsumer = withCondition(consumer, new ModLoadedCondition("chromaticarsenal"));
 
-        gemMelting(caConsumer, CCFluids.moltenChroma.get(), "chroma", false, 9, folder, true);
+        MeltingRecipeBuilder.melting(Ingredient.of(ModItems.COPPER_RING.get()), TinkerFluids.moltenCopper.get(), FluidValues.INGOT * 4)
+                .save(caConsumer, location(folder + "copper/ring_chromaticarsenal"));
+        MeltingRecipeBuilder.melting(Ingredient.of(ModItems.AMETHYST_RING.get()), TinkerFluids.moltenAmethyst.get(), FluidValues.GEM * 4)
+                .addByproduct(new FluidStack(TinkerFluids.moltenCopper.get(), FluidValues.INGOT * 4))
+                .save(caConsumer, location(folder + "amethyst/ring_chromaticarsenal"));
+        MeltingRecipeBuilder.melting(Ingredient.of(ModItems.OMNI_RING.get()), TinkerFluids.moltenAmethyst.get(), FluidValues.GEM * 4)
+                .addByproduct(new FluidStack(TinkerFluids.moltenIron.get(), CCFluidValues.ENIGMATIC_RING))
+                .addByproduct(new FluidStack(TinkerFluids.moltenGold.get(), CCFluidValues.ENIGMATIC_RING))
+                .addByproduct(new FluidStack(TinkerFluids.moltenCopper.get(), FluidValues.INGOT * 4))
+                .addByproduct(new FluidStack(CCFluids.moltenChroma.get(), FluidValues.GEM))
+                .save(withCondition(caConsumer, new ModLoadedCondition("enigmaticlegacy")), location(folder + "chromaticarsenal/omni_ring"));
 
         MeltingRecipeBuilder.melting(Ingredient.of(CCItems.glassReinforcement), TinkerFluids.moltenGlass.get(), FluidValues.GLASS_BLOCK)
                 .save(consumer, location(folder + "glass/reinforcement"));
@@ -96,7 +131,6 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
 
     private void addCastingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         String folder = "smeltery/casting/";
-        String metalFolder = folder + "metal/";
 
         ItemCastingRecipeBuilder.tableRecipe(CCItems.glassReinforcement)
                 .setFluidAndTime(TinkerFluids.moltenGlass, FluidValues.GLASS_BLOCK)
@@ -109,13 +143,6 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
                 .save(consumer, prefix(CCItems.hamhide, folder));
 
         Consumer<FinishedRecipe> mmConsumer = withCondition(consumer, new ModLoadedCondition("meaningfulmaterials"));
-
-        this.gemCasting(mmConsumer, CCFluids.moltenCosmite, MMItems.COSMITE.get(), folder + "cosmite/gem");
-        this.metalCasting(mmConsumer, CCFluids.moltenInfernium, MMItems.INFERNIUM_BLOCK_ITEM.get(), MMItems.INFERNIUM_INGOT.get(), null, metalFolder, "infernium");
-
-        ItemCastingRecipeBuilder.basinRecipe(MMItems.COSMITE_BLOCK_ITEM.get())
-                .setFluidAndTime(CCFluids.moltenCosmite, FluidValues.LARGE_GEM_BLOCK)
-                .save(mmConsumer, location(folder + "cosmite/block"));
 
         ItemCastingRecipeBuilder.tableRecipe(MMItems.COSMIC_ARROW.get())
                 .setCast(Items.ARROW, true)
@@ -138,15 +165,18 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
 
         Consumer<FinishedRecipe> caConsumer = withCondition(consumer, new ModLoadedCondition("chromaticarsenal"));
 
-        this.gemCasting(caConsumer, CCFluids.moltenChroma, ModItems.CHROMA_SHARD.get(), folder + "chroma/gem");
-
-        ItemCastingRecipeBuilder.basinRecipe(ModItems.CHROMA_BLOCK_ITEM.get())
-                .setFluidAndTime(CCFluids.moltenChroma, FluidValues.LARGE_GEM_BLOCK)
-                .save(caConsumer, location(folder + "chroma/block"));
-
         ItemCastingRecipeBuilder.tableRecipe(ModItems.MAGIC_GARLIC_BREAD.get())
                 .setFluidAndTime(CCFluids.moltenChroma, FluidValues.GEM_SHARD)
                 .setCast(Items.BREAD, true)
                 .save(caConsumer, location(folder + "chroma/bread"));
+    }
+
+    public SmelteryRecipeBuilder metal(Consumer<FinishedRecipe> consumer, String name, TagKey<Fluid> fluid) {
+        return SmelteryRecipeBuilder.fluid(consumer, location(name), fluid).castingFolder("smeltery/casting/metal").meltingFolder("smeltery/melting/metal");
+    }
+
+    /** Creates a smeltery builder for a metal fluid */
+    public SmelteryRecipeBuilder metal(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid) {
+        return molten(consumer, fluid).castingFolder("smeltery/casting/metal").meltingFolder("smeltery/melting/metal");
     }
 }

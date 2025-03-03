@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:casting_table",
   "cast": {
-    "tag": "tconstruct:casts/single_use/ingot"
+    "tag": "tconstruct:casts/single_use/gem"
   },
   "cast_consumed": true,
   "conditions": [
@@ -10,12 +10,12 @@
       "modid": "meaningfulmaterials"
     }
   ],
-  "cooling_time": 66,
+  "cooling_time": 53,
   "fluid": {
-    "amount": 90,
-    "tag": "chromatic_construct:molten_infernium"
+    "amount": 100,
+    "tag": "chromatic_construct:molten_cosmite"
   },
   "result": {
-    "tag": "forge:ingots/infernium"
+    "tag": "forge:gems/cosmite"
   }
 }

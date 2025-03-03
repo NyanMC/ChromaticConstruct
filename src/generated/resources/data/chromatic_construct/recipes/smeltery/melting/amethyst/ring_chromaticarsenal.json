@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 360,
+      "fluid": "tconstruct:molten_copper"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "chromaticarsenal"
+    }
+  ],
+  "ingredient": {
+    "item": "chromaticarsenal:amethyst_ring"
+  },
+  "result": {
+    "amount": 400,
+    "fluid": "tconstruct:molten_amethyst"
+  },
+  "temperature": 950,
+  "time": 137
+}

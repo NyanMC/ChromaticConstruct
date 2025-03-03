@@ -6,12 +6,12 @@
       "modid": "meaningfulmaterials"
     }
   ],
-  "cooling_time": 199,
+  "cooling_time": 158,
   "fluid": {
-    "amount": 810,
-    "tag": "chromatic_construct:molten_infernium"
+    "amount": 900,
+    "tag": "chromatic_construct:molten_cosmite"
   },
   "result": {
-    "tag": "forge:storage_blocks/infernium"
+    "tag": "forge:storage_blocks/cosmite"
   }
 }

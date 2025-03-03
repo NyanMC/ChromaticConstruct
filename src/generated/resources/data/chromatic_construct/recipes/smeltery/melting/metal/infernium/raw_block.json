@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:ore_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "meaningfulmaterials"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/raw_infernium"
+  },
+  "rate": "metal",
+  "result": {
+    "amount": 810,
+    "fluid": "chromatic_construct:molten_infernium"
+  },
+  "temperature": 1000,
+  "time": 398
+}

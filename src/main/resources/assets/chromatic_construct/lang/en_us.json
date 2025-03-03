@@ -78,11 +78,13 @@
 
   "block.chromatic_construct.molten_infernium_fluid": "Molten Infernium",
   "fluid.chromatic_construct.molten_infernium": "Molten Infernium",
+  "fluid.chromatic_construct.molten_infernium.fluid_effect": "Molten Infernium can be useful for mining, if you can beat the heat.",
   "fluid.chromatic_construct.flowing_molten_infernium": "Flowing Molten Infernium",
   "item.chromatic_construct.molten_infernium_bucket": "Molten Infernium Bucket",
 
   "block.chromatic_construct.molten_etherium_fluid": "Molten Etherium",
   "fluid.chromatic_construct.molten_etherium": "Molten Etherium",
+  "fluid.chromatic_construct.molten_etherium.fluid_effect": "Molten Etherium can be powerful in combat, but it is also expensive.",
   "fluid.chromatic_construct.flowing_molten_etherium": "Flowing Molten Etherium",
   "item.chromatic_construct.molten_etherium_bucket": "Molten Etherium Bucket",
 

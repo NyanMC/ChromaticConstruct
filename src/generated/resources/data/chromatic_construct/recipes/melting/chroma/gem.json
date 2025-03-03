@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "chromaticarsenal"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gems/chroma"
+  },
+  "result": {
+    "amount": 100,
+    "fluid": "chromatic_construct:molten_chroma"
+  },
+  "temperature": 850,
+  "time": 62
+}

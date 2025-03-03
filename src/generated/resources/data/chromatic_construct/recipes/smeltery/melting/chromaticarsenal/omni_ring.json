@@ -1,0 +1,40 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 400,
+      "fluid": "tconstruct:molten_iron"
+    },
+    {
+      "amount": 400,
+      "fluid": "tconstruct:molten_gold"
+    },
+    {
+      "amount": 360,
+      "fluid": "tconstruct:molten_copper"
+    },
+    {
+      "amount": 100,
+      "fluid": "chromatic_construct:molten_chroma"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enigmaticlegacy"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "chromaticarsenal"
+    }
+  ],
+  "ingredient": {
+    "item": "chromaticarsenal:omni_ring"
+  },
+  "result": {
+    "amount": 400,
+    "fluid": "tconstruct:molten_amethyst"
+  },
+  "temperature": 950,
+  "time": 137
+}

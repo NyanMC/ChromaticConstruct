@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/gem"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "chromaticarsenal"
+    }
+  ],
+  "cooling_time": 65,
+  "fluid": {
+    "amount": 100,
+    "fluid": "chromatic_construct:molten_chroma"
+  },
+  "result": {
+    "tag": "forge:gems/chroma"
+  }
+}
