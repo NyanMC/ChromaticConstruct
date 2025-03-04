@@ -8,7 +8,7 @@
   ],
   "fluid": {
     "amount": 100,
-    "tag": "chromatic_construct:molten_chroma"
+    "tag": "forge:molten_chroma"
   },
   "output": "chromatic_construct:chroma",
   "temperature": 850

@@ -9,7 +9,7 @@
   "cooling_time": 199,
   "fluid": {
     "amount": 810,
-    "tag": "chromatic_construct:molten_infernium"
+    "tag": "forge:molten_infernium"
   },
   "result": {
     "tag": "forge:storage_blocks/infernium"

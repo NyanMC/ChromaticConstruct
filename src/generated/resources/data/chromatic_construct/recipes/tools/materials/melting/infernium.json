@@ -9,7 +9,7 @@
   "input": "chromatic_construct:infernium",
   "result": {
     "amount": 90,
-    "fluid": "chromatic_construct:molten_infernium"
+    "tag": "forge:molten_infernium"
   },
   "temperature": 1000
 }

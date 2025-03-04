@@ -9,7 +9,7 @@
   "cooling_time": 158,
   "fluid": {
     "amount": 900,
-    "tag": "chromatic_construct:molten_cosmite"
+    "tag": "forge:molten_cosmite"
   },
   "result": {
     "tag": "forge:storage_blocks/cosmite"

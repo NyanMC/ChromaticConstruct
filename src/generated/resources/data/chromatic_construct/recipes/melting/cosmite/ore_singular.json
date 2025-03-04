@@ -23,7 +23,7 @@
   "rate": "gem",
   "result": {
     "amount": 100,
-    "fluid": "chromatic_construct:molten_cosmite"
+    "tag": "forge:molten_cosmite"
   },
   "temperature": 500,
   "time": 125

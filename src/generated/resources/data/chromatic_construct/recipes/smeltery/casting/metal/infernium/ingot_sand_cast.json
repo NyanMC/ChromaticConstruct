@@ -13,7 +13,7 @@
   "cooling_time": 66,
   "fluid": {
     "amount": 90,
-    "tag": "chromatic_construct:molten_infernium"
+    "tag": "forge:molten_infernium"
   },
   "result": {
     "tag": "forge:ingots/infernium"

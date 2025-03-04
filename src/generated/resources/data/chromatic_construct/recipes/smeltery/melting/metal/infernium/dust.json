@@ -15,7 +15,7 @@
   },
   "result": {
     "amount": 90,
-    "fluid": "chromatic_construct:molten_infernium"
+    "tag": "forge:molten_infernium"
   },
   "temperature": 1000,
   "time": 50

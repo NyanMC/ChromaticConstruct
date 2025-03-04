@@ -53,6 +53,6 @@
   ],
   "fluid": {
     "amount": 10,
-    "tag": "chromatic_construct:molten_etherium"
+    "tag": "forge:molten_etherium"
   }
 }

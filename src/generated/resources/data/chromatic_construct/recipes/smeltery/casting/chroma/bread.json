@@ -13,7 +13,7 @@
   "cooling_time": 33,
   "fluid": {
     "amount": 25,
-    "tag": "chromatic_construct:molten_chroma"
+    "tag": "forge:molten_chroma"
   },
   "result": "chromaticarsenal:magic_garlic_bread"
 }

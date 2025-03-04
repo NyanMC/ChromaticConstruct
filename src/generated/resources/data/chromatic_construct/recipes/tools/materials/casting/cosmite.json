@@ -8,7 +8,7 @@
   ],
   "fluid": {
     "amount": 100,
-    "tag": "chromatic_construct:molten_cosmite"
+    "tag": "forge:molten_cosmite"
   },
   "output": "chromatic_construct:cosmite",
   "temperature": 500
