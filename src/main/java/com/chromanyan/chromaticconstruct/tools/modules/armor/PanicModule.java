@@ -23,8 +23,6 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.tools.modules.armor.KineticModule;
-
 
 import java.util.List;
 
@@ -33,7 +31,7 @@ public enum PanicModule implements ModifierModule, OnAttackedModifierHook, Toolt
 
     private static final Component MOVEMENT_SPEED = ChromaticConstruct.makeTranslation("modifier", "panic.movement_speed");
 
-    private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<KineticModule>defaultHooks(ModifierHooks.ON_ATTACKED, ModifierHooks.TOOLTIP);
+    private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<PanicModule>defaultHooks(ModifierHooks.ON_ATTACKED, ModifierHooks.TOOLTIP);
     private static final TinkerDataCapability.TinkerDataKey<SlotInChargeModule.SlotInCharge> SLOT_IN_CHARGE = ChromaticConstruct.createKey("panic");
     public static final SingletonLoader<PanicModule> LOADER = new SingletonLoader<>(INSTANCE);
 

@@ -178,6 +178,10 @@ dependencies {
 
     implementation fg.deobf("curse.maven:chromatic-arsenal-656420:5721193")
 
+    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
+    implementation fg.deobf("curse.maven:cloth-config-348521:5729105")
+    implementation fg.deobf("curse.maven:powah-rearchitected-633483:6052195")
+
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"

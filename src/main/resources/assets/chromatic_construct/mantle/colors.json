@@ -14,7 +14,8 @@
     "emergency_protection": "#96FFFF",
     "nemesis": "#FF0000",
     "sorrow": "#000099",
-    "variety": "#FF00FF"
+    "variety": "#FF00FF",
+    "shocking": "#BA9566"
   },
 
   "material.chromatic_construct": {
@@ -22,6 +23,7 @@
     "cosmite": "#513593",
     "infernium": "#F9AB80",
     "etherium": "#96FFFF",
-    "chroma": "#FF00FF"
+    "chroma": "#FF00FF",
+    "energized_steel": "#BA9566"
   }
 }

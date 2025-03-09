@@ -16,9 +16,13 @@ public class CCMaterialDataProvider extends AbstractMaterialDataProvider {
         addMaterial(CCMaterialIds.hamhide, 2, ORDER_BINDING, true);
 
         addCompatMaterial(CCMaterialIds.cosmite, 2, ORDER_WEAPON, false, "gems/cosmite");
-        addCompatMaterial(CCMaterialIds.infernium, 3, ORDER_WEAPON, false, "ingots/infernium"); // infernium is tier 3 since that's the tier cobalt ended up in
+        addCompatMaterial(CCMaterialIds.infernium, 3, ORDER_WEAPON, false, "ingots/infernium"); // tier 3 since it's early nether
+
         addMaterial(CCMaterialIds.etherium, 4, ORDER_WEAPON, false, false, new ModLoadedCondition("enigmaticlegacy"));
+
         addCompatMaterial(CCMaterialIds.chroma, 2, ORDER_HARVEST, false, "gems/chroma");
+
+        addCompatMaterial(CCMaterialIds.energizedSteel, 3, ORDER_HARVEST, false, "ingots/energized_steel"); // tier 3 because it's an "alloy"
     }
 
     @Override

@@ -22,6 +22,7 @@ public class CCFluidTextureProvider extends AbstractFluidTextureProvider {
         moltenFolder(CCFluids.moltenInfernium, "compat_ore");
         moltenFolder(CCFluids.moltenEtherium, "compat_ore");
         moltenFolder(CCFluids.moltenChroma, "compat_ore");
+        moltenFolder(CCFluids.moltenEnergizedSteel, "compat_ore");
     }
 
     private FluidTexture.Builder named(FluidObject<?> fluid, String name) {

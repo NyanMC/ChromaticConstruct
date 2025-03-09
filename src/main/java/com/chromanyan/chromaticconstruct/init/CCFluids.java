@@ -43,6 +43,7 @@ public class CCFluids {
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenInfernium = FLUIDS.register("molten_infernium").commonTag().type(hot("molten_infernium").temperature(1300).lightLevel(15)).block(createBurning(MapColor.COLOR_ORANGE, 15, 15, 3f)).bucket().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenEtherium = FLUIDS.register("molten_etherium").commonTag().type(hot("molten_etherium").temperature(1800).lightLevel(15)).block(createBurning(MapColor.COLOR_LIGHT_BLUE, 15, 15, 6f)).bucket().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenChroma = FLUIDS.register("molten_chroma").commonTag().type(hot("molten_chroma").temperature(1150).lightLevel(15)).block(createBurning(MapColor.COLOR_MAGENTA, 15, 10, 2f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenEnergizedSteel = FLUIDS.register("molten_energized_steel").commonTag().type(hot("molten_energized_steel").temperature(1200).lightLevel(9)).block(createBurning(MapColor.COLOR_BROWN, 9, 10, 3f)).bucket().flowing();
 
     private static FluidType.Properties hot(String name) {
         return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000)
@@ -93,6 +94,7 @@ public class CCFluids {
             DispenserBlock.registerBehavior(moltenInfernium, dispenseBucket);
             DispenserBlock.registerBehavior(moltenEtherium, dispenseBucket);
             DispenserBlock.registerBehavior(moltenChroma, dispenseBucket);
+            DispenserBlock.registerBehavior(moltenEnergizedSteel, dispenseBucket);
         });
     }
 }

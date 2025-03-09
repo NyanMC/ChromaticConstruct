@@ -1,8 +1,11 @@
 package com.chromanyan.chromaticconstruct;
 
+import com.chromanyan.chromaticconstruct.compat.PowahCompatHelper;
+import com.chromanyan.chromaticconstruct.datagen.CCBlockTagProvider;
 import com.chromanyan.chromaticconstruct.datagen.CCEnchantmentTagProvider;
-import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCFluidEffectProvider;
+import com.chromanyan.chromaticconstruct.datagen.CCItemTagProvider;
 import com.chromanyan.chromaticconstruct.datagen.CCRecipeProvider;
+import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCFluidEffectProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.material.*;
 import com.chromanyan.chromaticconstruct.event.CCEvents;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
@@ -14,6 +17,7 @@ import com.chromanyan.chromaticconstruct.network.client.PacketRemainingFireTicks
 import com.chromanyan.chromaticconstruct.tools.CCPredicate;
 import com.chromanyan.chromaticconstruct.tools.modules.armor.FragileProtectionModule;
 import com.chromanyan.chromaticconstruct.tools.modules.armor.PanicModule;
+import com.chromanyan.chromaticconstruct.tools.modules.armor.ShockingModule;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
@@ -26,11 +30,13 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.client.data.material.GeneratorPartTextureJsonGenerator;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
@@ -39,7 +45,6 @@ import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.library.utils.Util;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
-import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
@@ -68,6 +73,10 @@ public class ChromaticConstruct {
         modEventBus.register(new CCFluids());
         modEventBus.register(new CCModifiers());
 
+        if (ModList.get().isLoaded("powah")) {
+            PowahCompatHelper.initialize();
+        }
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -95,6 +104,10 @@ public class ChromaticConstruct {
         gen.addProvider(event.includeServer(), new CCFluidEffectProvider(out));
         gen.addProvider(event.includeServer(), new CCEnchantmentTagProvider(out, provider, efh));
 
+        CCBlockTagProvider blockTagProvider = new CCBlockTagProvider(out, provider, efh);
+        gen.addProvider(event.includeServer(), blockTagProvider);
+        gen.addProvider(event.includeServer(), new CCItemTagProvider(out, provider, blockTagProvider.contentsGetter(), efh));
+
         CCMaterialSpriteProvider materialSprites = new CCMaterialSpriteProvider();
         TinkerPartSpriteProvider partSprites = new TinkerPartSpriteProvider();
         gen.addProvider(event.includeClient(), new CCMaterialRenderInfoProvider(out, materialSprites, efh));
@@ -109,6 +122,7 @@ public class ChromaticConstruct {
             LivingEntityPredicate.LOADER.register(getResource("below_40"), CCPredicate.BELOW_40.getLoader());
 
             ModifierModule.LOADER.register(getResource("panic"), PanicModule.LOADER);
+            ModifierModule.LOADER.register(getResource("shocking"), ShockingModule.LOADER);
             ModifierModule.LOADER.register(getResource("fragile_protection"), FragileProtectionModule.LOADER);
         }
     }

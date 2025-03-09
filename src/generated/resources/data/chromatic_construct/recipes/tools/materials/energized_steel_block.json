@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "powah"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/energized_steel"
+  },
+  "material": "chromatic_construct:energized_steel",
+  "needed": 1,
+  "value": 9
+}

@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "powah"
+    }
+  ],
+  "cooling_time": 63,
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_energized_steel"
+  },
+  "result": {
+    "tag": "forge:ingots/energized_steel"
+  }
+}

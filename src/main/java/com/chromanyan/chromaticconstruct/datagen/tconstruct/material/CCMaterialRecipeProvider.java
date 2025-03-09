@@ -6,6 +6,7 @@ import com.chromanyan.chromaticarsenal.init.ModTags;
 import com.chromanyan.chromaticconstruct.datagen.CCBaseRecipeProvider;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
 import com.chromanyan.chromaticconstruct.init.CCItems;
+import com.chromanyan.chromaticconstruct.init.CompatTags;
 import com.chromanyan.meaningfulmaterials.init.MMTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -42,6 +43,7 @@ public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IM
         Consumer<FinishedRecipe> mmConsumer = withCondition(consumer, new ModLoadedCondition("meaningfulmaterials"));
         Consumer<FinishedRecipe> elConsumer = withCondition(consumer, new ModLoadedCondition("enigmaticlegacy"));
         Consumer<FinishedRecipe> caConsumer = withCondition(consumer, new ModLoadedCondition("chromaticarsenal"));
+        Consumer<FinishedRecipe> pwConsumer = withCondition(consumer, new ModLoadedCondition("powah"));
 
         materialRecipe(consumer, CCMaterialIds.hamhide, Ingredient.of(CCItems.hamhide), 1, 1, folder + "hamhide");
 
@@ -57,6 +59,9 @@ public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IM
 
         materialRecipe(caConsumer, CCMaterialIds.chroma, Ingredient.of(ModTags.Items.GEMS_CHROMA), 1, 1, folder + "chroma_shard");
         materialRecipe(caConsumer, CCMaterialIds.chroma, Ingredient.of(ModTags.Items.STORAGE_BLOCKS_CHROMA), 9, 1, folder + "chroma_block");
+
+        materialRecipe(pwConsumer, CCMaterialIds.energizedSteel, Ingredient.of(CompatTags.Items.INGOTS_ENERGIZED_STEEL), 1, 1, folder + "energized_steel");
+        materialRecipe(pwConsumer, CCMaterialIds.energizedSteel, Ingredient.of(CompatTags.Items.STORAGE_BLOCKS_ENERGIZED_STEEL), 9, 1, folder + "energized_steel_block");
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {
@@ -65,6 +70,7 @@ public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IM
         Consumer<FinishedRecipe> mmConsumer = withCondition(consumer, new ModLoadedCondition("meaningfulmaterials"));
         Consumer<FinishedRecipe> elConsumer = withCondition(consumer, new ModLoadedCondition("enigmaticlegacy"));
         Consumer<FinishedRecipe> caConsumer = withCondition(consumer, new ModLoadedCondition("chromaticarsenal"));
+        Consumer<FinishedRecipe> pwConsumer = withCondition(consumer, new ModLoadedCondition("powah"));
 
         materialComposite(consumer, MaterialIds.leather, CCMaterialIds.hamhide, TinkerFluids.meatSoup, FluidValues.BOWL, folder);
 
@@ -72,5 +78,6 @@ public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IM
         materialMeltingCasting(mmConsumer, CCMaterialIds.infernium, CCFluids.moltenInfernium, FluidValues.INGOT, folder);
         materialMeltingCasting(elConsumer, CCMaterialIds.etherium, CCFluids.moltenEtherium, FluidValues.INGOT, folder);
         materialMeltingCasting(caConsumer, CCMaterialIds.chroma, CCFluids.moltenChroma, FluidValues.GEM, folder);
+        materialMeltingCasting(pwConsumer, CCMaterialIds.energizedSteel, CCFluids.moltenEnergizedSteel, FluidValues.INGOT, folder);
     }
 }

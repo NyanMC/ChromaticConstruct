@@ -39,12 +39,21 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
                 new HeadMaterialStats(150, 6.5f, IRON, 1.5f),
                 HandleMaterialStats.multipliers().durability(0.8f).miningSpeed(1.1f).attackDamage(0.95f).build(),
                 StatlessMaterialStats.BINDING);
+
+        addMaterialStats(CCMaterialIds.energizedSteel,
+                new HeadMaterialStats(300, 7f, IRON, 1.5f),
+                HandleMaterialStats.multipliers().durability(0.9f).miningSpeed(1.05f).build(),
+                StatlessMaterialStats.BINDING);
     }
 
     private void addRanged() {
         addMaterialStats(CCMaterialIds.chroma,
                 new LimbMaterialStats(150, 0.1f, 0f, -0.1f),
                 new GripMaterialStats(-0.2f, 0.05f, 1.25f));
+
+        addMaterialStats(CCMaterialIds.energizedSteel,
+                new LimbMaterialStats(300, 0.1f, -0.05f, -0.05f),
+                new GripMaterialStats(-0.1f, 0.05f, 1.5f));
     }
 
     private void addArmor() {

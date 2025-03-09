@@ -19,6 +19,9 @@ public class CCModifierIds {
     public static final ModifierId nemesis = id("nemesis");
     public static final ModifierId sorrow = id("sorrow");
 
+    // compat: other
+    public static final ModifierId shocking = id("shocking");
+
     private static ModifierId id(String name) {
         return new ModifierId(ChromaticConstruct.MODID, name);
     }

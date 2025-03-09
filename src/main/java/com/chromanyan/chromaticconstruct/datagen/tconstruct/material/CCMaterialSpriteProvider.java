@@ -48,5 +48,10 @@ public class CCMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
                         .addTexture(140, baseTexture,      0xFFE1E1E1).addTexture(178, baseTexture)
                         .addTexture(216, highlightTexture, 0xFFE1E1E1).addTexture(255, highlightTexture)
                         .build());
+
+        buildMaterial(CCMaterialIds.energizedSteel)
+                .meleeHarvest().ranged()
+                .fallbacks("metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF584834).addARGB(102, 0xFF76644A).addARGB(140, 0xFF857155).addARGB(178, 0xFFBA9566).addARGB(216, 0xFFD0B28C).addARGB(255, 0xFFD6D39E).build());
     }
 }

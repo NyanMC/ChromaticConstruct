@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "powah"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/energized_steel"
+  },
+  "result": {
+    "amount": 10,
+    "tag": "forge:molten_energized_steel"
+  },
+  "temperature": 900,
+  "time": 21
+}

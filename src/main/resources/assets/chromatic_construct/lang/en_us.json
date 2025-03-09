@@ -71,6 +71,10 @@
   "modifier.chromatic_construct.variety.mining_speed": "Variety Mining Speed",
   "modifier.chromatic_construct.variety.draw_speed": "Variety Draw Speed",
 
+  "modifier.chromatic_construct.shocking": "Shocking",
+  "modifier.chromatic_construct.shocking.flavor": "Electrifying!",
+  "modifier.chromatic_construct.shocking.description": "Increases mining or draw speed, but breaking blocks has a chance to electrocute you",
+
   "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
   "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
   "fluid.chromatic_construct.flowing_molten_cosmite": "Flowing Molten Cosmite",
@@ -92,6 +96,11 @@
   "fluid.chromatic_construct.molten_chroma": "Chromatic Essence",
   "fluid.chromatic_construct.flowing_chroma_etherium": "Flowing Chromatic Essence",
   "item.chromatic_construct.molten_chroma_bucket": "Molten Chromatic Essence",
+
+  "block.chromatic_construct.molten_energized_steel_fluid": "Molten Energized Steel",
+  "fluid.chromatic_construct.molten_energized_steel": "Molten Energized Steel",
+  "fluid.chromatic_construct.flowing_molten_energized_steel": "Flowing Molten Energized Steel",
+  "item.chromatic_construct.molten_energized_steel_bucket": "Molten Energized Steel Bucket",
 
   "item.chromatic_construct.glass_reinforcement": "Glass Reinforcement",
   "item.chromatic_construct.hamhide": "Hamhide",
@@ -122,5 +131,10 @@
   "material.chromatic_construct.chroma.flavor": "What a pretty material. Pretty WEAK! The trait's decent, though.",
   "material.chromatic_construct.chroma.encyclopedia": "Increases mining speed by 5% per level, multiplied by the number of unique materials the tool has",
   "material.chromatic_construct.chroma.ranged": "Increases draw speed by 0.05 per level, multiplied by the number of unique materials the tool has",
-  "modifier.tconstruct.embellishment.chromatic_construct:chroma": "Chromatic"
+  "modifier.tconstruct.embellishment.chromatic_construct:chroma": "Chromatic",
+
+  "material.chromatic_construct.energized_steel": "Energized Steel",
+  "material.chromatic_construct.energized_steel.flavor": "If you thought that this material would let you charge your tool, too bad! You can only charge yourself, and not in a good way.",
+  "material.chromatic_construct.energized_steel.encyclopedia": "Increases mining speed by 10% per level, but every block broken has a 1 in (30 / level) chance to deal 2 damage",
+  "material.chromatic_construct.energized_steel.ranged": "Increases draw speed by 7% per level, but every shot fired has a 1 in (15 / level) chance to deal 2 damage"
 }

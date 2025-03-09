@@ -68,6 +68,12 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
         SmelteryRecipeBuilder.fluid(caConsumer, ChromaticConstruct.getResource("chroma"), CCFluids.moltenChroma.get())
                 .largeGem()
                 .optional();
+
+        Consumer<FinishedRecipe> pwConsumer = withCondition(consumer, new ModLoadedCondition("powah"));
+
+        metal(pwConsumer, CCFluids.moltenEnergizedSteel)
+                .metal()
+                .optional();
     }
 
     private void addMeltingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {

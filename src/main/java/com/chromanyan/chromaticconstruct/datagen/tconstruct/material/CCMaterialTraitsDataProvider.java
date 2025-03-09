@@ -26,6 +26,7 @@ public class CCMaterialTraitsDataProvider extends AbstractMaterialTraitDataProvi
         addTraits(CCMaterialIds.etherium, MaterialRegistry.ARMOR, CCModifierIds.emergencyProtection);
 
         addDefaultTraits(CCMaterialIds.chroma, CCModifiers.variety);
+        addDefaultTraits(CCMaterialIds.energizedSteel, CCModifierIds.shocking);
     }
 
     @Override

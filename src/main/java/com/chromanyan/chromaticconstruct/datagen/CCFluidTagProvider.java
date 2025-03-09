@@ -29,9 +29,10 @@ public class CCFluidTagProvider extends FluidTagsProvider {
         fluidTag(CCFluids.moltenInfernium);
         fluidTag(CCFluids.moltenEtherium);
         fluidTag(CCFluids.moltenChroma);
+        fluidTag(CCFluids.moltenEnergizedSteel);
 
         this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(CCFluids.moltenCosmite.getLocalTag(), CCFluids.moltenChroma.getLocalTag());
-        this.tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(CCFluids.moltenInfernium.getLocalTag(), CCFluids.moltenEtherium.getLocalTag());
+        this.tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(CCFluids.moltenInfernium.getLocalTag(), CCFluids.moltenEtherium.getLocalTag(), CCFluids.moltenEnergizedSteel.getLocalTag());
     }
 
     /** Adds tags for an unplacable fluid */
