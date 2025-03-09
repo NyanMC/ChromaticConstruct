@@ -79,3 +79,9 @@ description='''${mod_description}'''
    versionRange="[2.30.1,)"
    ordering="AFTER"
    side="BOTH"
+[[dependencies."${mod_id}"]]
+   modId="powah"
+   mandatory=false
+   versionRange="*"
+   ordering="AFTER"
+   side="BOTH"
