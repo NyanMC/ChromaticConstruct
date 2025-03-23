@@ -4,10 +4,6 @@
     {
       "type": "mantle:tag_filled",
       "tag": "forge:dusts/infernium"
-    },
-    {
-      "type": "forge:mod_loaded",
-      "modid": "meaningfulmaterials"
     }
   ],
   "ingredient": {

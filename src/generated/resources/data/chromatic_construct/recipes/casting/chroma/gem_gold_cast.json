@@ -5,8 +5,8 @@
   },
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "chromaticarsenal"
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/chroma"
     }
   ],
   "cooling_time": 65,

@@ -2,8 +2,8 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "chromaticarsenal"
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/chroma"
     }
   ],
   "ingredient": {

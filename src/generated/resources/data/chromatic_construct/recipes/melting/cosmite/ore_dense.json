@@ -7,10 +7,6 @@
         "forge:ores/cosmite",
         "forge:ore_rates/dense"
       ]
-    },
-    {
-      "type": "forge:mod_loaded",
-      "modid": "meaningfulmaterials"
     }
   ],
   "ingredient": {

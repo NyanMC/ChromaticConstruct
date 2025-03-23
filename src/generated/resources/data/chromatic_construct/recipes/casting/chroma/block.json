@@ -2,8 +2,8 @@
   "type": "tconstruct:casting_basin",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "chromaticarsenal"
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/chroma"
     }
   ],
   "cooling_time": 195,

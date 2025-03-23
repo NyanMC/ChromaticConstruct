@@ -48,32 +48,26 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
     }
 
     private void addSmelteryRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
-        Consumer<FinishedRecipe> mmConsumer = withCondition(consumer, new ModLoadedCondition("meaningfulmaterials"));
-
         // maybe consider giving some of these byproducts again? infernium could byproduct lava
 
-        molten(mmConsumer, CCFluids.moltenCosmite)
+        molten(consumer, CCFluids.moltenCosmite)
+                .optional()
                 .ore()
-                .largeGem()
-                .optional();
+                .largeGem();
 
-        metal(mmConsumer, CCFluids.moltenInfernium)
+        metal(consumer, CCFluids.moltenInfernium)
+                .optional()
                 .ore()
                 .metal()
-                .dust()
-                .optional();
+                .dust();
 
-        Consumer<FinishedRecipe> caConsumer = withCondition(consumer, new ModLoadedCondition("chromaticarsenal"));
+        SmelteryRecipeBuilder.fluid(consumer, ChromaticConstruct.getResource("chroma"), CCFluids.moltenChroma.get())
+                .optional()
+                .largeGem();
 
-        SmelteryRecipeBuilder.fluid(caConsumer, ChromaticConstruct.getResource("chroma"), CCFluids.moltenChroma.get())
-                .largeGem()
-                .optional();
-
-        Consumer<FinishedRecipe> pwConsumer = withCondition(consumer, new ModLoadedCondition("powah"));
-
-        metal(pwConsumer, CCFluids.moltenEnergizedSteel)
-                .metal()
-                .optional();
+        metal(consumer, CCFluids.moltenEnergizedSteel)
+                .optional()
+                .metal();
     }
 
     private void addMeltingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {

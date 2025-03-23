@@ -5,8 +5,8 @@
   },
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "meaningfulmaterials"
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/infernium"
     }
   ],
   "cooling_time": 66,

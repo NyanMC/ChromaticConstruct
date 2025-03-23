@@ -5,10 +5,6 @@
       "type": "mantle:tag_combination_filled",
       "ignore": "tconstruct:non_singular_ore_rates",
       "match": "forge:ores/cosmite"
-    },
-    {
-      "type": "forge:mod_loaded",
-      "modid": "meaningfulmaterials"
     }
   ],
   "ingredient": {

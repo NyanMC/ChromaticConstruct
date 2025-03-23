@@ -7,10 +7,6 @@
         "forge:ores/infernium",
         "forge:ore_rates/sparse"
       ]
-    },
-    {
-      "type": "forge:mod_loaded",
-      "modid": "meaningfulmaterials"
     }
   ],
   "ingredient": {
