@@ -28,6 +28,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
@@ -44,6 +45,7 @@ import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvide
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.library.utils.Util;
+import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 import java.util.concurrent.CompletableFuture;
@@ -69,6 +71,7 @@ public class ChromaticConstruct {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::gatherData);
         modEventBus.addListener(this::registerEvent);
+        modEventBus.addListener(this::addCreative);
 
         modEventBus.register(new CCFluids());
         modEventBus.register(new CCModifiers());
@@ -85,6 +88,13 @@ public class ChromaticConstruct {
         MinecraftForge.EVENT_BUS.register(new CCEvents());
 
         CCPacketHandler.INSTANCE.registerMessage(0, PacketRemainingFireTicks.class, PacketRemainingFireTicks::encode, PacketRemainingFireTicks::decode, PacketRemainingFireTicks::handle);
+    }
+
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTab().equals(TinkerCommons.tabGeneral.get())) {
+            event.accept(CCItems.glassReinforcement.get());
+            event.accept(CCItems.hamhide.get());
+        }
     }
 
     @SubscribeEvent

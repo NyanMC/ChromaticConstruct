@@ -9,7 +9,6 @@ import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
 import slimeknights.tconstruct.shared.TinkerCommons;
 
-@Mod.EventBusSubscriber
 public class CCItems {
 
     public static final ItemDeferredRegisterExtension ITEMS = new ItemDeferredRegisterExtension(ChromaticConstruct.MODID);
@@ -18,12 +17,4 @@ public class CCItems {
 
     public static final ItemObject<Item> glassReinforcement = ITEMS.register("glass_reinforcement", GENERAL_PROPS);
     public static final ItemObject<Item> hamhide = ITEMS.register("hamhide", GENERAL_PROPS);
-
-    @SubscribeEvent
-    public static void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTab() == TinkerCommons.tabGeneral.get()) {
-            event.accept(glassReinforcement.get());
-            event.accept(hamhide.get());
-        }
-    }
 }
