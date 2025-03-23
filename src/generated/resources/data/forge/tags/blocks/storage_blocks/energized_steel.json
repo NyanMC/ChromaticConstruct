@@ -1,5 +1,8 @@
 {
   "values": [
-    "powah:energized_steel_block"
+    {
+      "id": "powah:energized_steel_block",
+      "required": false
+    }
   ]
 }

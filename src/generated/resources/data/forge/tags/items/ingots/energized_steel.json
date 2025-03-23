@@ -1,5 +1,8 @@
 {
   "values": [
-    "powah:steel_energized"
+    {
+      "id": "powah:steel_energized",
+      "required": false
+    }
   ]
 }
