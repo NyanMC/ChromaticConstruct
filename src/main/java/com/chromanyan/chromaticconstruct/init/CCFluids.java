@@ -1,7 +1,7 @@
 package com.chromanyan.chromaticconstruct.init;
 
 import com.chromanyan.chromaticconstruct.ChromaticConstruct;
-import com.chromanyan.chromaticconstruct.datagen.CCFluidTagProvider;
+import com.chromanyan.chromaticconstruct.datagen.tags.CCFluidTagProvider;
 import com.chromanyan.chromaticconstruct.datagen.CCFluidTextureProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;

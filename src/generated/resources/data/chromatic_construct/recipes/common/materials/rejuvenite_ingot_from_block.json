@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "chromatic_construct:rejuvenite_ingot",
+  "ingredients": [
+    {
+      "item": "chromatic_construct:rejuvenite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "chromatic_construct:rejuvenite_ingot"
+  }
+}

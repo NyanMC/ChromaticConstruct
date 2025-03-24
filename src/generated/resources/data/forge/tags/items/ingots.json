@@ -1,0 +1,9 @@
+{
+  "values": [
+    "chromatic_construct:rejuvenite_ingot",
+    {
+      "id": "powah:steel_energized",
+      "required": false
+    }
+  ]
+}

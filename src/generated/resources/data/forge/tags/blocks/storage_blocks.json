@@ -1,0 +1,9 @@
+{
+  "values": [
+    "chromatic_construct:rejuvenite_block",
+    {
+      "id": "powah:energized_steel_block",
+      "required": false
+    }
+  ]
+}

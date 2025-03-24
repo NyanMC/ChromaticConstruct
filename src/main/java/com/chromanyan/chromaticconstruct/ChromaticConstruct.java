@@ -1,17 +1,15 @@
 package com.chromanyan.chromaticconstruct;
 
 import com.chromanyan.chromaticconstruct.compat.PowahCompatHelper;
-import com.chromanyan.chromaticconstruct.datagen.CCBlockTagProvider;
-import com.chromanyan.chromaticconstruct.datagen.CCEnchantmentTagProvider;
-import com.chromanyan.chromaticconstruct.datagen.CCItemTagProvider;
-import com.chromanyan.chromaticconstruct.datagen.CCRecipeProvider;
+import com.chromanyan.chromaticconstruct.datagen.*;
+import com.chromanyan.chromaticconstruct.datagen.loot.CCLootTableProvider;
+import com.chromanyan.chromaticconstruct.datagen.tags.CCBlockTagProvider;
+import com.chromanyan.chromaticconstruct.datagen.tags.CCEnchantmentTagProvider;
+import com.chromanyan.chromaticconstruct.datagen.tags.CCItemTagProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCFluidEffectProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.material.*;
 import com.chromanyan.chromaticconstruct.event.CCEvents;
-import com.chromanyan.chromaticconstruct.init.CCFluids;
-import com.chromanyan.chromaticconstruct.init.CCItems;
-import com.chromanyan.chromaticconstruct.init.CCMobEffects;
-import com.chromanyan.chromaticconstruct.init.CCModifiers;
+import com.chromanyan.chromaticconstruct.init.*;
 import com.chromanyan.chromaticconstruct.network.CCPacketHandler;
 import com.chromanyan.chromaticconstruct.network.client.PacketRemainingFireTicks;
 import com.chromanyan.chromaticconstruct.tools.CCPredicate;
@@ -47,6 +45,7 @@ import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.library.utils.Util;
 import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
+import slimeknights.tconstruct.world.TinkerWorld;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
@@ -64,6 +63,8 @@ public class ChromaticConstruct {
     public ChromaticConstruct() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        CCMaterials.MATERIALS.register(modEventBus);
+        CCBlocks.BLOCKS.register(modEventBus);
         CCItems.ITEMS.register(modEventBus);
         CCMobEffects.MOB_EFFECTS.register(modEventBus);
         CCFluids.FLUIDS.register(modEventBus);
@@ -94,6 +95,14 @@ public class ChromaticConstruct {
         if (event.getTab().equals(TinkerCommons.tabGeneral.get())) {
             event.accept(CCItems.glassReinforcement.get());
             event.accept(CCItems.hamhide.get());
+            event.accept(CCMaterials.rejuvenite.getIngot());
+            event.accept(CCMaterials.rejuvenite.getNugget());
+            event.accept(CCMaterials.rejuvenite.get());
+        }
+        if (event.getTab().equals(TinkerWorld.tabWorld.get())) {
+            event.accept(CCBlocks.rejuveniteOre.get());
+            event.accept(CCItems.rawRejuvenite.get());
+            event.accept(CCBlocks.rawRejuveniteBlock.get());
         }
     }
 
@@ -118,11 +127,16 @@ public class ChromaticConstruct {
         gen.addProvider(event.includeServer(), blockTagProvider);
         gen.addProvider(event.includeServer(), new CCItemTagProvider(out, provider, blockTagProvider.contentsGetter(), efh));
 
+        gen.addProvider(event.includeServer(), new CCLootTableProvider(out));
+
         CCMaterialSpriteProvider materialSprites = new CCMaterialSpriteProvider();
         TinkerPartSpriteProvider partSprites = new TinkerPartSpriteProvider();
         gen.addProvider(event.includeClient(), new CCMaterialRenderInfoProvider(out, materialSprites, efh));
         gen.addProvider(event.includeClient(), new GeneratorPartTextureJsonGenerator(out, ChromaticConstruct.MODID, partSprites));
         gen.addProvider(event.includeClient(), new MaterialPartTextureGenerator(out, efh, partSprites, materialSprites));
+
+        gen.addProvider(event.includeClient(), new CCBlockStateProvider(out, efh));
+        gen.addProvider(event.includeClient(), new CCItemModelProvider(out, efh));
     }
 
     @SubscribeEvent

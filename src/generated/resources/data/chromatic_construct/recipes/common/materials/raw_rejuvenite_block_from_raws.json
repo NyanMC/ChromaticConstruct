@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "chromatic_construct:raw_rejuvenite_block",
+  "key": {
+    "#": {
+      "tag": "forge:raw_materials/rejuvenite"
+    },
+    "*": {
+      "item": "chromatic_construct:raw_rejuvenite"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "chromatic_construct:raw_rejuvenite_block"
+  },
+  "show_notification": true
+}

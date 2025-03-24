@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "chromatic_construct:raw_rejuvenite",
+  "ingredients": [
+    {
+      "item": "chromatic_construct:raw_rejuvenite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "chromatic_construct:raw_rejuvenite"
+  }
+}

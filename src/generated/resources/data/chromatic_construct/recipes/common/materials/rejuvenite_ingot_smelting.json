@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.5,
+  "ingredient": [
+    {
+      "item": "chromatic_construct:raw_rejuvenite"
+    },
+    {
+      "item": "chromatic_construct:raw_rejuvenite_block"
+    }
+  ],
+  "result": "chromatic_construct:rejuvenite_ingot"
+}

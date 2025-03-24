@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "chromatic_construct:rejuvenite_block",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/rejuvenite"
+    },
+    "*": {
+      "item": "chromatic_construct:rejuvenite_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "chromatic_construct:rejuvenite_block"
+  },
+  "show_notification": true
+}

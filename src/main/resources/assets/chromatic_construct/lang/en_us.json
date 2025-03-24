@@ -104,6 +104,12 @@
 
   "item.chromatic_construct.glass_reinforcement": "Glass Reinforcement",
   "item.chromatic_construct.hamhide": "Hamhide",
+  "item.chromatic_construct.raw_rejuvenite": "Raw Rejuvenite",
+  "item.chromatic_construct.rejuvenite_ingot": "Rejuvenite Ingot",
+  "item.chromatic_construct.rejuvenite_nugget": "Rejuvenite Nugget",
+  "block.chromatic_construct.rejuvenite_block": "Block of Rejuvenite",
+  "block.chromatic_construct.raw_rejuvenite_block": "Block of Raw Rejuvenite",
+  "block.chromatic_construct.rejuvenite_ore": "Rejuvenite Ore",
 
   "effect.chromatic_construct.fragile_cooldown": "Fragile Cooldown",
   "effect.chromatic_construct.panic": "Panic!",

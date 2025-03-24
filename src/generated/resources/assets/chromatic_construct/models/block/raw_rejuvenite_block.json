@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "chromatic_construct:block/raw_rejuvenite_block_end",
+    "side": "chromatic_construct:block/raw_rejuvenite_block_side"
+  }
+}

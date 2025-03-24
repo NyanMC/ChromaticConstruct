@@ -13,4 +13,6 @@ public class CCItems {
 
     public static final ItemObject<Item> glassReinforcement = ITEMS.register("glass_reinforcement", GENERAL_PROPS);
     public static final ItemObject<Item> hamhide = ITEMS.register("hamhide", GENERAL_PROPS);
+
+    public static final ItemObject<Item> rawRejuvenite = ITEMS.register("raw_rejuvenite", GENERAL_PROPS);
 }

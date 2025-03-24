@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "chromatic_construct:block/rejuvenite_block"
+  }
+}

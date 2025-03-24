@@ -4,13 +4,15 @@ import com.aizistral.enigmaticlegacy.registries.EnigmaticBlocks;
 import com.aizistral.enigmaticlegacy.registries.EnigmaticItems;
 import com.chromanyan.chromaticarsenal.init.ModItems;
 import com.chromanyan.chromaticconstruct.ChromaticConstruct;
-import com.chromanyan.chromaticconstruct.init.CCFluids;
-import com.chromanyan.chromaticconstruct.init.CCItems;
+import com.chromanyan.chromaticconstruct.init.*;
 import com.chromanyan.chromaticconstruct.tools.CCFluidValues;
 import com.chromanyan.meaningfulmaterials.init.MMItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.material.Fluid;
@@ -37,6 +39,7 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+        this.addCommonRecipes(consumer);
         this.addMeltingRecipes(consumer);
         this.addCastingRecipes(consumer);
         this.addSmelteryRecipes(consumer);
@@ -45,6 +48,21 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
     @Override
     public @NotNull String getName() {
         return "Chromatic Construct Recipes";
+    }
+
+    private void addCommonRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+        String folder = "common/materials/";
+
+        metalCrafting(consumer, CCMaterials.rejuvenite, folder);
+        packingRecipe(consumer, RecipeCategory.MISC, "raw_block", CCBlocks.rawRejuveniteBlock, "raw", CCItems.rawRejuvenite, CCTags.Items.RAW_MATERIALS_REJUVENITE, folder);
+
+        Item rejuveniteIngot = CCMaterials.rejuvenite.getIngot();
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(CCItems.rawRejuvenite, CCBlocks.rawRejuveniteBlock), RecipeCategory.MISC, rejuveniteIngot, 1.5f, 200)
+                .unlockedBy("has_item", has(CCItems.rawRejuvenite))
+                .save(consumer, wrap(id(rejuveniteIngot), folder, "_smelting"));
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(CCItems.rawRejuvenite, CCBlocks.rawRejuveniteBlock), RecipeCategory.MISC, rejuveniteIngot, 1.5f, 100)
+                .unlockedBy("has_item", has(CCItems.rawRejuvenite))
+                .save(consumer, wrap(id(rejuveniteIngot), folder, "_blasting"));
     }
 
     private void addSmelteryRecipes(@NotNull Consumer<FinishedRecipe> consumer) {

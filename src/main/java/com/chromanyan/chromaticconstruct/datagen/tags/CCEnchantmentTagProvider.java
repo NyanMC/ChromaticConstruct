@@ -1,4 +1,4 @@
-package com.chromanyan.chromaticconstruct.datagen;
+package com.chromanyan.chromaticconstruct.datagen.tags;
 
 import com.chromanyan.chromaticconstruct.ChromaticConstruct;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.CCModifierIds;
