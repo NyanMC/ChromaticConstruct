@@ -5,7 +5,7 @@ import com.chromanyan.chromaticconstruct.tools.CCPredicate;
 import com.chromanyan.chromaticconstruct.tools.CCVolatileFlags;
 import com.chromanyan.chromaticconstruct.tools.modules.armor.FragileProtectionModule;
 import com.chromanyan.chromaticconstruct.tools.modules.armor.PanicModule;
-import com.chromanyan.chromaticconstruct.tools.modules.armor.ShockingModule;
+import com.chromanyan.chromaticconstruct.tools.modules.ShockingModule;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.common.ForgeMod;

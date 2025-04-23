@@ -1,4 +1,4 @@
-package com.chromanyan.chromaticconstruct.tools.modules.armor;
+package com.chromanyan.chromaticconstruct.tools.modules;
 
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;

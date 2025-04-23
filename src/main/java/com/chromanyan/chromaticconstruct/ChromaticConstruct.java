@@ -15,7 +15,7 @@ import com.chromanyan.chromaticconstruct.network.client.PacketRemainingFireTicks
 import com.chromanyan.chromaticconstruct.tools.CCPredicate;
 import com.chromanyan.chromaticconstruct.tools.modules.armor.FragileProtectionModule;
 import com.chromanyan.chromaticconstruct.tools.modules.armor.PanicModule;
-import com.chromanyan.chromaticconstruct.tools.modules.armor.ShockingModule;
+import com.chromanyan.chromaticconstruct.tools.modules.ShockingModule;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
