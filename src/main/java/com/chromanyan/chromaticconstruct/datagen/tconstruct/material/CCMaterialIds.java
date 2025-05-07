@@ -5,6 +5,7 @@ import slimeknights.tconstruct.library.materials.definition.MaterialId;
 
 public class CCMaterialIds {
     public static final MaterialId hamhide = id("hamhide");
+    public static final MaterialId rejuvenite = id("rejuvenite");
 
     public static final MaterialId cosmite = id("cosmite");
     public static final MaterialId infernium = id("infernium");

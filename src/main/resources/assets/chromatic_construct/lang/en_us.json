@@ -43,6 +43,10 @@
   "modifier.chromatic_construct.panic.description": "Increases movement speed after being attacked",
   "modifier.chromatic_construct.panic.movement_speed": "Panic Movement Speed",
 
+  "modifier.chromatic_construct.harvest_shield": "Harvest Shield",
+  "modifier.chromatic_construct.harvest_shield.flavor": "Home-grown!",
+  "modifier.chromatic_construct.harvest_shield.description": "Harvested crops have a chance to protect the tool from future damage",
+
   "modifier.chromatic_construct.slayer": "Slayer",
   "modifier.chromatic_construct.slayer.flavor": "Defeat the evil!",
   "modifier.chromatic_construct.slayer.description": "Tool does bonus damage to monsters!",
@@ -74,6 +78,11 @@
   "modifier.chromatic_construct.shocking": "Shocking",
   "modifier.chromatic_construct.shocking.flavor": "Electrifying!",
   "modifier.chromatic_construct.shocking.description": "Increases mining or draw speed, but breaking blocks has a chance to electrocute you",
+
+  "block.chromatic_construct.molten_rejuvenite_fluid": "Molten Rejuvenite",
+  "fluid.chromatic_construct.molten_rejuvenite": "Molten Rejuvenite",
+  "fluid.chromatic_construct.flowing_molten_rejuvenite": "Flowing Molten Rejuvenite",
+  "item.chromatic_construct.molten_rejuvenite_bucket": "Molten Rejuvenite Bucket",
 
   "block.chromatic_construct.molten_cosmite_fluid": "Molten Cosmite",
   "fluid.chromatic_construct.molten_cosmite": "Molten Cosmite",
@@ -118,6 +127,10 @@
   "material.chromatic_construct.hamhide": "Hamhide",
   "material.chromatic_construct.hamhide.flavor": "This material empowers you with the same abilities of the animals you had to sacrifice to make it! Make it count.",
   "material.chromatic_construct.hamhide.armor": "Increases movement speed by 10% per level after being attacked",
+
+  "material.chromatic_construct.rejuvenite": "Rejuvenite",
+  "material.chromatic_construct.rejuvenite.flavor": "Home-grown crops are good for you. With this, they'll be good for your tool, too!",
+  "material.chromatic_construct.rejuvenite.encyclopedia": "Breaking fully grown crops has a 20% chance per level of granting +3 harvest shield",
 
   "material.chromatic_construct.cosmite": "Cosmite",
   "material.chromatic_construct.cosmite.flavor": "What goes up must come down, except for this apparently",

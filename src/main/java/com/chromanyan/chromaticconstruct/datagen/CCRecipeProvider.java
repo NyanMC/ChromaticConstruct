@@ -79,6 +79,11 @@ public class CCRecipeProvider extends CCBaseRecipeProvider implements ISmelteryR
                 .metal()
                 .dust();
 
+        metal(consumer, CCFluids.moltenRejuvenite)
+                .optional()
+                .ore()
+                .metal();
+
         SmelteryRecipeBuilder.fluid(consumer, ChromaticConstruct.getResource("chroma"), CCFluids.moltenChroma.get())
                 .optional()
                 .largeGem();

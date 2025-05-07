@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:ore_melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:raw_materials/rejuvenite"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:raw_materials/rejuvenite"
+  },
+  "rate": "metal",
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_rejuvenite"
+  },
+  "temperature": 600,
+  "time": 80
+}

@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/rejuvenite"
+    }
+  ],
+  "cooling_time": 53,
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_rejuvenite"
+  },
+  "result": {
+    "tag": "forge:ingots/rejuvenite"
+  }
+}

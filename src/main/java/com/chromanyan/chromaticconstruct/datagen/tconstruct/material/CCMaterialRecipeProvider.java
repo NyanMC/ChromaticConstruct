@@ -6,6 +6,7 @@ import com.chromanyan.chromaticarsenal.init.ModTags;
 import com.chromanyan.chromaticconstruct.datagen.CCBaseRecipeProvider;
 import com.chromanyan.chromaticconstruct.init.CCFluids;
 import com.chromanyan.chromaticconstruct.init.CCItems;
+import com.chromanyan.chromaticconstruct.init.CCTags;
 import com.chromanyan.chromaticconstruct.init.CompatTags;
 import com.chromanyan.meaningfulmaterials.init.MMTags;
 import net.minecraft.data.PackOutput;
@@ -47,6 +48,10 @@ public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IM
 
         materialRecipe(consumer, CCMaterialIds.hamhide, Ingredient.of(CCItems.hamhide), 1, 1, folder + "hamhide");
 
+        materialRecipe(consumer, CCMaterialIds.rejuvenite, Ingredient.of(CCTags.Items.NUGGETS_REJUVENITE), 1, 9, folder + "rejuvenite_nugget");
+        materialRecipe(consumer, CCMaterialIds.rejuvenite, Ingredient.of(CCTags.Items.INGOTS_REJUVENITE), 1, 1, folder + "rejuvenite_ingot");
+        materialRecipe(consumer, CCMaterialIds.rejuvenite, Ingredient.of(CCTags.Items.STORAGE_BLOCKS_REJUVENITE), 9, 1, folder + "rejuvenite_block");
+
         materialRecipe(mmConsumer, CCMaterialIds.cosmite, Ingredient.of(MMTags.Items.GEMS_COSMITE), 1, 1, folder + "cosmite");
         materialRecipe(mmConsumer, CCMaterialIds.cosmite, Ingredient.of(MMTags.Items.STORAGE_BLOCKS_COSMITE), 9, 1, folder + "cosmite_block");
 
@@ -73,6 +78,7 @@ public class CCMaterialRecipeProvider extends CCBaseRecipeProvider implements IM
         Consumer<FinishedRecipe> pwConsumer = withCondition(consumer, new ModLoadedCondition("powah"));
 
         materialComposite(consumer, MaterialIds.leather, CCMaterialIds.hamhide, TinkerFluids.meatSoup, FluidValues.BOWL, folder);
+        materialMeltingCasting(consumer, CCMaterialIds.rejuvenite, CCFluids.moltenRejuvenite, FluidValues.INGOT, folder);
 
         materialMeltingCasting(mmConsumer, CCMaterialIds.cosmite, CCFluids.moltenCosmite, FluidValues.GEM, folder);
         materialMeltingCasting(mmConsumer, CCMaterialIds.infernium, CCFluids.moltenInfernium, FluidValues.INGOT, folder);

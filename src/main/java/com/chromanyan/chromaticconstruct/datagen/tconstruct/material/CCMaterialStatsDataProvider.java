@@ -22,6 +22,11 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
     }
 
     private void addMeleeHarvest() {
+        addMaterialStats(CCMaterialIds.rejuvenite,
+                new HeadMaterialStats(325, 4.5f, IRON, 1.5f),
+                HandleMaterialStats.multipliers().durability(1.1f).miningSpeed(0.95f).build(),
+                StatlessMaterialStats.BINDING);
+
         addMaterialStats(CCMaterialIds.cosmite,
                 new HeadMaterialStats(200, 5f, IRON, 2.25f),
                 HandleMaterialStats.multipliers().durability(0.9f).attackSpeed(1.05f).attackDamage(1.05f).build(),

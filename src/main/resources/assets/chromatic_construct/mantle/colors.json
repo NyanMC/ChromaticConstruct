@@ -8,6 +8,7 @@
     "fragile_protection": "#CCCCFF",
     "encumberment": "#AAAAAA",
     "panic": "#FF7272",
+    "harvest_shield": "#DA4F4F",
     "heartstopper": "#AA3333",
     "slayer": "#96FFFF",
     "backstep": "#96FFFF",
@@ -20,6 +21,7 @@
 
   "material.chromatic_construct": {
     "hamhide": "#FF7272",
+    "rejuvenite": "#DA4F4F",
     "cosmite": "#513593",
     "infernium": "#F9AB80",
     "etherium": "#96FFFF",

@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/rejuvenite"
+    }
+  ],
+  "cooling_time": 18,
+  "fluid": {
+    "amount": 10,
+    "tag": "forge:molten_rejuvenite"
+  },
+  "result": {
+    "tag": "forge:nuggets/rejuvenite"
+  }
+}

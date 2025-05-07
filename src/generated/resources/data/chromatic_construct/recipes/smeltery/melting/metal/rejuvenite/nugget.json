@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/rejuvenite"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/rejuvenite"
+  },
+  "result": {
+    "amount": 10,
+    "tag": "forge:molten_rejuvenite"
+  },
+  "temperature": 600,
+  "time": 18
+}

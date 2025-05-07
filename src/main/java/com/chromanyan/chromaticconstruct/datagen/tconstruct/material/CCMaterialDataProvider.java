@@ -14,6 +14,7 @@ public class CCMaterialDataProvider extends AbstractMaterialDataProvider {
     @Override
     protected void addMaterials() {
         addMaterial(CCMaterialIds.hamhide, 2, ORDER_BINDING, true);
+        addMaterial(CCMaterialIds.rejuvenite, 2, ORDER_HARVEST, false);
 
         addCompatMaterial(CCMaterialIds.cosmite, 2, ORDER_WEAPON, false, "gems/cosmite");
         addCompatMaterial(CCMaterialIds.infernium, 3, ORDER_WEAPON, false, "ingots/infernium"); // tier 3 since it's early nether

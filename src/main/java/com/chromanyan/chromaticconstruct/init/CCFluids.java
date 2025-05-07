@@ -39,6 +39,8 @@ public class CCFluids {
 
     public static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(ChromaticConstruct.MODID);
 
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenRejuvenite = FLUIDS.register("molten_rejuvenite").commonTag().type(hot("molten_rejuvenite").temperature(900).lightLevel(7)).block(createBurning(MapColor.COLOR_RED, 7, 8, 2f)).bucket().flowing();
+
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenCosmite = FLUIDS.register("molten_cosmite").commonTag().type(hot("molten_cosmite").temperature(800).lightLevel(8)).block(createBurning(MapColor.COLOR_PURPLE, 8, 10, 5f)).bucket().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenInfernium = FLUIDS.register("molten_infernium").commonTag().type(hot("molten_infernium").temperature(1300).lightLevel(15)).block(createBurning(MapColor.COLOR_ORANGE, 15, 15, 3f)).bucket().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenEtherium = FLUIDS.register("molten_etherium").commonTag().type(hot("molten_etherium").temperature(1800).lightLevel(15)).block(createBurning(MapColor.COLOR_LIGHT_BLUE, 15, 15, 6f)).bucket().flowing();
@@ -90,6 +92,7 @@ public class CCFluids {
         };
 
         event.enqueueWork(() -> {
+            DispenserBlock.registerBehavior(moltenRejuvenite, dispenseBucket);
             DispenserBlock.registerBehavior(moltenCosmite, dispenseBucket);
             DispenserBlock.registerBehavior(moltenInfernium, dispenseBucket);
             DispenserBlock.registerBehavior(moltenEtherium, dispenseBucket);

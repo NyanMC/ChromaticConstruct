@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "chromatic_construct:rejuvenite",
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_rejuvenite"
+  },
+  "temperature": 600
+}
