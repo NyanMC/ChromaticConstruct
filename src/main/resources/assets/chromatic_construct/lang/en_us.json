@@ -47,6 +47,10 @@
   "modifier.chromatic_construct.harvest_shield.flavor": "Home-grown!",
   "modifier.chromatic_construct.harvest_shield.description": "Harvested crops have a chance to protect the tool from future damage",
 
+  "modifier.chromatic_construct.solar_protection": "Solar Protection",
+  "modifier.chromatic_construct.solar_protection.flavor": "Photosynthesis!",
+  "modifier.chromatic_construct.solar_protection.description": "Increases protection when standing under direct sunlight in clear weather",
+
   "modifier.chromatic_construct.slayer": "Slayer",
   "modifier.chromatic_construct.slayer.flavor": "Defeat the evil!",
   "modifier.chromatic_construct.slayer.description": "Tool does bonus damage to monsters!",

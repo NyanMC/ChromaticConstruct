@@ -144,6 +144,7 @@ public class ChromaticConstruct {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
             LivingEntityPredicate.LOADER.register(getResource("monster"), CCPredicate.MONSTER.getLoader());
             LivingEntityPredicate.LOADER.register(getResource("below_40"), CCPredicate.BELOW_40.getLoader());
+            LivingEntityPredicate.LOADER.register(getResource("in_sunlight"), CCPredicate.IN_SUNLIGHT.getLoader());
 
             ModifierModule.LOADER.register(getResource("panic"), PanicModule.LOADER);
             ModifierModule.LOADER.register(getResource("shocking"), ShockingModule.LOADER);

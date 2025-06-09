@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/rejuvenite"
+  },
+  "material": "chromatic_construct:rejuvenite",
+  "needed": 1,
+  "value": 9
+}

@@ -41,6 +41,11 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
                 .addModule(PanicModule.INSTANCE);
         buildModifier(CCModifierIds.fragileProtection)
                 .addModule(new FragileProtectionModule(LevelingValue.eachLevel(2.5f)));
+        buildModifier(CCModifierIds.solarProtection).addModule(
+                ProtectionModule.builder()
+                        .source(DamageSourcePredicate.CAN_PROTECT)
+                        .entity(CCPredicate.IN_SUNLIGHT)
+                        .eachLevel(1.25f));
 
         // compat: meaningful materials
         buildModifier(CCModifierIds.antiair).addModule(
