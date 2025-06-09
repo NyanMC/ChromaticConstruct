@@ -167,7 +167,7 @@ dependencies {
 
     // since tinkers things is an "official" addon i'll support it natively. don't expect this for other addons
     implementation fg.deobf("curse.maven:json-things-541617:6100175")
-    implementation fg.deobf("curse.maven:tinkers-things-json-811436:6258956")
+    implementation fg.deobf("curse.maven:tinkers-things-json-811436:6603376")
 
     implementation fg.deobf("curse.maven:meaningful-materials-997680:5738630")
 
