@@ -13,7 +13,6 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 
 import java.util.concurrent.CompletableFuture;
@@ -28,7 +27,7 @@ public class CCEnchantmentTagProvider extends TagsProvider<Enchantment> {
     protected void addTags(HolderLookup.@NotNull Provider provider) {
         modifierTag(CCModifierIds.nemesis, "enigmaticlegacy:nemesis");
         modifierTag(CCModifierIds.sorrow, "enigmaticlegacy:sorrow");
-        modifierTag(TinkerModifiers.crystalshot.getId(), "enigmaticlegacy:ceaseless");
+        modifierTag(ModifierIds.crystalshot, "enigmaticlegacy:ceaseless");
         modifierTag(ModifierIds.power, "enigmaticlegacy:sharpshooter");
         modifierTag(ModifierIds.cooling, "enigmaticlegacy:torrent");
     }

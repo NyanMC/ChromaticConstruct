@@ -4,10 +4,6 @@
   "modifier.chromatic_construct.anti_air.description": "Tool does bonus damage to airborne targets!",
   "modifier.chromatic_construct.anti_air.attack_damage": "Anti-Air Damage",
 
-  "modifier.chromatic_construct.moonbound": "Moonbound",
-  "modifier.chromatic_construct.moonbound.flavor": "Floaty!",
-  "modifier.chromatic_construct.moonbound.description": "Reduces the gravity of the wearer",
-
   "modifier.chromatic_construct.antigravity": "Cosmic Suspension",
   "modifier.chromatic_construct.antigravity.flavor": "Personally, I prefer the air",
   "modifier.chromatic_construct.antigravity.description": "Tool defies gravity when dropped",
@@ -49,7 +45,8 @@
 
   "modifier.chromatic_construct.solar_protection": "Solar Protection",
   "modifier.chromatic_construct.solar_protection.flavor": "Photosynthesis!",
-  "modifier.chromatic_construct.solar_protection.description": "Increases protection when standing under direct sunlight in clear weather",
+  "modifier.chromatic_construct.solar_protection.description": "Increases protection when standing under direct sunlight",
+  "modifier.chromatic_construct.solar_protection.resistance": "Solar Resistance",
 
   "modifier.chromatic_construct.slayer": "Slayer",
   "modifier.chromatic_construct.slayer.flavor": "Defeat the evil!",
@@ -133,13 +130,13 @@
   "material.chromatic_construct.hamhide.armor": "Increases movement speed by 10% per level after being attacked",
 
   "material.chromatic_construct.rejuvenite": "Rejuvenite",
-  "material.chromatic_construct.rejuvenite.flavor": "Home-grown crops are good for you. With this, they'll be good for your tool, too!",
+  "material.chromatic_construct.rejuvenite.flavor": "Harness the power of nature itself!",
   "material.chromatic_construct.rejuvenite.encyclopedia": "Breaking fully grown crops has a 20% chance per level of granting +3 harvest shield",
+  "material.chromatic_construct.rejuvenite.armor": "Reduces damage taken by 5% per level while standing under the sun in clear weather",
 
   "material.chromatic_construct.cosmite": "Cosmite",
   "material.chromatic_construct.cosmite.flavor": "What goes up must come down, except for this apparently",
   "material.chromatic_construct.cosmite.encyclopedia": "Grants +1.5 damage per level against targets that are not touching the ground. Tool defies gravity when dropped",
-  "material.chromatic_construct.cosmite.armor": "Reduces the wearer's gravity by 25%, multiplicatively with other pieces. Armor defies gravity when dropped",
 
   "material.chromatic_construct.infernium": "Infernium",
   "material.chromatic_construct.infernium.flavor": "Do you like third-degree burns? No? Too bad!",

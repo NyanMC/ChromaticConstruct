@@ -12,6 +12,7 @@ public class CCModifierIds {
     // compat: meaningful materials
     public static final ModifierId antiair = id("anti_air");
     public static final ModifierId antigravity = id("antigravity");
+    @Deprecated(forRemoval = true)
     public static final ModifierId moonbound = id("moonbound");
 
     // compat: enigmatic legacy

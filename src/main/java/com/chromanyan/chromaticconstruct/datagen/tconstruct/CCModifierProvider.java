@@ -1,6 +1,7 @@
 package com.chromanyan.chromaticconstruct.datagen.tconstruct;
 
 import com.aizistral.enigmaticlegacy.registries.EnigmaticEnchantments;
+import com.chromanyan.chromaticconstruct.ChromaticConstruct;
 import com.chromanyan.chromaticconstruct.tools.CCPredicate;
 import com.chromanyan.chromaticconstruct.tools.CCVolatileFlags;
 import com.chromanyan.chromaticconstruct.tools.modules.armor.FragileProtectionModule;
@@ -16,6 +17,7 @@ import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingValue;
+import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.EnchantmentModule;
@@ -24,6 +26,7 @@ import slimeknights.tconstruct.library.modifiers.modules.build.VolatileFlagModul
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 
 public class CCModifierProvider extends AbstractModifierProvider implements IConditionBuilder {
 
@@ -55,10 +58,6 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
         buildModifier(CCModifierIds.antigravity)
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(new VolatileFlagModule(CCVolatileFlags.NOGRAVITY_ENTITY));
-        buildModifier(CCModifierIds.moonbound).addModule(
-                AttributeModule.builder(ForgeMod.ENTITY_GRAVITY.get(), AttributeModifier.Operation.MULTIPLY_TOTAL)
-                        .uniqueFrom(CCModifierIds.moonbound)
-                        .eachLevel(-0.25f));
 
         // compat: enigmatic legacy
         buildModifier(CCModifierIds.slayer).addModule(
@@ -82,10 +81,17 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
                 .addModule(ShockingModule.INSTANCE)
                 .addModule(StatBoostModule.multiplyBase(ToolStats.MINING_SPEED).eachLevel(0.1f))
                 .addModule(StatBoostModule.multiplyBase(ToolStats.DRAW_SPEED).eachLevel(0.07f));
+
+        // skyfall does what moonbound used to with slightly different numbers
+        addRedirect(id("moonbound"), redirect(ModifierIds.skyfall));
     }
 
     @Override
     public @NotNull String getName() {
         return "Chromatic Construct Modifiers";
+    }
+
+    private static ModifierId id(String name) {
+        return new ModifierId(ChromaticConstruct.MODID, name);
     }
 }

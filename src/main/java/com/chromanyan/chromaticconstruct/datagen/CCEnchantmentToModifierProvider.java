@@ -6,7 +6,6 @@ import net.minecraft.data.PackOutput;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.data.tinkering.AbstractEnchantmentToModifierProvider;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 
 public class CCEnchantmentToModifierProvider extends AbstractEnchantmentToModifierProvider {
@@ -19,7 +18,7 @@ public class CCEnchantmentToModifierProvider extends AbstractEnchantmentToModifi
     protected void addEnchantmentMappings() {
         addOptionalCompat(CCModifierIds.nemesis);
         addOptionalCompat(CCModifierIds.sorrow);
-        addCompat(TinkerModifiers.crystalshot.getId());
+        addCompat(ModifierIds.crystalshot);
         addCompat(ModifierIds.power);
         addCompat(ModifierIds.cooling);
     }

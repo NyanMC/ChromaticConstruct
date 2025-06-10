@@ -4,5 +4,13 @@
       "level": 1,
       "name": "chromatic_construct:harvest_shield"
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "chromatic_construct:solar_protection"
+      }
+    ]
+  }
 }
