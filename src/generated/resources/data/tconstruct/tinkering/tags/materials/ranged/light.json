@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "chromatic_construct:chroma",
+      "required": false
+    },
+    {
+      "id": "chromatic_construct:energized_steel",
+      "required": false
+    }
+  ]
+}

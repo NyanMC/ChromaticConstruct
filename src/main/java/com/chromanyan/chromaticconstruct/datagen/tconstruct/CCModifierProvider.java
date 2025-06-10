@@ -8,8 +8,6 @@ import com.chromanyan.chromaticconstruct.tools.modules.armor.FragileProtectionMo
 import com.chromanyan.chromaticconstruct.tools.modules.armor.PanicModule;
 import com.chromanyan.chromaticconstruct.tools.modules.ShockingModule;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import org.jetbrains.annotations.NotNull;
@@ -19,7 +17,6 @@ import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
-import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.EnchantmentModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.VolatileFlagModule;
@@ -91,6 +88,7 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
         return "Chromatic Construct Modifiers";
     }
 
+    @SuppressWarnings("SameParameterValue")
     private static ModifierId id(String name) {
         return new ModifierId(ChromaticConstruct.MODID, name);
     }

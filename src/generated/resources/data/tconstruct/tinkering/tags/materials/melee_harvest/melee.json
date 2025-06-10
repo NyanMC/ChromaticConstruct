@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "chromatic_construct:cosmite",
+      "required": false
+    },
+    {
+      "id": "chromatic_construct:etherium",
+      "required": false
+    }
+  ]
+}

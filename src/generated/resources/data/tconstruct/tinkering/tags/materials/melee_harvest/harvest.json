@@ -1,0 +1,17 @@
+{
+  "values": [
+    "chromatic_construct:rejuvenite",
+    {
+      "id": "chromatic_construct:infernium",
+      "required": false
+    },
+    {
+      "id": "chromatic_construct:chroma",
+      "required": false
+    },
+    {
+      "id": "chromatic_construct:energized_steel",
+      "required": false
+    }
+  ]
+}

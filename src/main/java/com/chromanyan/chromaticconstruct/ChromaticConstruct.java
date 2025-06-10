@@ -118,6 +118,7 @@ public class ChromaticConstruct {
         gen.addProvider(event.includeServer(), new CCMaterialTraitsDataProvider(out, materials));
         gen.addProvider(event.includeServer(), new CCMaterialStatsDataProvider(out, materials));
         gen.addProvider(event.includeServer(), new CCMaterialRecipeProvider(out));
+        gen.addProvider(event.includeServer(), new CCMaterialTagProvider(out, efh));
 
         gen.addProvider(event.includeServer(), new CCRecipeProvider(out));
         gen.addProvider(event.includeServer(), new CCFluidEffectProvider(out));
