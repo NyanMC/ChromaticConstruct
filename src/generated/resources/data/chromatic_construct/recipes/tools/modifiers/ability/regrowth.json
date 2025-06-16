@@ -1,0 +1,43 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "inputs": [
+    {
+      "tag": "forge:ingots/rejuvenite"
+    },
+    {
+      "item": "minecraft:grass"
+    },
+    {
+      "tag": "forge:ingots/rejuvenite"
+    },
+    {
+      "item": "minecraft:grass_block"
+    },
+    {
+      "item": "minecraft:grass_block"
+    }
+  ],
+  "level": 1,
+  "result": "chromatic_construct:regrowth",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "type": "forge:intersection",
+    "children": [
+      {
+        "tag": "tconstruct:modifiable/durability"
+      },
+      [
+        {
+          "tag": "tconstruct:modifiable/interactable"
+        },
+        {
+          "tag": "tconstruct:modifiable/armor/boots"
+        }
+      ]
+    ]
+  }
+}

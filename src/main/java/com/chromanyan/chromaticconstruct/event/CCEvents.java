@@ -3,15 +3,18 @@ package com.chromanyan.chromaticconstruct.event;
 import com.chromanyan.chromaticconstruct.init.CCMobEffects;
 import com.chromanyan.chromaticconstruct.network.CCPacketHandler;
 import com.chromanyan.chromaticconstruct.network.client.PacketRemainingFireTicks;
+import com.chromanyan.chromaticconstruct.tools.CCToolActions;
 import com.chromanyan.chromaticconstruct.tools.CCVolatileFlags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.network.PacketDistributor;
@@ -67,6 +70,19 @@ public class CCEvents {
     public void onLivingHeal(LivingHealEvent event) {
         if (event.getEntity().hasEffect(CCMobEffects.heartstopperEffect.get())) {
             event.setCanceled(true);
+        }
+    }
+
+    private static void handleGrassGrowToolAction(BlockEvent.BlockToolModificationEvent event) {
+        if (event.getState().getBlock() != Blocks.DIRT) return;
+
+        event.setFinalState(Blocks.GRASS_BLOCK.defaultBlockState());
+    }
+
+    @SubscribeEvent
+    public void onBlockToolModification(BlockEvent.BlockToolModificationEvent event) {
+        if (event.getToolAction() == CCToolActions.GROW_GRASS) {
+            handleGrassGrowToolAction(event);
         }
     }
 }

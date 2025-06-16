@@ -1,0 +1,13 @@
+{
+  "modifier_id": "chromatic_construct:regrowth",
+  "text": [
+    {
+      "text": "Whoever said watching grass grow was boring clearly hasn't seen this before."
+    }
+  ],
+  "effects": [
+    "Allows you to grow grass on dirt with your tool",
+    "Single level",
+    "Requires 1 ability slot"
+  ]
+}

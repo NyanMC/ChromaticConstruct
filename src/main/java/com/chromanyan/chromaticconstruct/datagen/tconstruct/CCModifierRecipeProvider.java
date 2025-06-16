@@ -5,6 +5,7 @@ import com.chromanyan.chromaticarsenal.init.ModItems;
 import com.chromanyan.chromaticconstruct.datagen.CCBaseRecipeProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.material.CCMaterialIds;
 import com.chromanyan.chromaticconstruct.init.CCItems;
+import com.chromanyan.chromaticconstruct.init.CCMaterials;
 import com.chromanyan.chromaticconstruct.init.CCModifiers;
 import com.chromanyan.meaningfulmaterials.init.MMTags;
 import net.minecraft.data.PackOutput;
@@ -16,6 +17,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.CompoundIngredient;
+import net.minecraftforge.common.crafting.IntersectionIngredient;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -98,6 +100,22 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .setMaxLevel(1)
                 .saveSalvage(consumer, prefix(CCModifiers.riding, abilitySalvage))
                 .save(consumer, prefix(CCModifiers.riding, abilityFolder));
+
+        // block transformers
+        @SuppressWarnings("unused") Ingredient interactableWithDurability = IntersectionIngredient.of(Ingredient.of(TinkerTags.Items.DURABILITY), Ingredient.of(TinkerTags.Items.INTERACTABLE));
+        Ingredient interactableBootsWithDurability = IntersectionIngredient.of(Ingredient.of(TinkerTags.Items.DURABILITY), ingredientFromTags(TinkerTags.Items.INTERACTABLE, TinkerTags.Items.BOOTS));
+
+        ModifierRecipeBuilder.modifier(CCModifierIds.regrowth)
+                .setTools(interactableBootsWithDurability)
+                .addInput(CCMaterials.rejuvenite.getIngotTag())
+                .addInput(Items.GRASS)
+                .addInput(CCMaterials.rejuvenite.getIngotTag())
+                .addInput(Items.GRASS_BLOCK)
+                .addInput(Items.GRASS_BLOCK)
+                .setSlots(SlotType.ABILITY, 1)
+                .setMaxLevel(1).checkTraitLevel()
+                .saveSalvage(consumer, prefix(CCModifierIds.regrowth, abilitySalvage))
+                .save(consumer, prefix(CCModifierIds.regrowth, abilityFolder));
 
         IncrementalModifierRecipeBuilder.modifier(CCModifierIds.fragileProtection)
                 .setInput(CCItems.glassReinforcement, 1, 5)

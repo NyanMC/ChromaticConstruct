@@ -1,0 +1,15 @@
+{
+  "modifier_id": "chromatic_construct:regrowth",
+  "text": [
+    {
+      "text": "Ever seen an ugly patch of dirt before? Now you can make it pretty, with ease!"
+    }
+  ],
+  "tool_filter": "tconstruct:modifiable/armor/boots",
+  "effects": [
+    "Grow grass as you walk",
+    "Area boosted by expanded",
+    "Single level",
+    "Requires 1 ability slot"
+  ]
+}

@@ -48,6 +48,10 @@
   "modifier.chromatic_construct.solar_protection.description": "Increases protection when standing under direct sunlight",
   "modifier.chromatic_construct.solar_protection.resistance": "Solar Resistance",
 
+  "modifier.chromatic_construct.regrowth": "Regrowth",
+  "modifier.chromatic_construct.regrowth.flavor": "One with nature!",
+  "modifier.chromatic_construct.regrowth.description": "Tool can grow grass from dirt",
+
   "modifier.chromatic_construct.slayer": "Slayer",
   "modifier.chromatic_construct.slayer.flavor": "Defeat the evil!",
   "modifier.chromatic_construct.slayer.description": "Tool does bonus damage to monsters!",

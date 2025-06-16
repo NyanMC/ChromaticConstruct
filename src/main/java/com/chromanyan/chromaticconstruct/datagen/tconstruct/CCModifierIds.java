@@ -8,6 +8,7 @@ public class CCModifierIds {
     public static final ModifierId panic = id("panic");
     public static final ModifierId fragileProtection = id("fragile_protection");
     public static final ModifierId solarProtection = id("solar_protection");
+    public static final ModifierId regrowth = id("regrowth");
 
     // compat: meaningful materials
     public static final ModifierId antiair = id("anti_air");

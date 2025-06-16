@@ -4,6 +4,7 @@
   "chromatic_construct:sorrow": ["chromatic_construct:gui/modifiers/unluck", "tconstruct:gui/modifiers/book"],
   "chromatic_construct:heartstopper": ["chromatic_construct:gui/modifiers/heartstopper"],
   "chromatic_construct:snowball": ["minecraft:item/snowball", "tconstruct:gui/modifiers/book"],
+  "chromatic_construct:regrowth": ["minecraft:block/grass", "tconstruct:gui/modifiers/book"],
   "chromatic_construct:riding": ["minecraft:item/saddle", "tconstruct:gui/modifiers/book"],
   "chromatic_construct:fragile_protection": ["chromatic_construct:item/glass_reinforcement", "tconstruct:gui/modifiers/book"],
   "chromatic_construct:encumberment": "chromatic_construct:gui/modifiers/encumberment"

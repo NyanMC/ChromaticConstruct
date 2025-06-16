@@ -1,0 +1,14 @@
+{
+  "modifier_id": "chromatic_construct:regrowth",
+  "text": [
+    {
+      "text": "Allows the tool to grow grass on dirt, turning it into a grass block. Grass will not grow if there is a block above the dirt."
+    }
+  ],
+  "more_text_space": true,
+  "tool_filter": "tconstruct:modifiable/interactable",
+  "effects": [
+    "Maximum of 1 level",
+    "Requires 1 ability slot"
+  ]
+}

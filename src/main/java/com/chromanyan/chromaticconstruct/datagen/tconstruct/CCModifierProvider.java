@@ -3,11 +3,13 @@ package com.chromanyan.chromaticconstruct.datagen.tconstruct;
 import com.aizistral.enigmaticlegacy.registries.EnigmaticEnchantments;
 import com.chromanyan.chromaticconstruct.ChromaticConstruct;
 import com.chromanyan.chromaticconstruct.tools.CCPredicate;
+import com.chromanyan.chromaticconstruct.tools.CCToolActions;
 import com.chromanyan.chromaticconstruct.tools.CCVolatileFlags;
 import com.chromanyan.chromaticconstruct.tools.modules.armor.FragileProtectionModule;
 import com.chromanyan.chromaticconstruct.tools.modules.armor.PanicModule;
 import com.chromanyan.chromaticconstruct.tools.modules.ShockingModule;
 import net.minecraft.data.PackOutput;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import org.jetbrains.annotations.NotNull;
@@ -17,6 +19,9 @@ import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
+import slimeknights.tconstruct.library.modifiers.modules.armor.ToolActionWalkerTransformModule;
+import slimeknights.tconstruct.library.modifiers.modules.behavior.ShowOffhandModule;
+import slimeknights.tconstruct.library.modifiers.modules.behavior.ToolActionTransformModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.EnchantmentModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.VolatileFlagModule;
@@ -46,6 +51,11 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
                         .source(DamageSourcePredicate.CAN_PROTECT)
                         .entity(CCPredicate.IN_SUNLIGHT)
                         .eachLevel(1.25f));
+        buildModifier(CCModifierIds.regrowth)
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
+                .addModule(ShowOffhandModule.DISALLOW_BROKEN)
+                .addModule(ToolActionTransformModule.builder(CCToolActions.GROW_GRASS, SoundEvents.GRASS_PLACE).requireGround().build())
+                .addModule(ToolActionWalkerTransformModule.builder(CCToolActions.GROW_GRASS, SoundEvents.GRASS_PLACE).amount(0.5f, 1));
 
         // compat: meaningful materials
         buildModifier(CCModifierIds.antiair).addModule(

@@ -1,0 +1,14 @@
+{
+  "modifier_id": "chromatic_construct:regrowth",
+  "text": [
+    {
+      "text": "Grows grass on dirt you walk on. Area of effect expanded by the expanded modifier."
+    }
+  ],
+  "more_text_space": true,
+  "tool_filter": "tconstruct:modifiable/armor/boots",
+  "effects": [
+    "Maximum of 1 level",
+    "Requires 1 ability slot"
+  ]
+}
