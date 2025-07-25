@@ -48,12 +48,12 @@ public class SnowballModifier extends NoLevelsModifier implements GeneralInterac
 
             ModDataNBT arrowData = PersistentDataCapability.getOrWarn(snowball);
             for (ModifierEntry entry : tool.getModifierList()) {
-                entry.getHook(ModifierHooks.PROJECTILE_LAUNCH).onProjectileLaunch(tool, modifierEntry, player, snowball, null, arrowData, true);
+                entry.getHook(ModifierHooks.PROJECTILE_LAUNCH).onProjectileLaunch(tool, modifierEntry, player, player.getItemInHand(interactionHand), snowball, null, arrowData, true);
             }
 
             level.addFreshEntity(snowball);
 
-            ToolDamageUtil.damageAnimated(tool, 5, player, interactionSource.getSlot(interactionHand));
+            ToolDamageUtil.damageAnimated(tool, 5, player, interactionHand);
 
             return InteractionResult.CONSUME;
         }
