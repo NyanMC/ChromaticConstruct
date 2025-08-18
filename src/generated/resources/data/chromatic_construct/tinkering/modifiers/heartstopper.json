@@ -1,0 +1,16 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:mob_effect",
+      "effect": "chromatic_construct:heartstopper",
+      "level": {
+        "flat": 1.0
+      },
+      "time": {
+        "per_level": 40.0
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

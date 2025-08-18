@@ -7,6 +7,7 @@ public class CCModifierIds {
     public static final ModifierId encumberment = id("encumberment");
     public static final ModifierId panic = id("panic");
     public static final ModifierId fragileProtection = id("fragile_protection");
+    public static final ModifierId heartstopper = id("heartstopper");
     public static final ModifierId solarProtection = id("solar_protection");
     public static final ModifierId regrowth = id("regrowth");
 

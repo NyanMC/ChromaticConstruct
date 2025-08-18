@@ -18,8 +18,8 @@ public class CCModifierTagProvider extends AbstractModifierTagProvider {
         this.tag(TinkerTags.Modifiers.GENERAL_SLOTLESS).addOptional(CCModifierIds.nemesis, CCModifierIds.sorrow, CCModifierIds.antigravity);
         this.tag(TinkerTags.Modifiers.INTERACTION_ABILITIES).add(CCModifiers.snowball.getId(), CCModifierIds.regrowth);
         this.tag(TinkerTags.Modifiers.RANGED_ABILITIES).add(CCModifiers.riding.getId());
-        this.tag(TinkerTags.Modifiers.MELEE_UPGRADES).add(CCModifiers.heartstopper.getId());
-        this.tag(TinkerTags.Modifiers.RANGED_UPGRADES).add(CCModifiers.heartstopper.getId());
+        this.tag(TinkerTags.Modifiers.MELEE_UPGRADES).add(CCModifierIds.heartstopper);
+        this.tag(TinkerTags.Modifiers.RANGED_UPGRADES).add(CCModifierIds.heartstopper);
         this.tag(TinkerTags.Modifiers.LEGGING_UPGRADES).add(CCModifierIds.encumberment);
         this.tag(TinkerTags.Modifiers.PROTECTION_DEFENSE).add(CCModifierIds.fragileProtection);
 

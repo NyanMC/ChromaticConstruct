@@ -2,7 +2,7 @@
   "modifier_id": "chromatic_construct:heartstopper",
   "text": [
     {
-      "text": "Prevents entities hit by the arrow from healing for 2 seconds (plus 2 seconds per level)."
+      "text": "Prevents entities hit by the arrow from healing for 2 seconds per level."
     }
   ],
   "more_text_space": true,

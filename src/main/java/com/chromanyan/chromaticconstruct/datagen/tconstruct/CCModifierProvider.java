@@ -2,6 +2,7 @@ package com.chromanyan.chromaticconstruct.datagen.tconstruct;
 
 import com.aizistral.enigmaticlegacy.registries.EnigmaticEnchantments;
 import com.chromanyan.chromaticconstruct.ChromaticConstruct;
+import com.chromanyan.chromaticconstruct.init.CCMobEffects;
 import com.chromanyan.chromaticconstruct.tools.CCPredicate;
 import com.chromanyan.chromaticconstruct.tools.CCToolActions;
 import com.chromanyan.chromaticconstruct.tools.CCVolatileFlags;
@@ -17,6 +18,7 @@ import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingValue;
+import slimeknights.tconstruct.library.json.RandomLevelingValue;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ToolActionWalkerTransformModule;
@@ -26,6 +28,7 @@ import slimeknights.tconstruct.library.modifiers.modules.build.EnchantmentModule
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.VolatileFlagModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
+import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.data.ModifierIds;
@@ -46,6 +49,12 @@ public class CCModifierProvider extends AbstractModifierProvider implements ICon
                 .addModule(PanicModule.INSTANCE);
         buildModifier(CCModifierIds.fragileProtection)
                 .addModule(new FragileProtectionModule(LevelingValue.eachLevel(2.5f)));
+        buildModifier(CCModifierIds.heartstopper)
+                .addModule(MobEffectModule.builder(CCMobEffects.heartstopperEffect.get())
+                        .level(RandomLevelingValue.flat(1))
+                        .time(RandomLevelingValue.perLevel(0, 40))
+                        .build()
+                );
         buildModifier(CCModifierIds.solarProtection).addModule(
                 ProtectionModule.builder()
                         .source(DamageSourcePredicate.CAN_PROTECT)
