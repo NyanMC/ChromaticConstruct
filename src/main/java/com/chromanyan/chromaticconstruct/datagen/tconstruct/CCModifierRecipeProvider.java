@@ -2,6 +2,7 @@ package com.chromanyan.chromaticconstruct.datagen.tconstruct;
 
 import com.aizistral.enigmaticlegacy.registries.EnigmaticItems;
 import com.chromanyan.chromaticarsenal.init.ModItems;
+import com.chromanyan.chromaticconstruct.ChromaticConstruct;
 import com.chromanyan.chromaticconstruct.datagen.CCBaseRecipeProvider;
 import com.chromanyan.chromaticconstruct.datagen.tconstruct.material.CCMaterialIds;
 import com.chromanyan.chromaticconstruct.init.CCItems;
@@ -10,6 +11,7 @@ import com.chromanyan.chromaticconstruct.init.CCModifiers;
 import com.chromanyan.meaningfulmaterials.init.MMTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -60,6 +62,13 @@ public class CCModifierRecipeProvider extends CCBaseRecipeProvider {
                 .addInput(MMTags.Items.GEMS_COSMITE)
                 .setMaxLevel(1)
                 .save(withCondition(consumer, modLoaded("meaningfulmaterials")), prefix(CCModifierIds.antigravity, slotlessFolder));
+
+        ModifierRecipeBuilder.modifier(CCModifierIds.antigravity)
+                .addInput(Items.SHULKER_SHELL)
+                .addInput(Items.END_STONE)
+                .addInput(Items.SHULKER_SHELL)
+                .setMaxLevel(1)
+                .save(withCondition(consumer, not(modLoaded("meaningfulmaterials"))), prefix(new ResourceLocation(ChromaticConstruct.MODID, "antigravity_fallback"), slotlessFolder));
 
         ModifierRecipeBuilder.modifier(CCModifierIds.nemesis)
                 .setTools(TinkerTags.Items.MELEE_PRIMARY) // nemesis would be jank if you could put it on a bow

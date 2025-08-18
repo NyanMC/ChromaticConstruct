@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:mod_loaded",
+        "modid": "meaningfulmaterials"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "item": "minecraft:shulker_shell"
+    },
+    {
+      "item": "minecraft:end_stone"
+    },
+    {
+      "item": "minecraft:shulker_shell"
+    }
+  ],
+  "level": 1,
+  "result": "chromatic_construct:antigravity",
+  "tools": {
+    "tag": "tconstruct:modifiable"
+  }
+}
