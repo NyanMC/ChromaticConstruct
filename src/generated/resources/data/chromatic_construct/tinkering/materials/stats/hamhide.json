@@ -1,5 +1,7 @@
 {
   "stats": {
-    "tconstruct:maille": {}
+    "tconstruct:cuirass": {},
+    "tconstruct:maille": {},
+    "tconstruct:repair_kit": {}
   }
 }

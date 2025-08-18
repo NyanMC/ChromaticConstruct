@@ -20,7 +20,7 @@ public class CCMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
     protected void addAllMaterials() {
         buildMaterial(CCMaterialIds.hamhide)
                 .fallbacks("cloth")
-                .repairKit().maille()
+                .repairKit().maille().cuirass()
                 .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF5C1B30).addARGB(102, 0xFF761C38).addARGB(140, 0xFFB02054).addARGB(178, 0xFFC72054).addARGB(216, 0xFFF22263).addARGB(255, 0xFFFF2E70).build());
         buildMaterial(CCMaterialIds.rejuvenite)
                 .fallbacks("metal")

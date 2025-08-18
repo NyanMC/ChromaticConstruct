@@ -19,6 +19,7 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
         addMeleeHarvest();
         addRanged();
         addArmor();
+        addMisc();
     }
 
     private void addMeleeHarvest() {
@@ -62,10 +63,14 @@ public class CCMaterialStatsDataProvider extends AbstractMaterialStatsDataProvid
     }
 
     private void addArmor() {
-        addMaterialStats(CCMaterialIds.hamhide, StatlessMaterialStats.MAILLE);
+        addMaterialStats(CCMaterialIds.hamhide, StatlessMaterialStats.MAILLE, StatlessMaterialStats.CUIRASS);
         addArmorShieldStats(CCMaterialIds.rejuvenite, PlatingMaterialStats.builder().durabilityFactor(16).armor(1, 3, 5, 2), StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(CCMaterialIds.etherium, PlatingMaterialStats.builder().durabilityFactor(40).armor(2, 5, 7, 2).toughness(2), StatlessMaterialStats.MAILLE);
+    }
+
+    private void addMisc() {
+        addMaterialStats(CCMaterialIds.hamhide, StatlessMaterialStats.REPAIR_KIT);
     }
 
     @Override
